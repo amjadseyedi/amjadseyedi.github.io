@@ -26,16 +26,17 @@
 
     <!-- CSS Template
     <link rel="stylesheet" href="assets/css/theme.css" /> -->
-    <link rel="stylesheet" href="assets/css/color/blue-beige.css" id="color" />
-
+    <link rel="stylesheet" href="assets/css/color/green-orange.css" id="color" />
+    
     <style>
         p {
         font-weight: 400;
         }
 
-        a {
+        a:link {
+        color: #006747;
         text-decoration: none;
-        }
+}
 
         label {
         cursor: pointer;
@@ -172,24 +173,16 @@
         transition: transform 250ms ease;
         z-index: 111;
         }
-
+    
     </style>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177003832-2"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-177003832-2');
-    </script>
+    
     
 </head>
 <body class="header-vertical">
    
 <!-- Loader -->
-    <div id="page-loader" class="bg-white"></div>
+<div id="page-loader" class="bg-white"></div> 
 <!-- Loader / End -->
 
 <!-- Header -->
@@ -198,6 +191,8 @@
         <!-- Photo -->
         <div class="photo">
             <img src="assets/img/photos/it-avatar2.jpg" alt="amjad, amjad seyedi, seyedi">
+            
+           <!-- <p align=center><img style="Padding: 30px,30px,30px,30px;"  src="sas.svg" width=80px></p>-->
         </div>
 
         <!-- Navigation -->
@@ -213,10 +208,12 @@
             </ul>
         </nav>
 
+        
+
         <!-- Social Media -->
         <div class="social-media">
             <ul class="list-inline margin-t-10">
-                <li><a href="https://www.linkedin.com/in/amjad-seyedi-3a72b8196/" target="_blank" class="icon icon-xs">
+                <li><a href="https://www.linkedin.com/in/AmjadSeyedi/" target="_blank" class="icon icon-xs">
                 <i class="fa fa-linkedin text-muted"></i></a></li>
                 <li><a href="https://github.com/amjadseyedi/" target="_blank" class="icon icon-xs"><i class="fa fa-github text-muted"></i></a></li>
                 <li><a href="https://join.skype.com/invite/bpRXVCW1ucD3" target="_blank" class="icon icon-xs"><i class="fa fa-skype text-muted"></i></a></li>
@@ -230,40 +227,35 @@
 <div id="content" class="bg-white">
     <!-- Section - Resume -->
     <section id="resume" class="section fullheight bg-grey padding-v-20">
-        <div style="opacity: 0.15;" class="bg-image animated infinite zooming"><img src="assets/img/photos/it-bg01.jpg" alt="..."></div>
+        <div style="opacity: 0.1;" class="bg-image animated infinite zooming"><img src="assets/img/photos/it-bg01.jpg" alt="..."></div>
         <!-- Content -->
         <div class="container container-wide">
             <div>
                 <div class="">
                     <!-- Resume Box / About -->
-                    <div class="resume-box">
+                    <div class="resume-box" style="margin-bottom: 20px">
                         <span class="icon animated" data-animation="fadeInDown"><i class="tsti-comment-alt text-tertiary"></i></span>
                         <h2 style="margin-bottom:5px;margin-top:10px"><strong>Amjad Seyedi</strong></h2>
-                        <h6 style="margin-bottom:0; color:#caa669;">Research Assistant<br>Department of Computer Engineering<br>
-                        Faculty of Engineering<br>University of Kurdistan</h6>
-                        <span class="event-name"><a href="mailto:amjadseyedi@eng.uok.ac.ir">amjadseyedi@eng.uok.ac.ir</a></span>
+                        <h4 style="margin-bottom:5px;margin-top:5px; color:#006747"><strong>Graduate Research Assistant</strong></h4>
+                        <h6 style="margin-bottom:0; color:#a69d76;">Representation Learning Research Lab<br>Department of Computer Engineering<br>
+                        University of Kurdistan</h6>
+                        
+                        <span class="event-name"><a href="mailto:amjadseyedi@uok.ac.ir">amjadseyedi@uok.ac.ir</a></span>
 
-                       <p style="margin-top:10px; margin-bottom:0px" class="lead" align=justify>I'm a research assistant at the <a href="https://en.uok.ac.ir" target="_blank"><u>University of Kurdistan</u></a> working
-                       on deep learning (from optimization and generalization aspects). I received my Master's in Artificial Intelligence from the Department
-                        of Computer, at University of Kurdistan in 2018. My advisors were 
-                        <a href="https://scholar.google.com/citations?user=bR5ttrwAAAAJ" target="_blank"><u>Dr. Parham Moradi</u></a> and 
-                        <a href="https://scholar.google.com/citations?user=BQl2nKsAAAAJ" target="_blank"><u>Dr. Fardin Akhlaghian</u></a>.
-                         My work mostly focused on the matrix factorization and low-rank approximation, predominantly for semi-supervised, recommendation,
-                          and multi-label applications. Before that, I obtained my Associate and Bachelor's degrees in Software Engineering.</p>
+                       <p style="margin-top:10px; margin-bottom:0px" class="lead" align=justify>As a graduate research assistant at the <a href="https://en.uok.ac.ir" target="_blank">University of Kurdistan</a>, I work on representation learning with a focus on robustness and generalization. I also lead the <a style="color:#006747" href="http://amlteam.ml" target="_blank"><u>Algebraic Machine Learning (AML) team</u></a>, a group that explores fundamental methods in unsupervised machine learning and representation theory. I have a Master’s degree in Artificial Intelligence from the same university, where I worked with <a style="color:#006747" href='https://scholar.google.com/citations?user=bR5ttrwAAAAJ' target="_blank">Dr. Parham Moradi</a> and <a style="color:#006747" href="https://scholar.google.com/citations?user=BQl2nKsAAAAJ" target="_blank">Dr. Fardin Akhlaghian</a> on matrix factorization and low-rank approximation for various applications such as semi-supervised learning, recommendation systems, and multi-label classification. I also have an Associate and a Bachelor’s degree in Software Engineering.</p>
                     </div>
-
-                    <span><a href="cv/SeyediCV.pdf" target="_blank" class="btn btn-sm btn-secondary animated" data-animation="bounceIn">
+                    <span><a style="color:#CFC493;" href="cv/SeyediCV.pdf" target="_blank" class="btn btn-sm btn-secondary animated" data-animation="bounceIn">
                     <span>Curriculum Vitae</span><i class="ti-id-badge"></i></a></span>
-
                     <!-- Resume Box / Skills -->
                     <div class="resume-box">
                         <span class="icon animated" data-animation="fadeInDown"><i class="text-tertiary"></i></span>
                         <h4 style="margin-bottom:10px"><strong>Research Interests</strong></h4>
                         <ul style="margin-top:10px; margin-bottom:10px; font-size:18px" class="lead" >
-                            <li>Optimization, Regularization, and Matrix theory</li>
-                            <li>Machine learning, Representation learning, and Generalization</li>
-                            <li>Matrix factorization, Matrix completion, and Low-rank approximation</li>
-                            <li>Semi-supervised learning, Multi-label learning, Self-paced learning, and Data clustering</li>
+                            
+                            <li>Machine learning, Representation learning, Linear algebra</li>
+                            <li>Deep learning, Self-supervised/Semi-supervised learning</li>
+                            <li>Generalization, Adversarial training, Robust learning</li>
+                            <li>Computer vision, Multi-view Learning, Recommendation</li>
                         </ul> 
                     </div>
                 </div>
@@ -271,23 +263,24 @@
         </div>
     </section>
  
-    <section id="publications" class="section fullheight bg-grey padding-v-20">
-        <div style="opacity:0.2" class="bg-image animated infinite zooming"><img src="assets/img/photos/it-bg011.jpg" alt="..."></div>
+    <section id="publications" class="section bg-grey padding-v-20">
+        <div style="opacity:0.1" class="bg-image animated infinite zooming"><img src="assets/img/photos/it-bg011.jpg" alt="..."></div>
         <!-- Content -->
         <div class="container container-wide">
             <h4 style="margin-bottom:0;margin-top:40px" class="margin-b-0"><strong>Publications</strong> </h4>
-            <span class="event-name"><a href="https://scholar.google.com/citations?user=gRU1aPYAAAAJ" target="_blank">Google Scholar</a></span>
+            <span class="event-name"><a style="color:#006747";" href="https://scholar.google.com/citations?user=gRU1aPYAAAAJ" target="_blank">Google Scholar</a></span>
             <div class="row padding-lg">
                 <div class="col-lg-10 col-sm-0">
                    <!-- Testimonial -->
+
                     <div class="testimonial testimonial-dark">
                         <div class="testimonial-author testimonial">
                             <div class="testimonial-author-txt" style="line-height:1.3; ">
-                              <span class="caption text" style="font-size:14px"><a href="https://doi.org/10.1109/ICCKE50421.2020.9303649" target="_blank">
-                              <strong>"Asymmetric Semi-Nonnegative Matrix Factorization for Directed Graph Clustering"</strong></a> - 
-                              <a style="color:initial;" href="https://github.com/amjadseyedi/RAsNMF" target="_blank">[source code]</a><br>
-                              R. Abdollahi, <u>S.A. Seyedi</u>, and M.R. Noorimehr<br>
-                              <span style="color:#caa669;">The 10th International Conference on Computer and Knowledge Engineering, IEEE, pp. 323-328, 2020
+                              <span class="caption text" style="font-size:14px"><a style="color:#006747" href="https://doi.org/10.1016/j.patcog.2022.109282" target="_blank">
+                              <strong>"Self-Supervised Semi-Supervised Nonnegative Matrix Factorization for Data Clustering"</strong></a> - 
+                              <a style="color:initial;" href="https://github.com/ChavoshiNejad/S4NMF" target="_blank">[source code]</a><br>
+                              J. Chavoshinejad, <u>A. Seyedi</u>, F. Akhlaghian, and N. Salahian, 
+                              <span style="color:#a69d76;">Pattern Recognition 2023.
                               </span>
                               </span>
                             </div>
@@ -297,24 +290,66 @@
                     <div class="testimonial testimonial-dark">
                         <div class="testimonial-author testimonial">
                             <div class="testimonial-author-txt" style="line-height:1.3; ">
-                                <span class="caption text" style="font-size:14px"><a href="http://proceedings.mlr.press/v101/seyedi19a.html" target="_blank">
+                              <span class="caption text" style="font-size:14px"><a style="color:#006747" href="https://doi.org/10.1016/j.ins.2022.11.120" target="_blank">
+                              <strong>"Elastic Adversarial Deep Nonnegative Matrix Factorization for Matrix Completion"</strong></a> - 
+                              <a style="color:initial;" href="https://github.com/amjadseyedi/EADNMF" target="_blank">[source code]</a><br>
+                              <u>A. Seyedi</u>, F. Akhlaghian, A. Lotfi, N. Salahian, and J. Chavoshinejad, 
+                              <span style="color:#a69d76;">Information Sciences 2023.</span>
+                              </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial testimonial-dark">
+                        <div class="testimonial-author testimonial">
+                            <div class="testimonial-author-txt" style="line-height:1.3; ">
+                              <span class="caption text" style="font-size:14px"><a style="color:#006747" href="https://doi.org/10.1016/j.eswa.2022.119051" target="_blank">
+                              <strong>"Deep Autoencoder-like NMF with Contrastive Regularization and Feature Relationship Preservation"</strong></a> - 
+                              <a style="color:initial;" href="https://github.com/amjadseyedi/DANMF_CRFR" target="_blank">[source code]</a><br>
+                              N. Salahian, F. Akhlaghian, <u>A. Seyedi</u>, and J. Chavoshinejad, 
+                              <span style="color:#a69d76;">Expert Systems with Applications 2023.
+                              </span>
+                              </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial testimonial-dark">
+                        <div class="testimonial-author testimonial">
+                            <div class="testimonial-author-txt" style="line-height:1.3; ">
+                              <span class="caption text" style="font-size:14px"><a style="color:#006747" href="https://doi.org/10.1109/ICCKE50421.2020.9303649" target="_blank">
+                              <strong>"Asymmetric Semi-Nonnegative Matrix Factorization for Directed Graph Clustering"</strong></a> - 
+                              <a style="color:initial;" href="https://github.com/amjadseyedi/RAsNMF" target="_blank">[source code]</a><br>
+                              R. Abdollahi, <u>A. Seyedi</u>, and M.R. Noorimehr, 
+                              <span style="color:#a69d76;">IEEE International Conference on Computer and Knowledge Engineering (ICCKE) 2020.
+                              </span>
+                              </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial testimonial-dark">
+                        <div class="testimonial-author testimonial">
+                            <div class="testimonial-author-txt" style="line-height:1.3; ">
+                                <span class="caption text" style="font-size:14px"><a style="color:#006747" href="http://proceedings.mlr.press/v101/seyedi19a.html" target="_blank">
                                 <strong>"Self-Paced Multi-Label Learning with Diversity"</strong></a> -
                                 <a style="color:initial;" href="https://github.com/amjadseyedi/SPMLD" target="_blank">[source code]</a><br>
-                                <u>S.A. Seyedi</u>, S.S. Ghodsi, F. Akhlaghian, M. Jalili, and P. Moradi<br>
-                                <span style="color:#caa669;">The 11th Asian Conference on Machine Learning, PMLR 101, pp. 790-805, 2019
+                                <u>A. Seyedi</u>, S. Ghodsi, F. Akhlaghian, M. Jalili, and P. Moradi, 
+                                <span style="color:#a69d76;">Asian Conference on Machine Learning 2019.
                                 </span>
                                 </span>
                             </div>
                         </div>
                     </div>
+
                     <div class="testimonial testimonial-dark">
                         <div class="testimonial-author testimonial">
                             <div class="testimonial-author-txt" style="line-height:1.3; ">
                                 <span class="caption text" style="font-size:14px"><a href="https://doi.org/10.1016/j.eswa.2018.07.075" target="_blank">
-                                <strong>"Dynamic Graph-Based Label Propagation for Density Peaks Clustering"</strong></a> - 
+                                <strong>"Dynamic Graph-based Label Propagation for Density Peaks Clustering"</strong></a> - 
                                 <a style="color:initial;" href="https://github.com/amjadseyedi/DPC-DLP" target="_blank">[source code]</a><br>
-                                <u>S.A. Seyedi</u>, A. Lotfi, P. Moradi, and N.N. Qader<br>
-                                <span style="color:#caa669;">Expert Systems with Applications, Elsevier 115, pp. 314-328, 2019
+                                <u>A. Seyedi</u>, A. Lotfi, P. Moradi, and N.N. Qader, 
+                                <span style="color:#a69d76;">Expert Systems with Applications 2019.
                                 </span>
                                 </span>
                             </div>
@@ -326,8 +361,8 @@
                             <div class="testimonial-author-txt" style="line-height:1.3; ">
                                 <span class="caption text" style="font-size:14px"><a href="https://doi.org/10.1109/AISP.2017.8324084" target="_blank">
                                 <strong>"A Weakly-Supervised Factorization Method with Dynamic Graph Embedding"</strong></a><br>
-                                <u>S.A. Seyedi</u>, P. Moradi, and F. Akhlaghian<br>
-                                <span style="color:#caa669;">The 19th Artificial Intelligence and Signal Processing Conference, IEEE, pp. 213-218, 2017
+                                <u>A. Seyedi</u>, P. Moradi, and F. Akhlaghian Tab, 
+                                <span style="color:#a69d76;">IEEE Artificial Intelligence and Signal Processing Conference (AISP) 2017.
                                 </span>
                                 </span>
                             </div>
@@ -338,9 +373,9 @@
                         <div class="testimonial-author testimonial">
                             <div class="testimonial-author-txt" style="line-height:1.3; ">
                                 <span class="caption text" style="font-size:14px"><a href="https://doi.org/10.1109/IranianCEE.2017.7985435" target="_blank">
-                                <strong>"A Clustering-Based Matrix Factorization Method to Improve the Accuracy of Recommendation Systems"</strong></a><br>
-                                Z. Shajarian, <u>S.A. Seyedi</u>, and P. Moradi<br>
-                                <span style="color:#caa669;">The 25th Iranian Conference on Electrical Engineering, IEEE, pp. 2241-2246, 2017
+                                <strong>"A Clustering-based Matrix Factorization Method to Improve the Accuracy of Recommendation Systems"</strong></a><br>
+                                Z. Shajarian, <u>A. Seyedi</u>, and P. Moradi, 
+                                <span style="color:#a69d76;">IEEE Iranian Conference on Electrical Engineering (ICEE) 2017.
                                 </span>
                                 </span>
                             </div>
@@ -353,9 +388,8 @@
                                 <span class="caption text" style="font-size:14px"><a href="https://doi.org/10.1109/ICCKE.2016.7802150" target="_blank">
                                 <strong>"An Improved Density Peaks Method for Data Clustering"</strong></a> - 
                                 <a style="color:initial;" href="https://github.com/amjadseyedi/IDPC" target="_blank">[source code]</a><br>
-                                A. Lotfi, <u>S.A. Seyedi</u>, and P. Moradi<br>
-                                <span style="color:#caa669;">The 6th International Conference on Computer and Knowledge Engineering, IEEE, pp. 263-268,
-                                2016</span>
+                                A. Lotfi, <u>A. Seyedi</u>, and P. Moradi, 
+                                <span style="color:#a69d76;">IEEE International Conference on Computer and Knowledge Engineering (ICCKE) 2016.</span>
                                 </span>
                             </div>
                         </div>
@@ -376,25 +410,25 @@
                     <div class="timeline-event te-primary">
                         <span class="event-name">Master's Degree, Sep 2015 - Feb 2018</span>
                         <span class="event-name"><h5 class="text-tertiary margin-b-0">Artificial Intelligence</h5></span>
-                        <span class="event-description">University of Kurdistan, Sanandaj, Iran</span>
+                        <span class="event-description" style="color:#a69d76;">University of Kurdistan, Sanandaj, Iran</span>
                     </div>
                         <!-- Single event -->
                     <div class="timeline-event te-primary">
                         <span class="event-name">Bachelor's Degree, Jan 2012 - Jun 2014</span>
                         <span class="event-name"><h5 class="text-tertiary margin-b-0">Software Engineering</h5></span>
-                        <span class="event-description">Amirkabir Technical College, Arak, Iran</span>
+                        <span class="event-description" style="color:#a69d76;">Amirkabir Technical College, Arak, Iran</span>
                     </div>
                     <!-- Single event -->
                     <div class="timeline-event te-primary">
                         <span class="event-name">Associate Degree, Jan 2009 - Jun 2011</span>
-                        <span class="event-name"><h5 class="text-tertiary margin-b-0">Software Engineering</h5></span>
-                        <span class="event-description">Technical College of Tabriz, Tabriz, Iran</span>
+                        <span class="event-name"><h5 class="text-tertiary margin-b-0">Computer Software</h5></span>
+                        <span class="event-description" style="color:#a69d76;">Technical College of Tabriz, Tabriz, Iran</span>
                     </div>
                     <!-- Single event -->
                     <div class="timeline-event te-primary">
                         <span class="event-name">Student, Sep 2005 - Jun 2007</span>
                         <span class="event-name"><h5 class="text-tertiary margin-b-0">Computer</h5></span>
-                        <span class="event-description">Taleghani Vocational School, Sanandaj, Iran</span>
+                        <span class="event-description" style="color:#a69d76;">Taleghani Vocational School, Sanandaj, Iran</span>
                     </div>
                 </div>
             </div>
@@ -411,46 +445,47 @@
                 <h4 style="margin-bottom: 0px;"><strong>Experience</strong></h4>
                 <div class="timeline">
                     <div class="timeline-event te-primary" style="padding-bottom:20px">
-                        <span class="event-name"><h5 class="text-tertiary margin-b-0">Thesis Co-Advisor</h5></span>
-                        <span class="event-name">Machine Learning (MSc), Feb 2020 - Now</span>
-                        <span class="event-description">University of Kurdistan, Sanandaj, Iran (Advisor: Dr. Fardin Akhlaghian)</span>
-                        <label for="modal">
+                        <span class="event-name"><h5 class="text-tertiary margin-b-0">Team Leader & Thesis Advisor</h5></span>
+                        <span class="event-name">Algebriac Machine Learning (PhD & MSc), 2020 - present</span>
+                        <span class="event-description">Algebraic Machine Learning Team, University of Kurdistan, Iran (Supervisor: Dr. Fardin Akhlaghian)</span>
+                        <!--<label for="modal">
                             <span class="caption text" style="font-size:14px; color:#3aa8db">
-                            <strong class="blurp"  style="margin-bottom:-20px">Students</strong></span> 
-                        </label> 
+                            <strong class="blurp"  style="color:#006747; margin-bottom:-20px">Students</strong></span> 
+                        </label> -->
                     </div>
 
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+                     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
                     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
-                    <script src="js/index.js"></script>
+                   <script src="js/index.js"></script>-->
 
                     <div class="timeline-event te-primary" style="padding-bottom:20px">
-                        <span class="event-name"><h5 class="text-tertiary margin-b-0">Research Assistant</h5></span>
-                        <span class="event-name">Deep Learning, Sep 2019 - Now</span>
-                        <span class="event-description">University of Kurdistan, Sanandaj, Iran</span>
+                        <span class="event-name"><h5 class="text-tertiary margin-b-0">Graduate Research Assistant</h5></span>
+                        <span class="event-name">Deep Learning, 2019 - present</span>
+                        <span class="event-description">Representation Learning Lab, University of Kurdistan, Iran</span>
                     </div>
 
                     <div class="timeline-event te-primary" style="padding-bottom:20px">
                         <span class="event-name"><h5 class="text-tertiary margin-b-0">Teaching Assistant</h5></span>
-                        <span class="event-name">Pattern Recognition (MSc), Fall 2018 | Spring 2020</span>
-                        <span class="event-description">University of Kurdistan, Sanandaj, Iran</span>
+                        <span class="event-name">Nonnegative Matrix Factorization for Machine Learning (PhD), Fall 2022</span> 
+                        <span class="event-name">Pattern Recognition (MSc), Fall 2018 | Spring 2020 | Spring 2021 | Spring 2022 | Spring 2023</span>
+                        <span class="event-name">Special Topics in Artificial Intelligence (MSc), Fall 2021</span>
+                        <span class="event-name">Advanced Concepts in Artificial Intelligence (PhD), Spring 2023</span>
+                        <span class="event-description">University of Kurdistan, Iran</span>
+                        
+                            <a href="teaching.html" target="_blank"><span class="caption text" style="font-size:14px; color:#3aa8db">
+                            <strong class="blurp"  style="color:#006747; margin-bottom:-20px">Lectures</strong></span> </a>
+                        
                     </div>
                     
                     <div class="timeline-event te-primary" style="padding-bottom:20px">
                         <span class="event-name"><h5 class="text-tertiary margin-b-0">Lab Instructor</h5></span>
                         <span class="event-name">Computer Lab, Fall 2019</span>
-                        <span class="event-description">University of Kurdistan, Sanandaj, Iran</span>
-                    </div>
-
-                    <div class="timeline-event te-primary" style="padding-bottom:20px">
-                        <span class="event-name"><h5 class="text-tertiary margin-b-0">Intern</h5></span>
-                        <span class="event-name">Software Engineering, Fall 2013</span>
-                        <span class="event-description">ICT Center, Telecommunication company of Markazi province, Arak, Iran</span>
+                        <span class="event-description">University of Kurdistan, Iran</span>
                     </div>
                 </div>
             </div>
             
-            <input type="checkbox" id="modal" />
+             <input type="checkbox" id="modal" />
 
             <label for="modal" class="modal-bg"></label>
             <div class="modal-content">
@@ -461,17 +496,40 @@
                     <h5 style="margin-bottom:0px"><strong>Master's Students</strong></h5>
                 </header>
                 <article class="content"><br>
-                    <h5 style="font-size:15px" class="text-tertiary margin-b-0">Akram Haji-Veiseh (Feb 2020 - Now)</h5>
-                    <h5 class="event-name" style="margin-bottom:0px">Deep matrix factorization for graph clustering</h5>
-                    <h5 class="event-description">Thesis title: TBD</h5>
-                    <h5 style="font-size:15px" class="text-tertiary margin-b-0">Navid Salahian (Feb 2020 - Now)</h5>
-                    <h5 class="event-name" style="margin-bottom:0px">Recommendation based on low-rank approximation</h5>
-                    <h5 class="event-description">Thesis title: TBD</h5>
-                    <h5 style="font-size:15px" class="text-tertiary margin-b-0">Jovan Chavoshi-Nejad (Feb 2020 - Now)</h5>
-                    <h5 class="event-name" style="margin-bottom:0px">Nonlinear orthogonal semi-supervised clustering</h5>
-                    <h5 class="event-description">Thesis title: TBD</h5>
+                    
+                    <h5 style="font-size:12px" class="text-tertiary margin-b-0">Mohammad Faraji (2021 - present)</h5>
+                    <h5 class="event-name" style="font-size:12px; margin-bottom:0px">Sparse Coding for Multi-label Feature Selection</h5>
+                    <h5 class="event-description" style="margin-bottom:12px">Thesis title: [TBD]</h5>
+                    <h5 style="font-size:12px" class="text-tertiary margin-b-0">Setareh Mohammadi (2021 - present)</h5>
+                    <h5 class="event-name" style="font-size:12px; margin-bottom:0px">Robust Data Representation</h5>
+                    <h5 class="event-description" style="margin-bottom:12px">Thesis title: [TBD]</h5>
+                    <h5 style="font-size:12px" class="text-tertiary margin-b-0">Ali Mirgoli (2021 - present)</h5>
+                    <h5 class="event-name" style="font-size:12px; margin-bottom:0px">Recommendation Systems</h5>
+                    <h5 class="event-description" style="margin-bottom:12px">Thesis title: [TBD]</h5>
+                    <h5 style="font-size:12px" class="text-tertiary margin-b-0">Reza Mahmoodi (2021 - present)</h5>
+                    <h5 class="event-name" style="font-size:12px; margin-bottom:0px">Link Prediction</h5>
+                    <h5 class="event-description" style="margin-bottom:12px">Thesis title: [TBD]</h5>
+
+                    <h5 style="font-size:12px" class="text-tertiary margin-b-0">Akram Hajiveiseh (2020 - present)</h5>
+                    <h5 class="event-name" style="font-size:12px; margin-bottom:0px">Deep Matrix Factorization for Graph Clustering</h5>
+                    <h5 class="event-description" style="margin-bottom:12px">Thesis title: Deep Nonnegative Matrix Factorization for Community Detection</h5>
+                    <h5 style="font-size:12px" class="text-tertiary margin-b-0">Navid Salahian (2020 - present)</h5>
+                    <h5 class="event-name" style="font-size:12px; margin-bottom:0px">Deep Matrix Factorization for Data Representation</h5>
+                    <h5 class="event-description" style="margin-bottom:12px">Thesis title: Deep Nonnegative Matrix Factorization</h5>
+                    <h5 style="font-size:12px" class="text-tertiary margin-b-0">Jovan Chavoshinejad (2020 - present)</h5>
+                    <h5 class="event-name" style="font-size:12px; margin-bottom:0px">Self-Supervised Semi-Supervised Learning</h5>
+                    <h5 class="event-description" style="margin-bottom:12px">Thesis title: Semi-Supervised Nonnegative Matrix Factorization</h5>
                 </article>
             </div>
+
+            
+            
+            
+
+
+
+
+
         </div>
     </section>
 
@@ -483,26 +541,19 @@
             <h1><strong>contact me</strong>!</h1>
             <!-- Contact List -->
             <ul class="list-unstyled list-unstyled-icons">
-                <li><i class="inline-icon icon-before-and-after text-primary fa fa-map-marker"></i>Office No. 223<br>Department of Computer
-                 Engineering<br>Faculty of Engineering<br>University of Kurdistan<br>Sanandaj, Kurdistan, Iran</li>
-                <li><i class="inline-icon icon-before-and-after text-primary fa fa-comment"></i>
-                <a style="color:inherit" href="mailto:amjadseyedi@eng.uok.ac.ir">amjadseyedi@eng.uok.ac.ir</a></li>
+                <li><i class="inline-icon icon-before-and-after text-primary fa fa-map-marker"></i>Office No. 222<br>Department of Computer
+                 Engineering<br>Faculty of Engineering<br>University of Kurdistan<br>Sanandaj, Kurdistan, Iran<br>
+                
+                <a style="color:inherit" href="mailto:amjadseyedi@uok.ac.ir">amjadseyedi@uok.ac.ir</a></li>
             </ul>
             <ul class="list-inline">
-                <li><a href="https://www.linkedin.com/in/amjad-seyedi-3a72b8196/" target="_blank" class="icon icon-circle icon-xs icon-linkedin">
+                <li><a href="https://www.linkedin.com/in/AmjadSeyedi/" target="_blank" class="icon icon-circle icon-xs icon-linkedin">
                 <i class="fa fa-linkedin"></i></a></li>
                 <li><a href="https://github.com/amjadseyedi/" target="_blank" class="icon icon-circle icon-xs icon-github"><i class="fa fa-github"></i></a></li>
                 <li><a href="https://join.skype.com/invite/bpRXVCW1ucD3" target="_blank" class="icon icon-circle icon-xs icon-skype">
                 <i class="fa fa-skype"></i></a></li>
             </ul>
 	    </div>
-
-        <div style="position: relative; z-index: -1;">
-
-            <a href='https://www.embed-map.net/'>adding google map to website</a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=10fbc142c6bc4d2c17e541f9f0b590ec32ecff9d'></script>
-<script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/718825/t/1"></script>
-
-        </div>
 
     </section>
 </div>
@@ -529,7 +580,7 @@
         <!-- Social Media -->
         <div class="margin-t-20">
             <ul class="list-inline margin-t-10">
-                <li><a target="_blank" href="https://www.linkedin.com/in/amjad-seyedi-3a72b8196/" class="icon icon-xs">
+                <li><a target="_blank" href="https://www.linkedin.com/in/AmjadSeyedi/" class="icon icon-xs">
                 <i class="fa fa-linkedin text-muted"></i></a></li>
                 <li><a href="https://github.com/amjadseyedi/" target="_blank" class="icon icon-xs"><i class="fa fa-github text-muted"></i></a></li>
                 <li><a href="https://join.skype.com/invite/bpRXVCW1ucD3" target="_blank" class="icon icon-xs"><i class="fa fa-skype text-muted"></i></a></li>               </ul>
@@ -552,26 +603,7 @@ window.paceOptions = {
 <!-- JS Core -->
 <script src="assets/js/core.js"></script>
 
-<!--
-<script>
- $(function() {
-       $('a[href*="#"]:not([href="#"])').click(function() {
-         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-           var target = $(this.hash);
-           target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-           if (target.length) {
-             $('html, body').animate({
-               scrollTop: target.offset().top
-             }, 1000);
-             return false;
-           }
-         }
-       });
-     });
-</script>
--->
-<!-- Default Statcounter code for Seyedi http://seyedi.ml
--->
+<!-- Statcounter -->
 <script type="text/javascript">
 var sc_project=12494759; 
 var sc_invisible=1; 
@@ -586,5 +618,6 @@ class="statcounter"
 src="https://c.statcounter.com/12494759/0/06ce839b/1/"
 alt="Web Analytics"></a></div></noscript>
 <!-- End of Statcounter Code -->
+
 </body>
 </html>
