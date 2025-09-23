@@ -34,9 +34,9 @@
       border-radius: 18px; padding: 18px; backdrop-filter: blur(6px);
       box-shadow: 0 10px 30px rgba(0,0,0,0.25);
     }
-    h1 { margin: 0 0 4px 0; font-weight: 700; letter-spacing: .2px; }
+    h1 { margin: 0 0 4px 0; font-weight: 0; letter-spacing: .2px; }
     .sub { color: #b9c4ff; margin-bottom: 14px; font-size: .95rem; }
-    label { display: grid; gap: 6px; margin: 12px 0 18px; font-weight: 600; color: var(--muted); }
+    label { display: grid; gap: 6px; margin: 12px 0 18px; font-weight: 520; color: var(--muted); }
     input[type="range"] { width: 100%; }
     .row { display: flex; gap: 12px; align-items: center; justify-content: space-between; }
     .bubble {
@@ -48,10 +48,10 @@
     .btns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
     button {
       background: #22306a; color: #e9f0ff; border: 1px solid rgba(255,255,255,0.12);
-      padding: 10px 12px; border-radius: 12px; cursor: pointer; font-weight: 600;
+      padding: 10px 12px; border-radius: 12px; cursor: pointer; font-weight: 520;
     }
     button:hover { filter: brightness(1.1); }
-    canvas { width: 100% !important; height: 520px !important; }
+    canvas { height: 520px !important; }
     .legend { font-size: .9rem; color: #cad6ff; }
     .code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
     @media (max-width: 980px) {
@@ -67,15 +67,15 @@
 
       <div>
         <label>
-          <div class="row"><span>λp (popularity)</span><span class="bubble" id="val-lambda"></span></div>
+          <div class="row"><span>λ<sub>p</sub> (popularity)</span><span class="bubble" id="val-lambda"></span></div>
           <input id="slider-lambda" type="range" min="0" step="1" value="0" />
         </label>
         <label>
-          <div class="row"><span>λd (Diversity)</span><span class="bubble" id="val-alpha"></span></div>
+          <div class="row"><span>λ<sub>d</sub> (Diversity)</span><span class="bubble" id="val-alpha"></span></div>
           <input id="slider-alpha" type="range" min="0" step="1" value="0" />
         </label>
         <label>
-          <div class="row"><span>λf (Fairness)</span><span class="bubble" id="val-beta"></span></div>
+          <div class="row"><span>λ<sub>f</sub> (Fairness)</span><span class="bubble" id="val-beta"></span></div>
           <input id="slider-beta" type="range" min="0" step="1" value="0" />
         </label>
       </div>
@@ -86,7 +86,8 @@
       </div>
 
       <p class="legend">
-        The dataset includes 7 lambdaf, 8 lambdad, 8 lambdaf → 7×8×8 = 448 solutions. Each has 6 measures:
+        The model includes 7 × λ<sub>p</sub> , 8 × λ<sub>d</sub> , 8 × λ<sub>f</sub>  → 7×8×8 = 448 solutions. 
+		Each has 6 measures:
         <span class="code">1-ARP, NDCG, HR, IPE, 1-ILS, AGD</span> scaled to [0,1].
       </p>
     </div>
