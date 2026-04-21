@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tilted ERM — Interactive Explorer</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Playfair+Display:wght@400;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #06060b;
+      --surface: #0e0e16;
+      --surface2: #14141e;
+      --border: #1c1c2c;
+      --text: #e2e0db;
+      --muted: #5e5e72;
+      --accent: #f0c040;
+      --accent-dim: rgba(240,192,64,0.15);
+      --blue: #4ea8de;
+      --red: #e06060;
+      --green: #50b870;
+      --purple: #a07ce0;
+      --grid: #161620;
+      --mono: 'DM Mono', 'Fira Code', monospace;
+      --display: 'Playfair Display', Georgia, serif;
+      --body: 'DM Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--body);
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 32px 24px 48px;
+    }
+
+    /* ── Header ── */
+    .header {
+      margin-bottom: 24px;
+      display: flex;
+      align-items: baseline;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .header h1 {
+      font-family: var(--display);
+      font-size: 28px;
+      font-weight: 400;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+    }
+    .formula-box {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+      background: var(--surface);
+      padding: 8px 14px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      line-height: 1.6;
+    }
+
+    /* ── Unified slider card ── */
+    .slider-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 24px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .slider-main {
+      flex: 1 1 400px;
+      min-width: 280px;
+    }
+    .slider-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 8px;
+    }
+    .slider-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .t-value {
+      font-family: var(--mono);
+      font-size: 28px;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: -0.03em;
+    }
+    input[type="range"] {
+      width: 100%;
+      accent-color: var(--accent);
+      cursor: pointer;
+      height: 6px;
+    }
+    .slider-ticks {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--mono);
+      font-size: 8px;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+    .density-wrap { margin-top: 6px; }
+    .density-hint {
+      font-family: var(--mono);
+      font-size: 7px;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 2px;
+    }
+
+    /* Stats */
+    .stats {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      flex: 0 0 auto;
+    }
+    .stat {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 6px 12px;
+      min-width: 85px;
+    }
+    .stat-label {
+      font-family: var(--mono);
+      font-size: 8px;
+      color: var(--muted);
+      margin-bottom: 1px;
+    }
+    .stat-value {
+      font-family: var(--mono);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    /* ── Three-column chart grid ── */
+    .chart-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 14px;
+    }
+    @media (max-width: 1100px) {
+      .chart-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 700px) {
+      .chart-grid { grid-template-columns: 1fr; }
+    }
+
+    .chart-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 14px 8px;
+      display: flex;
+      flex-direction: column;
+    }
+    .chart-title {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--muted);
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+    .chart-title strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+    canvas {
+      width: 100%;
+      border-radius: 6px;
+      display: block;
+      flex: 1;
+    }
+    .legend-row {
+      font-family: var(--mono);
+      font-size: 8px;
+      color: var(--muted);
+      margin-top: 6px;
+      text-align: center;
+    }
+    .legend-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      margin-right: 2px;
+      vertical-align: middle;
+    }
+
+    .footer {
+      font-family: var(--mono);
+      font-size: 8px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-top: 14px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>Tilted Empirical Risk</h1>
+    <div class="formula-box">
+      R̃<sub>t</sub>(θ) = (1/t) · log( (1/n) Σ exp( t · ℓ(θ; xᵢ) ) )
+    </div>
+  </div>
+
+  <!-- UNIFIED SLIDER -->
+  <div class="slider-card">
+    <div class="slider-main">
+      <div class="slider-top">
+        <span class="slider-label">tilt parameter</span>
+        <span class="t-value" id="tValueLabel">t = 0.00</span>
+      </div>
+      <input type="range" id="tSlider" min="0" max="1000" step="1" value="500" />
+      <div class="slider-ticks">
+        <span>−20</span><span>−5</span><span>−1</span>
+        <span style="color:var(--green)">0</span>
+        <span>+1</span><span>+5</span><span>+20</span>
+      </div>
+      <div class="density-wrap">
+        <canvas id="densityBar" height="8" style="width:100%; border-radius:3px;"></canvas>
+        <div class="density-hint">nonlinear scale · more resolution near t≈0</div>
+      </div>
+    </div>
+    <div class="stats" id="statsRow"></div>
+  </div>
+
+  <!-- THREE CHARTS -->
+  <div class="chart-grid">
+
+    <div class="chart-card">
+      <div class="chart-title">
+        <strong>① Sample Weights</strong><br>
+        effective weight per loss sample
+      </div>
+      <canvas id="weightCanvas" height="300"></canvas>
+      <div class="legend-row">
+        <span class="legend-dot" style="background:var(--red)"></span>upweighted ·
+        <span class="legend-dot" style="background:var(--green)"></span>neutral ·
+        <span class="legend-dot" style="background:var(--blue)"></span>downweighted
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-title">
+        <strong>② Risk Curve</strong><br>
+        R̃ₜ(θ) over full t range
+      </div>
+      <canvas id="sweepCanvas" height="300"></canvas>
+      <div class="legend-row">
+        <span style="color:var(--accent)">━</span> tilted risk ·
+        <span class="legend-dot" style="background:var(--green)"></span>ERM at t=0
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-title">
+        <strong>③ Sensitivity</strong><br>
+        base=[1,2,3,4] + one loss 0→100
+      </div>
+      <canvas id="sensCanvas" height="300"></canvas>
+      <div class="legend-row">
+        <span style="color:var(--accent)">━</span> tilted ERM ·
+        <span style="color:var(--muted)">┅</span> ERM (mean)
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    n=150 synthetic samples · cubic nonlinear slider · log-sum-exp for stability · Taylor near t≈0 · pure JS, no dependencies
+  </div>
+</div>
+
+<script>
+const C = {
+  bg: '#06060b', surface: '#0e0e16', surface2: '#14141e',
+  border: '#1c1c2c', text: '#e2e0db', muted: '#5e5e72',
+  accent: '#f0c040', accentDim: 'rgba(240,192,64,0.15)',
+  blue: '#4ea8de', red: '#e06060', green: '#50b870',
+  purple: '#a07ce0', grid: '#16162044',
+};
+
+function tiltedERM(losses, t) {
+  const n = losses.length;
+  const mu = losses.reduce((s, l) => s + l, 0) / n;
+  if (Math.abs(t) < 1e-2) {
+    const v = losses.reduce((s, l) => s + (l - mu) ** 2, 0) / n;
+    return mu + 0.5 * t * v;
+  }
+  const maxZ = Math.max(...losses.map(l => t * l));
+  const sumExp = losses.reduce((s, l) => s + Math.exp(t * l - maxZ), 0);
+  return (maxZ + Math.log(sumExp / n)) / t;
+}
+
+function effectiveWeights(losses, t) {
+  const n = losses.length;
+  if (Math.abs(t) < 1e-6) return losses.map(() => 1 / n);
+  const maxL = Math.max(...losses);
+  const w = losses.map(l => Math.exp(t * (l - maxL)));
+  const s = w.reduce((a, b) => a + b, 0);
+  return w.map(v => v / s);
+}
+
+function generateSamples(n = 150, seed = 42) {
+  let s = seed;
+  const rand = () => { s = (s * 16807) % 2147483647; return s / 2147483647; };
+  const out = [];
+  for (let i = 0; i < n; i += 2) {
+    const u1 = rand(), u2 = rand();
+    out.push(Math.max(0.01, 1.5 + 0.6 * Math.sqrt(-2 * Math.log(u1)) * Math.cos(2 * Math.PI * u2)));
+    if (i + 1 < n) out.push(Math.max(0.01, 1.5 + 0.6 * Math.sqrt(-2 * Math.log(u1)) * Math.sin(2 * Math.PI * u2)));
+  }
+  for (let i = 0; i < 8; i++) out[Math.floor(rand() * n)] = 2.8 + rand() * 1.2;
+  return out.sort((a, b) => a - b);
+}
+
+function setupHiDPI(canvas) {
+  const dpr = window.devicePixelRatio || 1;
+  const rect = canvas.getBoundingClientRect();
+  canvas.width = rect.width * dpr;
+  canvas.height = rect.height * dpr;
+  const ctx = canvas.getContext('2d');
+  ctx.scale(dpr, dpr);
+  return { ctx, w: rect.width, h: rect.height };
+}
+
+function sliderToT(val) {
+  const u = (val / 1000) * 2 - 1;
+  return Math.sign(u) * 20 * Math.pow(Math.abs(u), 3);
+}
+
+// ── DATA ──
+const losses = generateSamples(150, 42);
+const minL = Math.min(...losses), maxL = Math.max(...losses), rangeL = maxL - minL;
+
+const sweepTs = [], sweepVals = [];
+for (let t = -20; t <= 20; t += 0.15) { sweepTs.push(t); sweepVals.push(tiltedERM(losses, t)); }
+
+const baseLosses = [1, 2, 3, 4];
+const xVals = [];
+for (let x = 0; x <= 100; x += 0.5) xVals.push(x);
+
+// ── DOM ──
+const tSlider = document.getElementById('tSlider');
+const tLabel = document.getElementById('tValueLabel');
+const statsRow = document.getElementById('statsRow');
+const weightCanvas = document.getElementById('weightCanvas');
+const sweepCanvas = document.getElementById('sweepCanvas');
+const sensCanvas = document.getElementById('sensCanvas');
+const densityBar = document.getElementById('densityBar');
+
+// ── DENSITY BAR ──
+function drawDensityBar() {
+  const { ctx, w, h } = setupHiDPI(densityBar);
+  ctx.clearRect(0, 0, w, h);
+  for (let s = 0; s <= 1000; s += 2) {
+    const t = sliderToT(s), x = (s / 1000) * w, a = Math.abs(t);
+    ctx.fillStyle = a < 1 ? C.green : a < 5 ? C.accent : C.muted;
+    ctx.globalAlpha = a < 1 ? 0.5 : a < 5 ? 0.25 : 0.1;
+    ctx.fillRect(x, 0, 1.5, h);
+  }
+  ctx.globalAlpha = 1;
+  ctx.fillStyle = C.green;
+  ctx.fillRect(0.5 * w - 0.5, 0, 1, h);
+}
+
+// ── CHART 1: Weights ──
+function drawWeightChart(t) {
+  const { ctx, w, h } = setupHiDPI(weightCanvas);
+  const pad = { t: 16, r: 14, b: 34, l: 42 };
+  const cw = w - pad.l - pad.r, ch = h - pad.t - pad.b;
+
+  ctx.clearRect(0, 0, w, h);
+  ctx.fillStyle = C.surface;
+  ctx.beginPath(); ctx.roundRect(pad.l, pad.t, cw, ch, 4); ctx.fill();
+
+  const weights = effectiveWeights(losses, t);
+  const maxW = Math.max(...weights);
+  const xS = v => pad.l + ((v - minL) / rangeL) * cw;
+  const yS = v => pad.t + ch - (v / (maxW * 1.1)) * ch;
+
+  ctx.strokeStyle = C.grid; ctx.lineWidth = 0.5;
+  for (let i = 0; i <= 4; i++) {
+    const x = xS(minL + (i / 4) * rangeL);
+    ctx.beginPath(); ctx.moveTo(x, pad.t); ctx.lineTo(x, pad.t + ch); ctx.stroke();
+  }
+
+  for (let i = 0; i < losses.length; i++) {
+    const x = xS(losses[i]), y = yS(weights[i]);
+    const nw = weights[i] * losses.length;
+    const col = nw > 1.5 ? C.red : nw < 0.5 ? C.blue : C.green;
+    ctx.strokeStyle = col; ctx.globalAlpha = 0.35; ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.moveTo(x, yS(0)); ctx.lineTo(x, y); ctx.stroke();
+    ctx.globalAlpha = 0.85; ctx.fillStyle = col;
+    ctx.beginPath(); ctx.arc(x, y, 1.8, 0, Math.PI * 2); ctx.fill();
+    ctx.globalAlpha = 1;
+  }
+
+  const erm = tiltedERM(losses, 0);
+  ctx.setLineDash([3, 3]); ctx.strokeStyle = C.muted; ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(xS(erm), pad.t); ctx.lineTo(xS(erm), pad.t + ch); ctx.stroke();
+  ctx.setLineDash([]);
+  ctx.fillStyle = C.muted; ctx.font = '8px DM Mono, monospace'; ctx.textAlign = 'center';
+  ctx.fillText('ERM', xS(erm), pad.t - 3);
+
+  const tv = tiltedERM(losses, t);
+  if (tv >= minL && tv <= maxL) {
+    ctx.setLineDash([5, 3]); ctx.strokeStyle = C.accent; ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.moveTo(xS(tv), pad.t); ctx.lineTo(xS(tv), pad.t + ch); ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle = C.accent; ctx.font = 'bold 8px DM Mono, monospace';
+    ctx.fillText(`R̃=${tv.toFixed(2)}`, xS(tv), pad.t + ch + 12);
+  }
+
+  ctx.strokeStyle = C.border; ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(pad.l, pad.t + ch); ctx.lineTo(pad.l + cw, pad.t + ch); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(pad.l, pad.t); ctx.lineTo(pad.l, pad.t + ch); ctx.stroke();
+
+  ctx.fillStyle = C.muted; ctx.font = '7px DM Mono, monospace'; ctx.textAlign = 'center';
+  for (let i = 0; i <= 4; i++) {
+    const v = minL + (i / 4) * rangeL;
+    ctx.fillText(v.toFixed(1), xS(v), pad.t + ch + 12);
+  }
+  ctx.font = '8px DM Sans, sans-serif';
+  ctx.fillText('loss ℓ(θ; xᵢ)', pad.l + cw / 2, pad.t + ch + 26);
+
+  ctx.save(); ctx.translate(10, pad.t + ch / 2); ctx.rotate(-Math.PI / 2);
+  ctx.textAlign = 'center'; ctx.fillText('weight', 0, 0); ctx.restore();
+}
+
+// ── CHART 2: Sweep ──
+function drawSweepChart(currentT) {
+  const { ctx, w, h } = setupHiDPI(sweepCanvas);
+  const pad = { t: 16, r: 14, b: 34, l: 42 };
+  const cw = w - pad.l - pad.r, ch = h - pad.t - pad.b;
+
+  ctx.clearRect(0, 0, w, h);
+  ctx.fillStyle = C.surface;
+  ctx.beginPath(); ctx.roundRect(pad.l, pad.t, cw, ch, 4); ctx.fill();
+
+  const minV = Math.min(...sweepVals), maxV = Math.max(...sweepVals), rV = maxV - minV || 1;
+  const xS = t => pad.l + ((t + 20) / 40) * cw;
+  const yS = v => pad.t + ch - ((v - minV) / rV) * ch;
+
+  ctx.strokeStyle = C.grid; ctx.lineWidth = 0.5;
+  [-20, -10, -5, 0, 5, 10, 20].forEach(t => {
+    ctx.beginPath(); ctx.moveTo(xS(t), pad.t); ctx.lineTo(xS(t), pad.t + ch); ctx.stroke();
+  });
+
+  ctx.setLineDash([3, 3]); ctx.strokeStyle = C.muted; ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(xS(0), pad.t); ctx.lineTo(xS(0), pad.t + ch); ctx.stroke();
+  ctx.setLineDash([]);
+
+  ctx.strokeStyle = C.accent; ctx.lineWidth = 2;
+  ctx.beginPath();
+  sweepTs.forEach((t, i) => {
+    const x = xS(t), y = yS(sweepVals[i]);
+    i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+  });
+  ctx.stroke();
+
+  const clampedT = Math.max(-20, Math.min(20, currentT));
+  const cv = tiltedERM(losses, clampedT);
+  ctx.fillStyle = C.accent;
+  ctx.beginPath(); ctx.arc(xS(clampedT), yS(cv), 5, 0, Math.PI * 2); ctx.fill();
+  ctx.fillStyle = C.bg;
+  ctx.beginPath(); ctx.arc(xS(clampedT), yS(cv), 2.5, 0, Math.PI * 2); ctx.fill();
+
+  const erm = tiltedERM(losses, 0);
+  ctx.fillStyle = C.green;
+  ctx.beginPath(); ctx.arc(xS(0), yS(erm), 3.5, 0, Math.PI * 2); ctx.fill();
+
+  ctx.strokeStyle = C.border; ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(pad.l, pad.t + ch); ctx.lineTo(pad.l + cw, pad.t + ch); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(pad.l, pad.t); ctx.lineTo(pad.l, pad.t + ch); ctx.stroke();
+
+  ctx.fillStyle = C.muted; ctx.font = '7px DM Mono, monospace'; ctx.textAlign = 'center';
+  [-20, -10, 0, 10, 20].forEach(t => ctx.fillText(t, xS(t), pad.t + ch + 12));
+  ctx.font = '8px DM Sans, sans-serif';
+  ctx.fillText('tilt parameter t', pad.l + cw / 2, pad.t + ch + 26);
+
+  ctx.save(); ctx.translate(10, pad.t + ch / 2); ctx.rotate(-Math.PI / 2);
+  ctx.textAlign = 'center'; ctx.fillText('R̃ₜ(θ)', 0, 0); ctx.restore();
+}
+
+// ── CHART 3: Sensitivity ──
+function drawSensChart(t) {
+  const { ctx, w, h } = setupHiDPI(sensCanvas);
+  const pad = { t: 24, r: 14, b: 34, l: 42 };
+  const cw = w - pad.l - pad.r, ch = h - pad.t - pad.b;
+
+  ctx.clearRect(0, 0, w, h);
+  ctx.fillStyle = C.surface;
+  ctx.beginPath(); ctx.roundRect(pad.l, pad.t, cw, ch, 4); ctx.fill();
+
+  const tilted = [], erm = [];
+  for (const l of xVals) {
+    const all = [...baseLosses, l];
+    tilted.push(tiltedERM(all, t));
+    erm.push(all.reduce((s, v) => s + v, 0) / all.length);
+  }
+
+  const allVals = [...tilted, ...erm];
+  let yMin = Math.min(...allVals), yMax = Math.max(...allVals);
+  const yPad = (yMax - yMin) * 0.1 || 5;
+  yMin = Math.max(0, yMin - yPad); yMax = yMax + yPad;
+  const yRange = yMax - yMin || 1;
+
+  const xS = v => pad.l + (v / 100) * cw;
+  const yS = v => pad.t + ch - ((v - yMin) / yRange) * ch;
+
+  ctx.strokeStyle = C.grid; ctx.lineWidth = 0.5;
+  for (let v = 0; v <= 100; v += 25) {
+    ctx.beginPath(); ctx.moveTo(xS(v), pad.t); ctx.lineTo(xS(v), pad.t + ch); ctx.stroke();
+  }
+  const yStep = yRange > 50 ? 20 : yRange > 20 ? 10 : yRange > 5 ? 2 : 0.5;
+  for (let v = Math.ceil(yMin / yStep) * yStep; v <= yMax; v += yStep) {
+    ctx.beginPath(); ctx.moveTo(pad.l, yS(v)); ctx.lineTo(pad.l + cw, yS(v)); ctx.stroke();
+  }
+
+  ctx.setLineDash([5, 4]); ctx.strokeStyle = C.muted; ctx.lineWidth = 1.5;
+  ctx.beginPath();
+  xVals.forEach((x, i) => { const px = xS(x), py = yS(erm[i]); i === 0 ? ctx.moveTo(px, py) : ctx.lineTo(px, py); });
+  ctx.stroke(); ctx.setLineDash([]);
+
+  ctx.strokeStyle = C.accent; ctx.lineWidth = 2.5;
+  ctx.beginPath();
+  xVals.forEach((x, i) => { const px = xS(x), py = yS(tilted[i]); i === 0 ? ctx.moveTo(px, py) : ctx.lineTo(px, py); });
+  ctx.stroke();
+
+  ctx.strokeStyle = 'rgba(240,192,64,0.12)'; ctx.lineWidth = 8;
+  ctx.beginPath();
+  xVals.forEach((x, i) => { const px = xS(x), py = yS(tilted[i]); i === 0 ? ctx.moveTo(px, py) : ctx.lineTo(px, py); });
+  ctx.stroke();
+
+  ctx.strokeStyle = C.border; ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(pad.l, pad.t + ch); ctx.lineTo(pad.l + cw, pad.t + ch); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(pad.l, pad.t); ctx.lineTo(pad.l, pad.t + ch); ctx.stroke();
+
+  ctx.fillStyle = C.muted; ctx.font = '7px DM Mono, monospace'; ctx.textAlign = 'center';
+  for (let v = 0; v <= 100; v += 25) ctx.fillText(v, xS(v), pad.t + ch + 12);
+  ctx.textAlign = 'right';
+  for (let v = Math.ceil(yMin / yStep) * yStep; v <= yMax; v += yStep)
+    ctx.fillText(v.toFixed(yStep < 1 ? 1 : 0), pad.l - 4, yS(v) + 3);
+  ctx.textAlign = 'center';
+  ctx.font = '8px DM Sans, sans-serif';
+  ctx.fillText('varying loss', pad.l + cw / 2, pad.t + ch + 26);
+
+  ctx.save(); ctx.translate(10, pad.t + ch / 2); ctx.rotate(-Math.PI / 2);
+  ctx.textAlign = 'center'; ctx.fillText('aggregated loss', 0, 0); ctx.restore();
+
+  const tColor = t > 0.5 ? C.red : t < -0.5 ? C.blue : C.green;
+  ctx.fillStyle = tColor; ctx.globalAlpha = 0.12;
+  ctx.beginPath(); ctx.roundRect(pad.l + 6, pad.t + 4, 90, 20, 5); ctx.fill();
+  ctx.globalAlpha = 1; ctx.fillStyle = tColor;
+  ctx.font = 'bold 11px DM Mono, monospace'; ctx.textAlign = 'left';
+  ctx.fillText(`t = ${t.toFixed(2)}`, pad.l + 12, pad.t + 18);
+}
+
+// ── STATS ──
+function updateStats(t) {
+  const tv = tiltedERM(losses, t);
+  const erm = tiltedERM(losses, 0);
+  const delta = tv - erm;
+  const regime = t > 0.5 ? 'tail-risk' : t < -0.5 ? 'optimistic' : '≈ ERM';
+  const rc = t > 0.5 ? C.red : t < -0.5 ? C.blue : C.green;
+  statsRow.innerHTML = [
+    { l: 'R̃ₜ(θ)', v: tv.toFixed(3), c: C.accent },
+    { l: 'ERM', v: erm.toFixed(3), c: C.green },
+    { l: 'Δ', v: (delta >= 0 ? '+' : '') + delta.toFixed(3), c: C.purple },
+    { l: 'regime', v: regime, c: rc },
+  ].map(s => `<div class="stat"><div class="stat-label">${s.l}</div><div class="stat-value" style="color:${s.c}">${s.v}</div></div>`).join('');
+}
+
+// ── UNIFIED UPDATE ──
+function updateAll() {
+  const t = sliderToT(parseFloat(tSlider.value));
+  tLabel.textContent = `t = ${t.toFixed(2)}`;
+  updateStats(t);
+  drawWeightChart(t);
+  drawSweepChart(t);
+  drawSensChart(t);
+}
+
+tSlider.addEventListener('input', updateAll);
+window.addEventListener('resize', () => { updateAll(); drawDensityBar(); });
+drawDensityBar();
+updateAll();
+</script>
+</body>
+</html>
