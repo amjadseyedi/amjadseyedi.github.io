@@ -1,0 +1,51 @@
+{
+  "title": "Teaching & Lecture Slides",
+  "courses": [
+    {
+      "name": "Advanced Concepts in Artificial Intelligence (Graduate)",
+      "period": "Spring and Fall 2023"
+    },
+    {
+      "name": "Nonnegative Matrix Factorization for Machine Learning (Graduate)",
+      "period": "Fall 2022"
+    },
+    {
+      "name": "Pattern Recognition (Graduate)",
+      "period": "Spring 2019 – Spring 2023"
+    },
+    {
+      "name": "Special Topics in Artificial Intelligence (Graduate)",
+      "period": "Fall 2021"
+    },
+    {
+      "name": "Computer Lab (Undergraduate)",
+      "period": "Fall 2019 — two sections"
+    }
+  ],
+  "items": [
+    {
+      "name": "Introduction on Nonnegative Matrix Factorization",
+      "pdf": "https://amjadseyedi.github.io/slides/NMF.pdf",
+      "context": "Pattern Recognition (Master), Spring 2021 | Spring 2022",
+      "downloadLabel": "Slides PDF"
+    },
+    {
+      "name": "Introduction on Semi-Supervised Learning",
+      "pdf": "https://amjadseyedi.github.io/slides/SSL.pdf",
+      "context": "Pattern Recognition (Master), Fall 2019 | Spring 2020 | Spring 2022 | Spring 2023",
+      "downloadLabel": "Slides PDF"
+    },
+    {
+      "name": "Modern Machine Learning Paradigms",
+      "pdf": "https://amjadseyedi.github.io/slides/SSL2.pdf",
+      "context": "Special Topics in AI (Master), Fall 2021",
+      "downloadLabel": "Slides PDF"
+    },
+    {
+      "name": "Transformer Network",
+      "pdf": "https://amjadseyedi.github.io/slides/Transformer.pdf",
+      "context": "Advanced Topics in AI (PhD), Spring 2023",
+      "downloadLabel": "Slides PDF"
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "title": "Students & Research Mentoring",
+  "currentTitle": "Current Students & Mentees",
+  "alumniTitle": "Former Students & Mentees",
+  "tableHeaders": [
+    "Student",
+    "Degree During Mentorship",
+    "Years",
+    "Research Topic",
+    "Current Position"
+  ],
+  "currentStudents": [
+    {
+      "name": "Wafa Barkhoda",
+      "link": "https://scholar.google.com/citations?hl=en&user=bDDX7RIAAAAJ",
+      "supervisor": "Dr. Akhlaghian",
+      "years": "2022–Present",
+      "topic": "Distributionally robust optimization",
+      "degreeDuringMentorship": "PhD",
+      "mentorshipRole": "Research mentor",
+      "currentPosition": "Faculty member at Kermanshah University of Technology"
+    }
+  ],
+  "alumni": [
+    {
+      "name": "Zahra Mohsenirad",
+      "link": null,
+      "supervisor": "Dr. Akhlaghian",
+      "years": "2023–2026",
+      "topic": "Hyperspectral unmixing",
+      "degreeDuringMentorship": "MSc",
+      "mentorshipRole": "Research mentor",
+      "currentPosition": ""
+    },
+    {
+      "name": "Shirin Moradi",
+      "link": "https://scholar.google.com/citations?hl=en&user=JB4CVBAAAAAJ",
+      "supervisor": "Dr. Akhlaghian",
+      "years": "2022–2025",
+      "topic": "Anomaly detection in hyperspectral images",
+      "degreeDuringMentorship": "MSc",
+      "mentorshipRole": "Research mentor",
+      "currentPosition": ""
+    },
+    {
+      "name": "Sarina Khaledian",
+      "link": null,
+      "supervisor": "Dr. Akhlaghian",
+      "years": "2022–2025",
+      "topic": "Popularity bias, diversity, and fairness in recommendation",
+      "degreeDuringMentorship": "MSc",
+      "mentorshipRole": "Research mentor",
+      "currentPosition": ""
+    },
+    {
+      "name": "Negin Jabari",
+      "link": "https://scholar.google.com/citations?user=ur2HXGUAAAAJ&hl=en",
+      "supervisor": "Dr. Akhlaghian",
+      "years": "2023–2025",
+      "topic": "Multi-view representation",
+      "degreeDuringMentorship": "MSc",
+      "mentorshipRole": "Research mentor",
+      "currentPosition": ""
+    },
+    {
+      "name": "Sayvan Soleymanbeigi",
+      "link": "https://scholar.google.com/citations?user=8uql40MAAAAJ&hl=en",
+      "supervisor": "Dr. Akhlaghian & Dr. Daneshfar",
+      "years": "2022–2024",
+      "topic": "Topic modeling, text clustering",
+      "degreeDuringMentorship": "MSc",
+      "mentorshipRole": "Research mentor",
+      "currentPosition": "Generative AI Engineer at Trifay Hataw"
+    },
+    {
+      "name": "Arina Mohammadi",
+      "link": "https://scholar.google.com/citations?user=-1AZPGkAAAAJ&hl=en",
+      "supervisor": "Dr. Akhlaghian & Dr. Pir Mohammadiani",
+      "years": "2021–2023",
+      "topic": "Attributed graph clustering",
+      "degreeDuringMentorship": "MSc",
+      "mentorshipRole": "Research mentor",
+      "currentPosition": ""
+    },
+    {
+      "name": "Mohammad Faraji",
+      "link": "https://scholar.google.com/citations?user=S8QF7LMAAAAJ&hl=en",
+      "supervisor": "Dr. Akhlaghian",
+      "years": "2021–2023",
+      "topic": "Multi-label feature selection",
+      "degreeDuringMentorship": "MSc",
+      "mentorshipRole": "Research mentor",
+      "currentPosition": ""
+    },
+    {
+      "name": "Akram Hajiveiseh",
+      "link": "https://scholar.google.com/citations?user=0VjfV-YAAAAJ&hl=en",
+      "supervisor": "Dr. Akhlaghian",
+      "years": "2020–2023",
+      "topic": "Directed graph clustering",
+      "degreeDuringMentorship": "MSc",
+      "mentorshipRole": "Research mentor",
+      "currentPosition": "Research fellow at Edinburgh Napier University"
+    },
+    {
+      "name": "Maryam Mozafari",
+      "link": "https://scholar.google.com/citations?user=jIh78k8AAAAJ&hl=en",
+      "supervisor": "Dr. Akhlaghian & Dr. Pir Mohammadiani",
+      "years": "2021–2022",
+      "topic": "Unsupervised feature selection",
+      "degreeDuringMentorship": "MSc",
+      "mentorshipRole": "Research mentor",
+      "currentPosition": "PhD student at University of Quebec in Outaouais"
+    }
+  ]
+}

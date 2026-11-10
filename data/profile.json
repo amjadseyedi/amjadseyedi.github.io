@@ -1,0 +1,121 @@
+{
+  "main": {
+    "name": "Amjad Seyedi",
+    "title": "PhD Researcher in Machine Learning & Matrix Factorization",
+    "email": "seyedamjad.seyedi@umons.ac.be",
+    "address": "Rue de Houdain 9, 7000 Mons, Belgium",
+    "bio": "I am a Doctoral Researcher at the <a href=\"https://web.umons.ac.be/en/\" target=\"_blank\" style=\"color:var(--accent);text-decoration:none;font-weight:600;\">University of Mons (UMONS)</a>, supervised by <a href=\"https://sites.google.com/site/nicolasgillis\" target=\"_blank\" style=\"color:var(--accent);text-decoration:none;font-weight:600;\">Prof. Nicolas Gillis</a>. My current research sits at the intersection of Matrix Theory and Optimization, specifically developing matrix factorization and low-rank approximation methods for Trustworthy Machine Learning. I aim to leverage these mathematical tools to enhance robustness, interpretability, and fairness in high-dimensional data and network analysis.<br><br>Previously, I was a Graduate Research Assistant at the <a href=\"https://uok.ac.ir/en/\" target=\"_blank\" style=\"color:var(--accent);text-decoration:none;font-weight:600;\">University of Kurdistan</a>, where I led the <a href=\"https://amlteams.github.io/\" target=\"_blank\" style=\"color:var(--accent);text-decoration:none;font-weight:600;\">Algebraic Machine Learning (AML) team</a> and focused on representation learning.",
+    "sections": {
+      "publications": {
+        "label": "Publications",
+        "desc": "Papers, Preprints & Open-Source Code",
+        "icon": "book-open"
+      },
+      "educations": {
+        "label": "Education",
+        "desc": "Degrees & Academic Background",
+        "icon": "graduation-cap"
+      },
+      "experiences": {
+        "label": "Experience",
+        "desc": "Research & TA Positions",
+        "icon": "briefcase"
+      },
+      "students": {
+        "label": "Students",
+        "desc": "PhD Candidates & MSc Alumni",
+        "icon": "users"
+      },
+      "services": {
+        "label": "Services",
+        "desc": "Journal & Conference Reviewer",
+        "icon": "award"
+      },
+      "teaching": {
+        "label": "Teaching",
+        "desc": "Courses & Lecture Slides",
+        "icon": "library"
+      }
+    },
+    "infoLinks": [
+      {
+        "label": "Google Scholar",
+        "url": "https://scholar.google.com/citations?user=gRU1aPYAAAAJ&hl=en",
+        "icon": "graduation-cap"
+      },
+      {
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com/in/AmjadSeyedi/",
+        "icon": "linkedin"
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/amjadseyedi",
+        "icon": "github"
+      },
+      {
+        "label": "ResearchGate",
+        "url": "https://www.researchgate.net/profile/Amjad-Seyedi",
+        "icon": "microscope"
+      },
+      {
+        "label": "Scopus",
+        "url": "https://www.scopus.com/authid/detail.uri?authorId=57193125657",
+        "icon": "database"
+      },
+      {
+        "label": "Linktree",
+        "url": "https://linktr.ee/AmjadSeyedi",
+        "icon": "link"
+      },
+      {
+        "label": "My CV",
+        "url": "https://amjadseyedi.github.io/cv/SeyediCV.pdf",
+        "icon": "file-text"
+      }
+    ]
+  },
+  "tools": {
+    "title": "Mathematical Simulators",
+    "termTitle": "Tilted Empirical Risk Minimization (TERM)"
+  },
+  "searchPlaceholder": "Search papers, courses, topics…",
+  "interests": [
+    "Machine Learning: representation learning, deep learning, and unsupervised learning",
+    "Trustworthy ML: robustness, generalization, interpretability, and fairness",
+    "Applications: healthcare, recommender systems, and remote sensing",
+    "Applied Mathematics: linear algebra, optimization, and low-rank approximation"
+  ],
+  "skills": [
+    "Python, PyTorch, NumPy, scikit-learn",
+    "MATLAB",
+    "C++, C#",
+    "LaTeX, Manim",
+    "Jupyter, Colab, PyCharm",
+    "Windows, Linux",
+    "Adobe Illustrator, Inkscape, Photoshop, GIMP"
+  ],
+  "references": [
+    [
+      "Prof. Nicolas Gillis",
+      "PhD supervisor, University of Mons",
+      "nicolas.gillis@umons.ac.be"
+    ],
+    [
+      "Prof. Arnaud Vandaele",
+      "PhD co-advisor, University of Mons",
+      "arnaud.vandaele@umons.ac.be"
+    ],
+    [
+      "Dr. Fardin Akhlaghian",
+      "MSc advisor and collaborator, University of Kurdistan",
+      "f.akhlaghian@uok.ac.ir"
+    ],
+    [
+      "Dr. Parham Moradi",
+      "MSc supervisor, Victoria University",
+      "parham.moradi@vu.edu.au"
+    ]
+  ],
+  "homepageIntro": "I am a doctoral researcher at the University of Mons, working on matrix factorization and low-rank approximation for trustworthy machine learning. My research focuses on robustness, interpretability, and fairness in high-dimensional and network data."
+}

@@ -1,0 +1,66 @@
+{
+  "schools": [
+    [
+      "Oct 2025",
+      "CWI Autumn School: Scientific Machine Learning and Numerical Methods",
+      "CWI, Netherlands"
+    ],
+    [
+      "Oct 2025",
+      "SOCN: Stochastic Variance-Reduced Optimization Algorithms and Applications to Federated Learning",
+      "UCLouvain, Belgium"
+    ],
+    [
+      "Sep 2025",
+      "CWI PhD School: Machine Learning and Optimization",
+      "CWI, Netherlands"
+    ],
+    [
+      "Apr 2025",
+      "SOCN: Learning Theory from First Principles (Francis Bach)",
+      "KU Leuven, Belgium"
+    ],
+    [
+      "Mar 2025",
+      "Masterclass: Graphs, Data and AI (Jure Leskovec)",
+      "University of Antwerp, Belgium"
+    ],
+    [
+      "Oct 2024",
+      "Autumn School: Constrained Optimization and Machine Learning",
+      "Trier University, Germany"
+    ]
+  ],
+  "talks": [
+    [
+      "Oct 2026",
+      "ML4Hyper3D 2026, Lyon, France",
+      "Bilinear Nonnegative Matrix Factorization for Hyperspectral Unmixing"
+    ],
+    [
+      "Aug–Sep 2026",
+      "EUSIPCO 2026, Bruges, Belgium",
+      "Bilinear Nonnegative Matrix Factorization for Hyperspectral Unmixing"
+    ],
+    [
+      "May 2026",
+      "ICASSP 2026, Barcelona, Spain",
+      "Encoder-Decoder Symmetric Nonnegative Matrix Tri-Factorization for Graph Clustering"
+    ],
+    [
+      "Sep 2025",
+      "LRMA 2025, Mons, Belgium",
+      "Instance-wise distributionally robust nonnegative matrix factorization"
+    ],
+    [
+      "Feb 2025",
+      "Invited talk, STADIUS, KU Leuven, Belgium",
+      "Deep Matrix Factorizations for Data Representation"
+    ],
+    [
+      "Aug 2024",
+      "ALGOPT2024, UCLouvain, Belgium",
+      "Deep asymmetric nonnegative matrix factorization for graph clustering"
+    ]
+  ]
+}

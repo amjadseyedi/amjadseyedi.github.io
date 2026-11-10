@@ -1,0 +1,35 @@
+{
+  "title": "Experience",
+  "items": [
+    {
+      "title": "Visiting Researcher (scheduled)",
+      "period": "Jan 2027 – Mar 2027",
+      "institution": "Inria, Montpellier, France",
+      "details": "Host: Dr. Aurélien Bellet<br>Topic: Low-rank matrix factorization methods for federated learning."
+    },
+    {
+      "title": "Team Leader & Thesis Advisor",
+      "period": "Sep 2020 – Jun 2024",
+      "institution": "Algebraic Machine Learning (AML) Team, University of Kurdistan, Iran",
+      "details": "Led research in representation learning, matrix factorization, semi-supervised learning, robustness and sparse coding. Supported 13 completed master’s theses; currently advising one PhD and one master’s student."
+    },
+    {
+      "title": "Graduate Research Assistant",
+      "period": "Sep 2019 – Jun 2024",
+      "institution": "Representation Learning Lab, University of Kurdistan, Iran",
+      "details": "Research on matrix factorization, distributionally robust learning, generalization and adversarial training, including image inpainting and recommender systems."
+    },
+    {
+      "title": "Teaching Assistant",
+      "period": "Jan 2019 – Jun 2024",
+      "institution": "University of Kurdistan, Iran",
+      "details": "<strong>Advanced Concepts in Artificial Intelligence</strong> (Graduate), Spring & Fall 2023<br><strong>Nonnegative Matrix Factorization for Machine Learning</strong> (Graduate), Fall 2022<br><strong>Pattern Recognition</strong> (Graduate), Spring 2019–Spring 2023<br><strong>Special Topics in Artificial Intelligence</strong> (Graduate), Fall 2021"
+    },
+    {
+      "title": "Lab Instructor",
+      "period": "Fall 2019",
+      "institution": "University of Kurdistan, Iran",
+      "details": "Course: Computer Lab"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "title": "Professional Services",
+  "reviewerTitle": "Journal Reviewer",
+  "confReviewerTitle": "Conference Reviewer",
+  "journals": [
+    "Artificial Intelligence Review",
+    "Computers and Electrical Engineering",
+    "Digital Signal Processing",
+    "Engineering Applications of Artificial Intelligence",
+    "Expert Systems with Applications",
+    "Information Fusion",
+    "Information Processing & Management",
+    "Information Sciences",
+    "International Journal of Machine Learning and Cybernetics",
+    "Journal of Computational and Applied Mathematics",
+    "Journal of Information and Intelligence",
+    "Knowledge-Based Systems",
+    "Mathematics",
+    "Medical Image Analysis",
+    "Neurocomputing",
+    "IEEE Transactions on Neural Networks and Learning Systems",
+    "Pattern Recognition",
+    "Scientific Reports",
+    "Signal Processing",
+    "ACM Transactions on Intelligent Systems and Technology"
+  ],
+  "conferences": [
+    "AAAI Conference on Artificial Intelligence (AAAI), 2027 — 6 papers",
+    "IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2027 — 4 papers",
+    "International Conference on Machine Learning (ICML), 2026 — 5 papers, Silver Reviewer",
+    "IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2026"
+  ]
+}
