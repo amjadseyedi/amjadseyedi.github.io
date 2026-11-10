@@ -1685,7 +1685,7 @@
 
     <div class="morph-overlay" id="morphOverlay">
         <div class="morph-backdrop" style="position:absolute;inset:0;" onclick="closeMorph()"></div>
-        <img src="data/jpg/amjad-seyedi.jpg" alt="Amjad Seyedi" class="morph-img" id="morphImg" onclick="closeMorph()" onerror="this.style.display='none';" />
+        <img src="photos/bio.png" alt="Amjad Seyedi" class="morph-img" id="morphImg" onclick="closeMorph()" onerror="this.style.display='none';" />
     </div>
 
     <nav class="floating-deck" id="floatingDeck"></nav>
@@ -1711,7 +1711,7 @@
     <div class="app-container" id="landingContainer">
         <div class="profile-section" id="profileSection">
             <div class="profile-avatar-wrap" onclick="openMorph()">
-                <img src="data/jpg/amjad-seyedi-.jpg" alt="Amjad Seyedi" class="profile-avatar" id="profileAvatar" onerror="this.style.display='none';" />
+                <img src="photos/bio.png" alt="Amjad Seyedi" class="profile-avatar" id="profileAvatar" onerror="this.style.display='none';" />
             </div>
             <a href="https://web.umons.ac.be/en/" target="_blank" class="status-badge" title="University of Mons (UMONS), Belgium" onclick="event.stopPropagation();">
                 <div class="status-dot"></div>
@@ -2480,7 +2480,7 @@
             const d = data;
             const backIcon = 'arrow-left';
             let html = '<div class="sub-header">';
-            html += '<div class="sub-profile-mini" onclick="showInfoCard()" style="cursor:pointer;" title="About Amjad Seyedi"><img src="data/jpg/amjad-seyedi-.jpg" alt="" class="spm-avatar" onerror="this.style.display=\'none\';" /><span class="spm-name">' + d.main.name + '</span></div>';
+            html += '<div class="sub-profile-mini" onclick="showInfoCard()" style="cursor:pointer;" title="About Amjad Seyedi"><img src="photos/bio.png" alt="" class="spm-avatar" onerror="this.style.display=\'none\';" /><span class="spm-name">' + d.main.name + '</span></div>';
             html += '<div class="sub-header-actions"><button class="action-icon-btn" onclick="toggleTheme()" title="Theme"><i data-lucide="' + (document.documentElement.getAttribute('data-theme') === 'dark' ? 'moon' : 'sun') + '" style="width:16px;height:16px;"></i></button></div>';
             html += '</div><div class="sub-content-card">';
 
@@ -2666,7 +2666,7 @@
                 let g = '<div class="student-grid">';
                 list.forEach(s => {
                     const firstName = s.name.split(' ')[0].toLowerCase();
-                    const photoPath = 'data/jpg/' + firstName + '.jpg';
+                    const photoPath = 'photos/' + firstName + '.png';
                     const targetUrl = s.link ? s.link : defaultLink;
                     const initials = s.name.split(' ').map(n => n[0]).join('').substring(0, 2);
                     
