@@ -1,0 +1,2802 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, " />
+    <title>Amjad Seyedi — PhD Researcher in Machine Learning &amp; Matrix Factorization</title>
+    <meta name="description" content="Academic website of Amjad Seyedi, PhD researcher at the University of Mons. Research in matrix factorization, low-rank approximation, optimization and trustworthy machine learning." />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%234f46e5'/%3E%3Ctext x='50' y='68' font-size='48' font-weight='bold' fill='white' text-anchor='middle' font-family='Arial'%3EAS%3C/text%3E%3C/svg%3E" />
+    <link rel="canonical" href="https://amjadseyedi.github.io/" />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta name="theme-color" content="#f8fafc" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root[data-theme="light"],
+        :root {
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --surface-hover: #f1f5f9;
+            --text: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #94a3b8;
+            --accent: #4f46e5;
+            --accent-light: #6366f1;
+            --accent-soft: rgba(79, 70, 229, 0.08);
+            --accent-glow: rgba(79, 70, 229, 0.18);
+            --accent-ring: rgba(79, 70, 229, 0.25);
+            --border: rgba(15, 23, 42, 0.08);
+            --border-hover: rgba(79, 70, 229, 0.28);
+            --shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.04);
+            --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.05);
+            --shadow: 0 10px 32px rgba(15, 23, 42, 0.08);
+            --shadow-lg: 0 20px 50px rgba(15, 23, 42, 0.12);
+            --glass: rgba(255, 255, 255, 0.75);
+            --glass-strong: rgba(255, 255, 255, 0.88);
+            --glass-border: rgba(255, 255, 255, 0.85);
+            --deck-bg: rgba(255, 255, 255, 0.84);
+            --deck-border: rgba(79, 70, 229, 0.12);
+            --radius-sm: 12px;
+            --radius-md: 18px;
+            --radius: 22px;
+            --radius-lg: 28px;
+            --radius-xl: 36px;
+            --radius-full: 9999px;
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-spring: cubic-bezier(0.34, 1.35, 0.64, 1);
+            --duration-fast: 0.18s;
+            --duration: 0.28s;
+            --duration-slow: 0.45s;
+            --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        :root[data-theme="dark"] {
+            --bg: #090a0f;
+            --surface: #13151f;
+            --surface-hover: #1c1e2d;
+            --text: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --accent: #818cf8;
+            --accent-light: #a5b4fc;
+            --accent-soft: rgba(129, 140, 248, 0.12);
+            --accent-glow: rgba(129, 140, 248, 0.22);
+            --accent-ring: rgba(129, 140, 248, 0.30);
+            --border: rgba(255, 255, 255, 0.08);
+            --border-hover: rgba(129, 140, 248, 0.30);
+            --shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.25);
+            --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.35);
+            --shadow: 0 10px 32px rgba(0, 0, 0, 0.48);
+            --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.68);
+            --glass: rgba(19, 21, 31, 0.72);
+            --glass-strong: rgba(19, 21, 31, 0.88);
+            --glass-border: rgba(255, 255, 255, 0.10);
+            --deck-bg: rgba(19, 21, 31, 0.85);
+            --deck-border: rgba(129, 140, 248, 0.16);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        body {
+            font-family: var(--font-family);
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            overflow-x: hidden;
+            line-height: 1.6;
+            transition: background var(--duration-slow) var(--ease-out-expo), color var(--duration-slow) var(--ease-out-expo);
+            padding-bottom: 70px;
+        }
+
+        /* ── MESH BACKGROUND ── */
+        .bg-mesh {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(140px);
+            animation: floatBlob 24s infinite ease-in-out alternate;
+            will-change: transform;
+            opacity: 0.55;
+        }
+        .blob-1 {
+            top: -12%;
+            left: -10%;
+            width: 55vw;
+            height: 55vw;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.22) 0%, rgba(79, 70, 229, 0.05) 70%);
+            animation-delay: 0s;
+        }
+        .blob-2 {
+            bottom: -15%;
+            right: -10%;
+            width: 60vw;
+            height: 60vw;
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.18) 0%, rgba(147, 51, 234, 0.04) 70%);
+            animation-delay: -8s;
+        }
+        .blob-3 {
+            top: 35%;
+            left: 30%;
+            width: 40vw;
+            height: 40vw;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, rgba(14, 165, 233, 0.03) 70%);
+            animation-delay: -16s;
+        }
+        @keyframes floatBlob {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(35px, 45px) scale(1.08); }
+            100% { transform: translate(-25px, -30px) scale(0.95); }
+        }
+
+        .hidden-scroll {
+            overflow-y: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            overscroll-behavior: contain;
+        }
+        .hidden-scroll::-webkit-scrollbar {
+            display: none;
+            width: 0;
+            height: 0;
+        }
+
+        /* ── INTRO SPLASH (CIRCULAR NO BACKGROUND + AUTOMATIC FADE) ── */
+        .intro-splash {
+            position: fixed;
+            inset: 0;
+            background: rgba(248, 250, 252, 0.45);
+            backdrop-filter: blur(18px) saturate(180%);
+            -webkit-backdrop-filter: blur(18px) saturate(180%);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            cursor: pointer;
+            animation: splashAutoFade 0.5s ease-out 1.2s forwards;
+            pointer-events: auto;
+        }
+        :root[data-theme="dark"] .intro-splash {
+            background: rgba(9, 10, 15, 0.50);
+        }
+        .intro-splash.fade-out {
+            animation: splashInstantFade 0.4s ease-out forwards;
+        }
+        @keyframes splashAutoFade {
+            0% { opacity: 1; visibility: visible; }
+            99% { opacity: 0; visibility: hidden; }
+            100% { opacity: 0; visibility: hidden; pointer-events: none; display: none !important; }
+        }
+        @keyframes splashInstantFade {
+            0% { opacity: 1; visibility: visible; }
+            100% { opacity: 0; visibility: hidden; pointer-events: none; display: none !important; }
+        }
+        .intro-avatar-wrap {
+            position: relative;
+            margin-bottom: 4px;
+        }
+        .intro-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 14px 40px rgba(79, 70, 229, 0.28);
+            border: 3px solid var(--surface);
+            transition: transform 0.3s var(--ease-spring);
+        }
+        .intro-card:hover .intro-avatar {
+            transform: scale(1.06);
+        }
+        .intro-sparkle-badge {
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            background: var(--accent);
+            color: #ffffff;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 14px var(--accent-glow);
+            border: 2px solid var(--surface);
+        }
+        .intro-card {
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            padding: 0;
+            box-shadow: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+            text-align: center;
+            max-width: 440px;
+            width: 100%;
+            animation: introPop 0.7s var(--ease-spring);
+        }
+        @keyframes introPop {
+            0% { transform: scale(0.9) translateY(20px); opacity: 0; }
+            100% { transform: scale(1) translateY(0); opacity: 1; }
+        }
+        .intro-icon-wrap {
+            width: 68px;
+            height: 68px;
+            border-radius: 22px;
+            background: linear-gradient(135deg, var(--accent-soft) 0%, rgba(99, 102, 241, 0.15) 100%);
+            border: 1px solid var(--accent-glow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            box-shadow: 0 10px 25px var(--accent-glow);
+            animation: pulseGlow 2.5s infinite ease-in-out;
+        }
+        @keyframes pulseGlow {
+            0%, 100% { transform: scale(1); box-shadow: 0 10px 25px var(--accent-glow); }
+            50% { transform: scale(1.05); box-shadow: 0 14px 35px var(--accent-ring); }
+        }
+        .intro-title {
+            font-size: 2.1rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: var(--text);
+            line-height: 1.15;
+            background: linear-gradient(135deg, var(--text) 30%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .intro-sub {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            line-height: 1.4;
+        }
+        .intro-progress-bar {
+            width: 180px;
+            height: 4px;
+            border-radius: var(--radius-full);
+            background: var(--border);
+            overflow: hidden;
+            position: relative;
+            margin-top: 6px;
+        }
+        .intro-progress-fill {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(90deg, var(--accent), var(--accent-light), #c084fc);
+            border-radius: var(--radius-full);
+            animation: loadProgress 1.8s var(--ease-out-expo) forwards;
+            transform-origin: left;
+        }
+        @keyframes loadProgress {
+            0% { transform: scaleX(0); }
+            100% { transform: scaleX(1); }
+        }
+
+        /* ── DESKTOP FLOATING DECK ── */
+        .floating-deck {
+            position: fixed;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 300;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            padding: 10px 7px;
+            background: var(--deck-bg);
+            backdrop-filter: blur(32px) saturate(210%);
+            -webkit-backdrop-filter: blur(32px) saturate(210%);
+            border: 1px solid var(--deck-border);
+            border-radius: 36px;
+            box-shadow: var(--shadow-lg), 0 0 0 1px rgba(255, 255, 255, 0.4) inset;
+            transition: all var(--duration) var(--ease-out-expo);
+            width: 48px;
+            min-width: 48px;
+        }
+        .floating-deck.expanded {
+            width: auto;
+            min-width: 185px;
+            padding: 12px 14px;
+            border-radius: 28px;
+            gap: 6px;
+        }
+        .deck-btn {
+            height: 38px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all var(--duration) var(--ease-out-expo);
+            position: relative;
+            flex-shrink: 0;
+            width: 38px;
+            padding: 0;
+            white-space: nowrap;
+            outline: none;
+        }
+        .floating-deck.expanded .deck-btn.nav-deck-item {
+            width: 100%;
+            justify-content: flex-start;
+            padding: 6px 10px;
+            gap: 0;
+            height: 36px;
+            border-radius: 10px;
+        }
+        .deck-btn:hover {
+            background: var(--accent-soft);
+            color: var(--accent);
+            box-shadow: 0 0 0 4px var(--accent-soft);
+        }
+        .deck-btn:active {
+            transform: scale(0.95);
+            transition: transform 0.10s ease;
+        }
+        .deck-btn.active {
+            background: var(--accent-soft);
+            color: var(--accent);
+            box-shadow: 0 0 0 5px var(--accent-soft), 0 0 20px var(--accent-glow);
+        }
+        .deck-btn .deck-tooltip {
+            position: absolute;
+            left: 52px;
+            background: var(--surface);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 5px 12px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--text);
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity var(--duration-fast) var(--ease-out-expo), transform var(--duration-fast) var(--ease-out-expo);
+            transform: translateX(-6px);
+            box-shadow: var(--shadow-sm);
+            z-index: 10;
+        }
+        .floating-deck.expanded .deck-btn .deck-tooltip {
+            display: none;
+        }
+        .deck-btn:hover .deck-tooltip {
+            opacity: 1;
+            transform: translateX(0);
+            transition-delay: 0.2s;
+        }
+        .deck-btn .deck-icon-slot {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 22px;
+            height: 22px;
+        }
+        .deck-btn .deck-expand-line {
+            display: none;
+            width: 14px;
+            height: 1.5px;
+            background: var(--border);
+            flex-shrink: 0;
+            border-radius: 1px;
+            margin: 0 8px;
+            opacity: 0;
+            transition: all var(--duration) var(--ease-out-expo);
+        }
+        .floating-deck.expanded .deck-btn.nav-deck-item .deck-expand-line {
+            display: block;
+            opacity: 1;
+        }
+        .deck-btn .deck-expand-label {
+            display: none;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text);
+            white-space: nowrap;
+            letter-spacing: -0.01em;
+            opacity: 0;
+            transition: all var(--duration) var(--ease-out-expo);
+        }
+        .floating-deck.expanded .deck-btn.nav-deck-item .deck-expand-label {
+            display: inline;
+            opacity: 1;
+        }
+        .deck-divider {
+            width: 22px;
+            height: 1px;
+            background: var(--border);
+            margin: 4px 0;
+            flex-shrink: 0;
+            transition: all var(--duration) var(--ease-out-expo);
+        }
+        .floating-deck.expanded .deck-divider {
+            width: 100%;
+        }
+        .deck-btn.deck-utility {
+            width: 34px;
+            height: 34px;
+            border-radius: 10px;
+        }
+
+        /* ── MAIN LAYOUT ── */
+                /* ── LANDING PAGE VIEWPORT FIT NO-SCROLL (REQUIREMENT 77) ── */
+        .app-container {
+            width: 100%;
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 20px 24px;
+            min-height: 100vh;
+            max-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        @media (max-width: 768px) {
+            .app-container {
+                padding: 16px;
+                min-height: 100vh;
+                max-height: 100vh;
+                justify-content: space-evenly;
+            }
+            .profile-avatar {
+                width: 84px;
+                height: 84px;
+                border-radius: 24px;
+            }
+            .profile-name { font-size: 1.4rem; }
+            .profile-title { font-size: 0.78rem; }
+            .search-capsule { padding: 8px 14px; min-height: 44px; }
+            .section-widgets-grid { gap: 10px; }
+            .mobile-launcher-grid { gap: 10px; margin-top: 10px; }
+        }
+
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transition: opacity var(--duration) var(--ease-out-expo), transform var(--duration) var(--ease-out-expo), max-height var(--duration) var(--ease-out-expo);
+            opacity: 1;
+            transform: translateY(0);
+            margin-bottom: 16px;
+        }
+        .profile-section.hidden-state {
+            opacity: 0;
+            transform: translateY(-25px);
+            pointer-events: none;
+            max-height: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+        .profile-avatar-wrap {
+            position: relative;
+            display: inline-flex;
+            justify-content: center;
+            margin-bottom: 4px;
+        }
+        .profile-avatar {
+            width: 115px;
+            height: 115px;
+            border-radius: 32px;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.10);
+            transition: all var(--duration) var(--ease-out-expo);
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+            border: 2px solid var(--surface);
+        }
+        .profile-avatar:hover {
+            box-shadow: 0 16px 45px rgba(79, 70, 229, 0.22);
+            transform: translateY(-2px) scale(1.02);
+        }
+        .profile-avatar:active {
+            transform: scale(0.96);
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 5px 14px;
+            border-radius: 20px;
+            background: var(--glass-strong);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-xs);
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--text);
+            text-decoration: none;
+            margin: 8px auto 8px;
+            transition: all var(--duration) var(--ease-out-expo);
+            cursor: pointer;
+        }
+        .status-badge:hover {
+            transform: translateY(-2px) scale(1.04);
+            border-color: var(--accent);
+            color: var(--accent);
+            box-shadow: var(--shadow-sm), 0 0 16px var(--accent-glow);
+        }
+        .status-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #10b981;
+            box-shadow: 0 0 8px #10b981;
+        }
+
+        .profile-name {
+            font-size: 1.85rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: var(--text);
+            line-height: 1.2;
+            text-align: center;
+            margin: 0 auto;
+        }
+        .profile-title {
+            font-size: 0.94rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            letter-spacing: -0.01em;
+            margin-top: 4px;
+            text-align: center;
+        }
+
+        /* ── SEARCH CAPSULE ── */
+        .search-capsule-wrap {
+            width: 100%;
+            max-width: 520px;
+            margin: 12px auto 18px;
+            transition: all var(--duration) var(--ease-out-expo);
+            position: relative;
+            z-index: 50;
+        }
+        .search-capsule-wrap.elevated {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 560px;
+            width: calc(100% - 80px);
+            z-index: 400;
+            margin: 0;
+        }
+        .search-capsule {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 22px;
+            background: var(--glass-strong);
+            backdrop-filter: blur(24px) saturate(200%);
+            -webkit-backdrop-filter: blur(24px) saturate(200%);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            box-shadow: var(--shadow);
+            transition: all var(--duration) var(--ease-out-expo);
+            cursor: text;
+            min-height: 54px;
+        }
+        .search-capsule:hover {
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow), 0 0 0 4px var(--accent-soft);
+        }
+        .search-capsule:focus-within {
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow), 0 0 35px var(--accent-glow);
+            background: var(--surface);
+        }
+        .search-capsule input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: var(--text);
+            font-size: 0.94rem;
+            font-family: inherit;
+            padding: 2px 0;
+            min-width: 0;
+        }
+        .search-capsule input::placeholder {
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+        .search-capsule .sc-icon {
+            color: var(--text-muted);
+            flex-shrink: 0;
+            transition: color var(--duration-fast) var(--ease-out-expo);
+        }
+        .search-capsule:focus-within .sc-icon {
+            color: var(--accent);
+        }
+        .search-capsule .sc-shortcut {
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            background: var(--accent-soft);
+            padding: 3px 7px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+        }
+        .search-capsule .sc-info-btn {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            background: transparent;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            flex-shrink: 0;
+            transition: all var(--duration) var(--ease-out-expo);
+            outline: none;
+        }
+        .search-capsule .sc-info-btn:hover {
+            background: var(--accent-soft);
+            border-color: var(--border-hover);
+            color: var(--accent);
+            box-shadow: 0 0 0 4px var(--accent-soft);
+        }
+
+        /* ── DESKTOP WIDGETS GRID ── */
+        .section-widgets-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            width: 100%;
+            max-width: 640px;
+            margin: 8px auto 14px;
+            transition: opacity var(--duration) var(--ease-out-expo), transform var(--duration) var(--ease-out-expo), max-height var(--duration) var(--ease-out-expo);
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .section-widgets-grid.hidden-state {
+            opacity: 0;
+            transform: translateY(-20px);
+            pointer-events: none;
+            max-height: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+        .section-widget-item {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+            cursor: pointer;
+            transition: all var(--duration) var(--ease-out-expo);
+            padding: 18px 16px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            background: var(--glass-strong);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            outline: none;
+            box-shadow: var(--shadow-xs);
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+        .section-widget-item:hover {
+            background: var(--surface);
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow), 0 0 25px var(--accent-soft);
+            transform: translateY(-3px);
+        }
+        .section-widget-item:active {
+            transform: scale(0.97);
+        }
+        .section-widget-item .sw-icon-wrap {
+            width: 48px;
+            height: 48px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            background: var(--accent-soft);
+            border: 1px solid var(--accent-glow);
+            transition: all var(--duration) var(--ease-out-expo);
+        }
+        .section-widget-item:hover .sw-icon-wrap {
+            background: var(--accent);
+            color: #ffffff;
+            box-shadow: 0 8px 20px var(--accent-glow);
+        }
+        .section-widget-item .sw-label {
+            font-size: 0.90rem;
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-top: 2px;
+        }
+        .section-widget-item .sw-desc {
+            font-size: 0.72rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+            line-height: 1.35;
+        }
+
+        /* ── MOBILE LAUNCHER GRID (2 COLUMNS x 3 ROWS) ── */
+        .mobile-launcher-grid {
+            display: none;
+            width: 100%;
+            max-width: 460px;
+            margin: 10px auto 20px;
+            padding: 0 4px;
+        }
+        .mobile-launcher-grid .mlg-inner {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+        }
+        .mobile-launcher-grid .mlg-item {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+            cursor: pointer;
+            transition: all var(--duration) var(--ease-out-expo);
+            padding: 16px 14px;
+            border-radius: 24px;
+            border: 1px solid var(--border);
+            background: var(--glass-strong);
+            backdrop-filter: blur(24px) saturate(200%);
+            -webkit-backdrop-filter: blur(24px) saturate(200%);
+            outline: none;
+            box-shadow: var(--shadow-sm);
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+        .mobile-launcher-grid .mlg-item:hover {
+            background: var(--surface);
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow);
+        }
+        .mobile-launcher-grid .mlg-item:active {
+            transform: scale(0.96);
+            transition: transform 0.10s ease;
+        }
+        .mobile-launcher-grid .mlg-item .mlg-icon-wrap {
+            width: 52px;
+            height: 52px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            background: var(--accent-soft);
+            border: 1px solid var(--accent-glow);
+            transition: all var(--duration) var(--ease-out-expo);
+            flex-shrink: 0;
+        }
+        .mobile-launcher-grid .mlg-item:active .mlg-icon-wrap {
+            background: var(--accent);
+            color: #fff;
+        }
+        .mobile-launcher-grid .mlg-item .mlg-label {
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-top: 2px;
+        }
+        .mobile-launcher-grid .mlg-item .mlg-desc {
+            font-size: 0.72rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+            line-height: 1.35;
+        }
+
+        /* ── MORPH OVERLAY ── */
+        .morph-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 5000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0);
+            pointer-events: none;
+            opacity: 0;
+            transition: background var(--duration-slow) var(--ease-out-expo), opacity var(--duration-slow) var(--ease-out-expo);
+        }
+        .morph-overlay.active {
+            background: rgba(0, 0, 0, 0.65);
+            pointer-events: auto;
+            opacity: 1;
+        }
+        .morph-overlay .morph-img {
+            border-radius: 36px;
+            object-fit: cover;
+            box-shadow: 0 30px 90px rgba(0, 0, 0, 0.4);
+            transition: all var(--duration-slow) var(--ease-spring);
+            transform: scale(0.4);
+            opacity: 0;
+            cursor: pointer;
+            max-width: 80vw;
+            max-height: 75vh;
+            width: 320px;
+            height: 320px;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+        }
+        .morph-overlay.active .morph-img {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        /* ── SEARCH RESULTS AREA ── */
+        .search-results-area {
+            position: fixed;
+            top: 90px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 80px);
+            max-width: 640px;
+            max-height: calc(100vh - 160px);
+            background: var(--surface);
+            backdrop-filter: blur(28px) saturate(200%);
+            -webkit-backdrop-filter: blur(28px) saturate(200%);
+            border: 1px solid var(--border-hover);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-lg);
+            z-index: 390;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: all var(--duration) var(--ease-out-expo);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .search-results-area.visible {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+        .search-results-area .sra-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 22px 12px;
+            border-bottom: 1px solid var(--border);
+            flex-shrink: 0;
+            gap: 8px;
+        }
+        .search-results-area .sra-header .sra-tabs {
+            display: flex;
+            gap: 6px;
+        }
+        .search-results-area .sra-header .sra-tab {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: transparent;
+            cursor: pointer;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            transition: all var(--duration-fast) var(--ease-out-expo);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+            outline: none;
+        }
+        .search-results-area .sra-header .sra-tab:hover {
+            background: var(--accent-soft);
+            border-color: var(--border-hover);
+            color: var(--accent);
+        }
+        .search-results-area .sra-header .sra-tab.active-tab {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #fff;
+            box-shadow: 0 4px 14px var(--accent-glow);
+        }
+        .search-results-area .sra-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px 20px;
+            display: grid;
+            gap: 12px;
+        }
+        .search-results-area .sra-body.grid-view {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .search-results-area .sra-body.list-view {
+            grid-template-columns: 1fr;
+        }
+        .sra-result-card {
+            background: var(--surface-hover);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 16px;
+            cursor: pointer;
+            transition: all var(--duration) var(--ease-out-expo);
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            outline: none;
+        }
+        .sra-result-card:hover {
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow);
+            background: var(--surface);
+        }
+
+        .search-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(4px);
+            z-index: 380;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: all var(--duration) var(--ease-out-expo);
+        }
+        .search-backdrop.visible {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        /* ── SUB PAGE CONTAINER ── */
+        .sub-page-container {
+            display: none;
+            flex-direction: column;
+            max-width: 840px;
+            margin: 0 auto;
+            padding: 24px 20px 100px;
+            min-height: 100vh;
+        }
+        .sub-page-container.active-view {
+            display: flex;
+            animation: fadeSlideIn var(--duration-slow) var(--ease-out-expo);
+        }
+        @keyframes fadeSlideIn {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+                .sub-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            padding: 0 4px;
+            border: none !important;
+            border-bottom: none !important;
+            box-shadow: none !important;
+        }
+        .sub-profile-mini {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border: none !important;
+            border-bottom: none !important;
+            text-decoration: none !important;
+            box-shadow: none !important;
+        }
+        .spm-avatar {
+            width: 38px;
+            height: 38px;
+            border-radius: 12px;
+            object-fit: cover;
+            border: none !important;
+            box-shadow: none !important;
+        }
+        .spm-name {
+            font-weight: 800;
+            font-size: 1.05rem;
+            color: var(--text);
+            text-decoration: none !important;
+            border: none !important;
+            border-bottom: none !important;
+        }
+
+        .sub-content-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-xl);
+            padding: 34px 38px;
+            box-shadow: var(--shadow);
+            transition: all var(--duration) var(--ease-out-expo);
+        }
+        .sub-content-card h2 {
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.45rem;
+            color: var(--text);
+        }
+        .item-card {
+            padding: 18px 22px;
+            background: var(--surface-hover);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            margin-bottom: 12px;
+            transition: all var(--duration) var(--ease-out-expo);
+        }
+        .item-card:hover {
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow-sm);
+            background: var(--surface);
+        }
+        .item-card .ic-title {
+            font-weight: 700;
+            font-size: 0.98rem;
+            color: var(--text);
+            line-height: 1.35;
+        }
+        .item-card .ic-sub {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin: 4px 0 10px;
+            line-height: 1.5;
+        }
+
+        .pill-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border-radius: var(--radius-full);
+            border: 1px solid var(--border);
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--accent);
+            text-decoration: none;
+            transition: all var(--duration-fast) var(--ease-out-expo);
+            background: var(--surface);
+            margin: 3px 6px 3px 0;
+            outline: none;
+        }
+        .pill-link:hover {
+            background: var(--accent);
+            color: #ffffff;
+            border-color: var(--accent);
+            box-shadow: 0 4px 14px var(--accent-glow);
+        }
+
+        .glass-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 8px;
+        }
+        .glass-table th {
+            padding: 10px 14px;
+            color: var(--text-muted);
+            font-size: 0.70rem;
+            text-align: left;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 700;
+        }
+        .glass-table td {
+            padding: 12px 16px;
+            background: var(--surface-hover);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            font-size: 0.85rem;
+        }
+        .glass-table tr td:first-child {
+            border-left: 1px solid var(--border);
+            border-radius: 12px 0 0 12px;
+            font-weight: 600;
+        }
+        .glass-table tr td:last-child {
+            border-right: 1px solid var(--border);
+            border-radius: 0 12px 12px 0;
+        }
+
+                /* ── MOBILE FOOTER CAPSULE & ACTIONS (REQUIREMENT 73) ── */
+        .mobile-footer-capsule {
+            display: none;
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 250;
+            background: var(--glass-strong);
+            backdrop-filter: blur(28px) saturate(200%);
+            -webkit-backdrop-filter: blur(28px) saturate(200%);
+            border: 1px solid var(--border);
+            border-radius: 40px;
+            padding: 6px 10px;
+            box-shadow: var(--shadow-lg);
+            gap: 6px;
+            align-items: center;
+            justify-content: center;
+        }
+        .mobile-footer-capsule .mfc-item {
+            width: 36px;
+            height: 36px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all var(--duration) var(--ease-out-expo);
+            flex-shrink: 0;
+            outline: none;
+        }
+        .mobile-footer-capsule .mfc-item.back-home-btn {
+            background: var(--accent-soft);
+            color: var(--accent);
+            border-radius: 50%;
+            margin-right: 4px;
+        }
+        .mobile-footer-capsule .mfc-item:hover,
+        .mobile-footer-capsule .mfc-item.active {
+            background: var(--accent-soft);
+            color: var(--accent);
+            box-shadow: 0 0 14px var(--accent-glow);
+        }
+
+        .mobile-top-actions {
+            display: none;
+            position: fixed;
+            top: 16px;
+            right: 16px;
+            z-index: 350;
+            gap: 8px;
+            align-items: center;
+        }
+        .mobile-top-actions .mta-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            background: var(--glass-strong);
+            backdrop-filter: blur(16px);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            transition: all var(--duration) var(--ease-out-expo);
+            outline: none;
+            box-shadow: var(--shadow-sm);
+        }
+
+                /* ── FOOTER POSITIONS (REQUIREMENT 79) ── */
+        .site-footer {
+            width: 100%;
+            text-align: center;
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            pointer-events: auto;
+        }
+        .site-footer .footer-link {
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            .mobile-footer-capsule {
+                bottom: 38px !important;
+            }
+            .mobile-bottom-fog {
+                height: 110px !important;
+            }
+            .site-footer {
+                position: fixed !important;
+                bottom: 8px !important;
+                left: 0 !important;
+                right: 0 !important;
+                z-index: 260 !important;
+                padding: 4px 12px !important;
+                margin: 0 !important;
+            }
+        }
+        @media (min-width: 769px) {
+            .site-footer {
+                position: relative;
+                margin-top: 36px;
+                padding: 20px 16px 28px;
+            }
+        }
+
+        /* ── HIDE ALL SCROLLBARS GLOBALLY (REQUIREMENT 78) ── */
+        html, body, *, *::before, *::after {
+            -ms-overflow-style: none !important;
+            scrollbar-width: none !important;
+        }
+        *::-webkit-scrollbar {
+            display: none !important;
+            width: 0 !important;
+            height: 0 !important;
+            background: transparent !important;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 768px) {
+            .floating-deck { display: none !important; }
+            .section-widgets-grid { display: none !important; }
+            .mobile-launcher-grid { display: block; }
+            .mobile-footer-capsule.visible { display: flex; }
+            .mobile-top-actions { display: none !important; }
+            .app-container {
+                padding: 24px 16px 30px;
+                min-height: calc(100vh - 100px);
+                justify-content: flex-start;
+                padding-top: 45px;
+            }
+            .profile-avatar { width: 92px; height: 92px; border-radius: 26px; }
+            .profile-name { font-size: 1.5rem; }
+            .profile-title { font-size: 0.82rem; }
+            .search-capsule { padding: 12px 18px; min-height: 48px; }
+            .search-capsule-wrap.elevated { width: calc(100% - 32px); top: 12px; }
+            .search-results-area { width: calc(100% - 24px); top: 68px; }
+            .search-results-area .sra-body.grid-view { grid-template-columns: repeat(2, 1fr); }
+            .sub-page-container { padding: 16px 16px 140px; }
+            .sub-content-card { padding: 22px 18px; border-radius: var(--radius-lg); }
+            
+            body { padding-bottom: 110px; }
+        }
+        /* ── DEDICATED ABOUT / INFO MODAL ── */
+        .info-modal-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            z-index: 6000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: all var(--duration-slow) var(--ease-out-expo);
+        }
+        .info-modal-backdrop.active {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+        .info-modal-card {
+            background: var(--surface);
+            border: 1px solid var(--border-hover);
+            border-radius: var(--radius-xl);
+            padding: 28px 24px;
+            max-width: 460px;
+            width: 100%;
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+            transform: scale(0.92) translateY(15px);
+            transition: transform var(--duration-slow) var(--ease-spring);
+            position: relative;
+        }
+        .info-modal-backdrop.active .info-modal-card {
+            transform: scale(1) translateY(0);
+        }
+        .info-modal-avatar-wrap {
+            margin: 0 auto 8px;
+            display: inline-block;
+        }
+        .info-modal-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+            box-shadow: 0 8px 20px var(--accent-glow);
+        }
+        .info-modal-name {
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: var(--text);
+            letter-spacing: -0.02em;
+        }
+        .info-modal-title {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+        .info-modal-bio {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin-bottom: 16px;
+            text-align: left;
+            background: var(--surface-hover);
+            padding: 12px 14px;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+        }
+        .info-modal-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        .info-stat-box {
+            background: var(--surface-hover);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 8px 4px;
+            text-align: center;
+        }
+        .isb-val {
+            font-weight: 800;
+            font-size: 1.05rem;
+            color: var(--accent);
+            line-height: 1.2;
+        }
+        .isb-lbl {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-top: 2px;
+        }
+        .info-modal-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            justify-content: center;
+        }
+
+        /* ── BUTTONS IN SEARCH CAPSULE AND SUB HEADERS ── */
+        .sc-action-btn,
+        .action-icon-btn {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            background: transparent;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            flex-shrink: 0;
+            transition: all var(--duration) var(--ease-out-expo);
+            outline: none;
+        }
+        .sc-action-btn:hover,
+        .action-icon-btn:hover {
+            background: var(--accent-soft);
+            border-color: var(--border-hover);
+            color: var(--accent);
+            box-shadow: 0 0 0 4px var(--accent-soft);
+        }
+        .sub-header-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* ── VIEW SWITCHER (LIST / TIMELINE, WIDGET / TABLE) ── */
+        .svt-container {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: var(--surface-hover);
+            border: 1px solid var(--border);
+            padding: 3px 8px;
+            border-radius: 20px;
+        }
+        .svt-icon-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            padding: 4px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--duration-fast) var(--ease-out-expo);
+            outline: none;
+        }
+        .svt-icon-btn:hover,
+        .svt-icon-btn.active {
+            color: var(--accent);
+            background: var(--accent-soft);
+        }
+        .svt-divider {
+            color: var(--border);
+            font-size: 0.75rem;
+            user-select: none;
+        }
+
+        /* ── PUBLICATIONS TIMELINE VIEW ── */
+        .pub-timeline-container {
+            position: relative;
+            padding-left: 24px;
+            margin-top: 18px;
+        }
+        .pub-timeline-track {
+            position: absolute;
+            left: 7px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent), var(--border));
+        }
+        .pub-tl-section {
+            margin-bottom: 24px;
+            position: relative;
+        }
+        .pub-tl-year-badge {
+            font-weight: 700;
+            font-size: 0.82rem;
+            color: var(--accent);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 12px;
+            background: var(--accent-soft);
+            padding: 4px 14px;
+            border-radius: 14px;
+            border: 1px solid var(--accent-glow);
+        }
+        .pub-tl-item {
+            position: relative;
+            margin-bottom: 12px;
+            padding: 14px 18px;
+            background: var(--surface-hover);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all var(--duration) var(--ease-out-expo);
+        }
+        .pub-tl-item:hover,
+        .pub-tl-item.active {
+            border-color: var(--border-hover);
+            background: var(--surface);
+            box-shadow: var(--shadow-sm);
+        }
+        .pub-tl-dot {
+            position: absolute;
+            left: -22px;
+            top: 20px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 2px solid var(--surface);
+            box-shadow: 0 0 8px var(--accent-glow);
+        }
+        .pub-tl-title {
+            font-weight: 700;
+            font-size: 0.94rem;
+            color: var(--text);
+            line-height: 1.35;
+        }
+        .pub-tl-popover {
+            margin-top: 8px;
+        }
+
+        /* ── STUDENT WIDGET GRID ── */
+        .student-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 14px;
+            margin-top: 10px;
+        }
+        .student-photo-card {
+            display: flex;
+            flex-direction: column;
+            background: var(--surface-hover);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            text-decoration: none;
+            transition: all var(--duration) var(--ease-out-expo);
+            color: inherit;
+        }
+        .student-photo-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-sm);
+            background: var(--surface);
+        }
+        .student-photo-wrap {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1;
+            background: var(--accent-soft);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .student-photo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .student-photo-fallback {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.6rem;
+            color: var(--accent);
+            letter-spacing: -0.03em;
+        }
+        .student-photo-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(15, 23, 42, 0.85), transparent);
+            padding: 12px 10px 6px;
+            color: #ffffff;
+        }
+        .student-name-label {
+            font-weight: 700;
+            font-size: 0.85rem;
+            display: block;
+            line-height: 1.2;
+        }
+        .student-details-wrap {
+            padding: 10px 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .student-topic {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--text);
+            line-height: 1.3;
+        }
+        .student-meta {
+            font-size: 0.70rem;
+            color: var(--text-muted);
+        }
+
+        /* ── MOBILE BOTTOM FOG ── */
+        .mobile-bottom-fog {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 90px;
+            background: linear-gradient(to top, var(--bg), transparent);
+            pointer-events: none;
+            z-index: 240;
+        }
+        .mobile-bottom-fog.visible {
+            display: block;
+        }
+    [id^="item-"], [id^="paper-"], [id^="education-"] { scroll-margin-top: 100px; }
+    .publication-highlight { outline: 2px solid var(--accent); box-shadow: 0 0 0 6px var(--accent-soft) !important; transition: box-shadow .25s ease; }
+</style>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Amjad Seyedi", "url": "https://amjadseyedi.github.io/", "jobTitle": "Doctoral Researcher", "affiliation": {"@type": "CollegeOrUniversity", "name": "University of Mons", "url": "https://web.umons.ac.be/en/"}, "description": "Researcher in matrix factorization, low-rank approximation, optimization, robust and trustworthy machine learning.", "email": "mailto:seyedamjad.seyedi@umons.ac.be", "sameAs": ["https://scholar.google.com/citations?user=gRU1aPYAAAAJ", "https://github.com/amjadseyedi", "https://www.linkedin.com/in/amjadseyedi/"]}</script>
+</head>
+<body>
+
+    <!-- INTRO SPLASH -->
+    <div class="intro-splash" id="introSplash" onclick="dismissIntro()">
+        <div class="intro-card">
+            <div class="intro-avatar-wrap">
+                <img src="data/jpg/amjad-seyedi-.jpg" alt="Amjad Seyedi" class="intro-avatar" onerror="this.style.display='none';" />
+                <div class="intro-sparkle-badge">
+                    <i data-lucide="sparkles" style="width:15px;height:15px;"></i>
+                </div>
+            </div>
+            <div class="intro-title">Amjad Seyedi</div>
+            <div class="intro-sub">Doctoral Researcher @ UMONS<br>Matrix Theory &amp; Low-Rank Optimization</div>
+            <div class="intro-progress-bar">
+                <div class="intro-progress-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-mesh">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <div class="search-backdrop" id="searchBackdrop"></div>
+
+    <!-- DEDICATED ABOUT / INFO MODAL -->
+    <div class="info-modal-backdrop" id="infoModalBackdrop" onclick="closeInfoModal()">
+        <div class="info-modal-card" onclick="event.stopPropagation()">
+            <div class="info-modal-avatar-wrap">
+                <img src="data/jpg/amjad-seyedi-.jpg" alt="Amjad Seyedi" class="info-modal-avatar" onerror="this.style.display='none';" />
+            </div>
+            <a href="https://web.umons.ac.be/en/" target="_blank" class="status-badge" style="margin: 0 auto 12px; display: inline-flex;" title="University of Mons (UMONS), Belgium" onclick="event.stopPropagation();">
+                <div class="status-dot"></div>
+                <i data-lucide="landmark" style="width:12px;height:12px;color:var(--accent);"></i>
+                <span>UMONS</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="11" viewBox="0 0 900 600" style="border-radius:3px;vertical-align:middle;display:inline-block;margin-left:4px;margin-right:2px;box-shadow:0 1px 3px rgba(0,0,0,0.3);"><path fill="#ef3340" d="M0 0H900V600H0z"/><path fill="#fdda25" d="M0 0H600V600H0z"/><path d="M0 0H300V600H0z"/></svg>
+            </a>
+            <div class="info-modal-name" id="infoModalName">Amjad Seyedi</div>
+            <div class="info-modal-title" id="infoModalTitle">PhD Researcher in Machine Learning &amp; Matrix Factorization</div>
+            <p class="info-modal-bio" id="infoModalBio"></p>
+            <div class="info-modal-stats">
+                <div class="info-stat-box"><div class="isb-val">25+</div><div class="isb-lbl" id="isbPapers">Papers</div></div>
+                <div class="info-stat-box"><div class="isb-val">4</div><div class="isb-lbl" id="isbDegrees">Degrees</div></div>
+                <div class="info-stat-box"><div class="isb-val">13</div><div class="isb-lbl" id="isbStudents">Students</div></div>
+                <div class="info-stat-box"><div class="isb-val">20+</div><div class="isb-lbl" id="isbReviewer">Reviewer</div></div>
+            </div>
+            <div class="info-modal-links" id="infoModalLinks"></div>
+        </div>
+    </div>
+
+    <div class="morph-overlay" id="morphOverlay">
+        <div class="morph-backdrop" style="position:absolute;inset:0;" onclick="closeMorph()"></div>
+        <img src="data/jpg/amjad-seyedi.jpg" alt="Amjad Seyedi" class="morph-img" id="morphImg" onclick="closeMorph()" onerror="this.style.display='none';" />
+    </div>
+
+    <nav class="floating-deck" id="floatingDeck"></nav>
+
+    <div class="mobile-top-actions" id="mobileTopActions">
+        <button class="mta-btn" onclick="toggleTheme()" title="Theme"><i data-lucide="sun" style="width:16px;height:16px;" id="mtaThemeIcon"></i></button>
+    </div>
+
+    <div class="search-results-area" id="searchResultsArea">
+        <div class="sra-header">
+            <div class="sra-tabs">
+                <button class="sra-tab active-tab" id="tabWidget" onclick="setResultView('widget')">
+                    <i data-lucide="grid3x3" style="width:14px;height:14px;"></i> Widgets
+                </button>
+                <button class="sra-tab" id="tabIndex" onclick="setResultView('index')">
+                    <i data-lucide="list" style="width:14px;height:14px;"></i> Index
+                </button>
+            </div>
+        </div>
+        <div class="sra-body grid-view hidden-scroll" id="sraBody"></div>
+    </div>
+
+    <div class="app-container" id="landingContainer">
+        <div class="profile-section" id="profileSection">
+            <div class="profile-avatar-wrap" onclick="openMorph()">
+                <img src="data/jpg/amjad-seyedi-.jpg" alt="Amjad Seyedi" class="profile-avatar" id="profileAvatar" onerror="this.style.display='none';" />
+            </div>
+            <a href="https://web.umons.ac.be/en/" target="_blank" class="status-badge" title="University of Mons (UMONS), Belgium" onclick="event.stopPropagation();">
+                <div class="status-dot"></div>
+                <i data-lucide="landmark" style="width:12px;height:12px;color:var(--accent);"></i>
+                <span>UMONS</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="11" viewBox="0 0 900 600" style="border-radius:3px;vertical-align:middle;display:inline-block;margin-left:4px;margin-right:2px;box-shadow:0 1px 3px rgba(0,0,0,0.3);"><path fill="#ef3340" d="M0 0H900V600H0z"/><path fill="#fdda25" d="M0 0H600V600H0z"/><path d="M0 0H300V600H0z"/></svg>
+            </a>
+            <div class="profile-name" id="profileName">Amjad Seyedi</div>
+            <div class="profile-title" id="profileTitle">PhD Researcher in Machine Learning &amp; Matrix Factorization</div>
+        </div>
+
+        <div class="search-capsule-wrap" id="searchCapsuleWrap">
+            <div class="search-capsule" id="searchCapsule" onclick="focusSearch()">
+                <i data-lucide="search" class="sc-icon" style="width:20px;height:20px;"></i>
+                <input type="text" id="mainSearchInput" placeholder="Search papers, courses, topics…" oninput="handleSearchInput()" onfocus="onSearchFocus()" />
+                
+                <button class="sc-action-btn" id="scThemeBtn" title="Toggle Theme" onclick="event.stopPropagation();toggleTheme();">
+                    <i data-lucide="sun" style="width:16px;height:16px;" id="scThemeIcon"></i>
+                </button>
+                <button class="sc-info-btn" id="infoBtn" title="About Amjad Seyedi" onclick="event.stopPropagation();showInfoCard();">
+                    <i data-lucide="info" style="width:16px;height:16px;"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- DESKTOP LANDING WIDGETS GRID -->
+        <div class="section-widgets-grid" id="sectionWidgetsGrid"></div>
+
+        <!-- MOBILE LANDING WIDGETS GRID -->
+        <div class="mobile-launcher-grid" id="mobileLauncherGrid"></div>
+    </div>
+
+    <div class="mobile-bottom-fog" id="mobileBottomFog"></div>
+    <div class="mobile-footer-capsule" id="mobileFooterCapsule"></div>
+
+    <div class="sub-page-container" id="subPublications"></div>
+    <div class="sub-page-container" id="subEducations"></div>
+    <div class="sub-page-container" id="subExperiences"></div>
+    <div class="sub-page-container" id="subStudents"></div>
+    <div class="sub-page-container" id="subServices"></div>
+    <div class="sub-page-container" id="subTeaching"></div>
+
+    <div class="site-footer" id="siteFooter">
+        &copy; <span id="footerYear">2026</span> <a href="https://linktr.ee/AmjadSeyedi" target="_blank" class="footer-link" id="footerNameLink">Amjad Seyedi</a>. All rights reserved. <span aria-hidden="true">·</span> <a class="footer-link" href="academic-profile.html">Academic profile</a> <span aria-hidden="true">·</span> <a class="footer-link" href="cv/SeyediCV.pdf">CV (PDF)</a>
+    </div>
+
+    <script>
+        function dismissIntro() {
+            const splash = document.getElementById('introSplash');
+            if (splash && splash.style.display !== 'none') {
+                splash.classList.add('fade-out');
+                setTimeout(function() {
+                    splash.style.display = 'none';
+                }, 400);
+            }
+        }
+        const CONTENT = {
+            en: {
+                main: {
+                    name: 'Amjad Seyedi',
+                    title: 'PhD Researcher in Machine Learning & Matrix Factorization',
+                    email: 'seyedamjad.seyedi@umons.ac.be',
+                    address: 'Rue de Houdain 9, 7000 Mons, Belgium',
+                    bio: 'I am a Doctoral Researcher at the <a href="https://web.umons.ac.be/en/" target="_blank" style="color:var(--accent);text-decoration:none;font-weight:600;">University of Mons (UMONS)</a>, supervised by <a href="https://sites.google.com/site/nicolasgillis" target="_blank" style="color:var(--accent);text-decoration:none;font-weight:600;">Prof. Nicolas Gillis</a>. My current research sits at the intersection of Matrix Theory and Optimization, specifically developing matrix factorization and low-rank approximation methods for Trustworthy Machine Learning. I aim to leverage these mathematical tools to enhance robustness, interpretability, and fairness in high-dimensional data and network analysis.<br><br>Previously, I was a Graduate Research Assistant at the <a href="https://uok.ac.ir/en/" target="_blank" style="color:var(--accent);text-decoration:none;font-weight:600;">University of Kurdistan</a>, where I led the <a href="https://amlteams.github.io/" target="_blank" style="color:var(--accent);text-decoration:none;font-weight:600;">Algebraic Machine Learning (AML) team</a> and focused on representation learning.',
+                    sections: {
+                        publications: { label: 'Publications', desc: 'Papers, Preprints & Open-Source Code', icon: 'book-open' },
+                        educations: { label: 'Education', desc: 'Degrees & Academic Background', icon: 'graduation-cap' },
+                        experiences: { label: 'Experience', desc: 'Research & TA Positions', icon: 'briefcase' },
+                        students: { label: 'Students', desc: 'PhD Candidates & MSc Alumni', icon: 'users' },
+                        services: { label: 'Services', desc: 'Journal & Conference Reviewer', icon: 'award' },
+                        teaching: { label: 'Teaching', desc: 'Courses & Lecture Slides', icon: 'library' },
+                        
+                    },
+                    infoLinks: [
+                        { label: 'Google Scholar', url: 'https://scholar.google.com/citations?user=gRU1aPYAAAAJ&hl=en', icon: 'graduation-cap' },
+                        { label: 'LinkedIn', url: 'https://www.linkedin.com/in/AmjadSeyedi/', icon: 'linkedin' },
+                        { label: 'GitHub', url: 'https://github.com/amjadseyedi', icon: 'github' },
+                        { label: 'ResearchGate', url: 'https://www.researchgate.net/profile/Amjad-Seyedi', icon: 'microscope' },
+                        { label: 'Scopus', url: 'https://www.scopus.com/authid/detail.uri?authorId=57193125657', icon: 'database' },
+                        { label: 'Linktree', url: 'https://linktr.ee/AmjadSeyedi', icon: 'link' },
+                        { label: 'My CV', url: 'https://amjadseyedi.github.io/cv/SeyediCV.pdf', icon: 'file-text' },
+                    ],
+                },
+                publications: {
+                    title: 'Publications & Preprints',
+                    scholarlUrl: 'https://scholar.google.com/citations?user=gRU1aPYAAAAJ&hl=en',
+                    years: [
+                        {
+                            label: 'Preprints',
+                            items: [
+                                { title: 'Supervised Deep Multimodal Matrix Factorization for Interpretable Brain Network Analysis', primaryLink: "https://arxiv.org/pdf/2605.13312", authors: '<strong>A. Seyedi</strong>, Lifang He, Songlin Zhao, Akwum Onwunta, and Nicolas Gillis.', links: [{ icon: 'file-text', label: 'arXiv PDF', url: 'https://arxiv.org/pdf/2605.13312' }] },
+                                { title: 'ECG-NAT: A Self-supervised Neighborhood Attention Transformer for Multi-lead ECG Classification', primaryLink: "https://arxiv.org/pdf/2605.13194", authors: 'M. Gazeran, S. Soleymanbaigi, F. Daneshfar, <strong>A. Seyedi</strong>, and F. Akhlaghian.', links: [{ icon: 'file-text', label: 'arXiv PDF', url: 'https://arxiv.org/pdf/2605.13194' }] },
+                            ]
+                        },
+                        {
+                            label: '2027',
+                            items: [
+                                { title: 'Distributionally Robust Multi-View Clustering with Anchor Graph Learning', primaryLink: "https://doi.org/10.1016/j.eswa.2026.134005", authors: 'W. Barkhoda, <strong>A. Seyedi</strong>, and F. Akhlaghian, <em>Expert Systems with Applications 2027</em>.', links: [] },
+                            ]
+                        },
+                        {
+                            label: '2026',
+                            items: [
+                                { title: 'Bilinear Nonnegative Matrix Factorization for Hyperspectral Unmixing', primaryLink: "https://www.researchgate.net/profile/Amjad-Seyedi/publication/404900737_Bilinear_Nonnegative_Matrix_Factorization_for_Hyperspectral_Unmixing/links/6a06e41a39e45e75a6dcc627/Bilinear-Nonnegative-Matrix-Factorization-for-Hyperspectral-Unmixing.pdf", authors: '<strong>A. Seyedi</strong>, A. Vandaele, and N. Gillis, <em>EUSIPCO 2026</em>.', links: [{ icon: 'code', label: 'Source Code', url: 'https://github.com/amjadseyedi/BiNMF' }] },
+                                { title: 'Robust Asymmetric Encoder-Decoder Nonnegative Matrix Factorization for Hyperspectral Anomaly Detection', primaryLink: "https://doi.org/10.1016/j.neucom.2026.133709", authors: 'S. Moradi, <strong>A. Seyedi</strong>, W. Barkhoda, and F. Akhlaghian, <em>Neurocomputing 2026</em>.', links: [{ icon: 'external-link', label: 'DOI', url: 'https://doi.org/10.1016/j.neucom.2026.133709' }, { icon: 'code', label: 'Source Code', url: 'https://github.com/shirin-moradi/REDNMF' }] },
+                                { title: 'Robust log-based multi-label feature selection with dynamic label correlation and relevance–redundancy optimization', primaryLink: "https://doi.org/10.1016/j.knosys.2026.115825", authors: 'M. Faraji, <strong>A. Seyedi</strong>, and F. Akhlaghian, <em>Knowledge-Based Systems 2026</em>.', links: [{ icon: 'external-link', label: 'DOI', url: 'https://doi.org/10.1016/j.knosys.2026.115825' }, { icon: 'code', label: 'Source Code', url: 'https://github.com/FarajiMohammad/RLBMLFS' }] },
+                                { title: 'Contrastive Calibration on Consensus and Complementary Multi-View Representations', primaryLink: "https://doi.org/10.1016/j.patcog.2026.113291", authors: 'N. Jabari, <strong>A. Seyedi</strong>, R. Mahmoodi, and F. Akhlaghian, <em>Pattern Recognition 2026</em>.', links: [{ icon: 'external-link', label: 'DOI', url: 'https://doi.org/10.1016/j.patcog.2026.113291' }, { icon: 'code', label: 'Source Code', url: 'https://github.com/neginjabbari/C4MV' }] },
+                                { title: 'Encoder-Decoder Symmetric Nonnegative Matrix Tri-Factorization for Graph Clustering', primaryLink: "https://doi.org/10.1109/ICASSP55912.2026.11460800", authors: '<strong>A. Seyedi</strong> and N. Gillis, <em>ICASSP 2026</em>.', links: [{ icon: 'external-link', label: 'DOI', url: 'https://doi.org/10.1109/ICASSP55912.2026.11460800' }, { icon: 'code', label: 'Source Code', url: 'https://github.com/amjadseyedi/ED-SNMTF' }] },
+                                { title: 'Semantic Encoder-Decoder Nonnegative Matrix Factorization with Kullback-Leibler Divergence', primaryLink: "https://doi.org/10.1007/s13042-025-02874-9", authors: 'S. Soleymanbaigi, <strong>A. Seyedi</strong>, F. Daneshfar, and F. Akhlaghian, <em>IJMLC 2026</em>.', links: [{ icon: 'external-link', label: 'DOI', url: 'https://doi.org/10.1007/s13042-025-02874-9' }] },
+                                { title: 'Community Detection via Deep Motif-regularized Asymmetric Nonnegative Matrix Factorization', primaryLink: "https://doi.org/10.1016/j.engappai.2025.113505", authors: 'H. Sohrabi, <strong>A. Seyedi</strong>, P. Moradi, and S. Esmaeili, <em>Engineering Applications of AI 2026</em>.', links: [{ icon: 'external-link', label: 'DOI', url: 'https://doi.org/10.1016/j.engappai.2025.113505' }, { icon: 'code', label: 'Source Code', url: 'https://github.com/sohrabi94/DMRA-NMF' }] },
+                                { title: 'Distributionally Robust Nonnegative Matrix Factorization with Self-Paced Adaptive Multi-Loss Fusion', primaryLink: "https://doi.org/10.1016/j.ins.2025.122823", authors: 'W. Barkhoda, <strong>A. Seyedi</strong>, N. Gillis, and F. Akhlaghian, <em>Information Sciences 2026</em>.', links: [{ icon: 'external-link', label: 'DOI', url: 'https://doi.org/10.1016/j.ins.2025.122823' }, { icon: 'code', label: 'Source Code', url: 'https://github.com/barkhoda/DRNMF-SP' }] },
+                                { title: 'Encoder-Decoder Nonnegative Matrix Factorization with β-Divergence for Data Clustering', primaryLink: "https://doi.org/10.1016/j.patcog.2025.112211", authors: 'S. Soleymanbaigi, <strong>A. Seyedi</strong>, F. Akhlaghian, and F. Daneshfar, <em>Pattern Recognition 2026</em>.', links: [{ icon: 'external-link', label: 'DOI', url: 'https://doi.org/10.1016/j.patcog.2025.112211' }] },
+                                { title: 'Instance-wise Distributionally Robust Nonnegative Matrix Factorization', primaryLink: "https://doi.org/10.1016/j.patcog.2025.111732", authors: 'W. Barkhoda, <strong>A. Seyedi</strong>, N. Gillis, and F. Akhlaghian, <em>Pattern Recognition 2026</em>.', links: [{ icon: 'external-link', label: 'DOI', url: 'https://doi.org/10.1016/j.patcog.2025.111732' }, { icon: 'code', label: 'Source Code', url: 'https://github.com/barkhoda/iDRNMF' }] },
+                            ]
+                        },
+                        {
+                            label: '2025',
+                            items: [
+                                { title: 'A Deep Latent Factor Graph Clustering with Fairness-Utility Trade-off Perspective', primaryLink: "https://arxiv.org/abs/2510.23507", authors: 'S. Ghodsi, <strong>A. Seyedi</strong>, T. Quy, F. Karimi, and E. Ntoutsi, <em>IEEE BigData 2025</em>.', links: [{ icon: 'code', label: 'Source Code', url: 'https://github.com/SiamakGhodsi/DFNMF' }, { icon: 'file-text', label: 'PDF', url: 'https://arxiv.org/abs/2510.23507' }] },
+                                { title: 'A New Bi-Level Deep Human Action Representation Structure based on the Sequence of Sub-Actions', primaryLink: "https://doi.org/10.1007/s00521-024-10370-4", authors: 'F. Akhlaghian, M. Ramezani, H. Afshoon, <strong>A. Seyedi</strong>, and A. Moradyani, <em>Neural Computing and Applications 2025</em>.', links: [{ icon: 'external-link', label: 'DOI', url: 'https://doi.org/10.1007/s00521-024-10370-4' }] },
+                            ]
+                        },
+                        {
+                            label: '2024',
+                            items: [
+                                { title: 'Diverse Joint Nonnegative Matrix Factorization for Attributed Graph Clustering', primaryLink: "https://doi.org/10.1016/j.asoc.2024.112012", authors: 'A. Mohammadi, <strong>A. Seyedi</strong>, F. Akhlaghian, and R. Pir Mohammadiani, <em>Applied Soft Computing 2024</em>.', links: [{ icon: 'external-link', label: 'DOI', url: 'https://doi.org/10.1016/j.asoc.2024.112012' }] },
+                                { title: 'Enhancing Link Prediction through Adversarial Training in Deep Nonnegative Matrix Factorization', primaryLink: "https://doi.org/10.1016/j.engappai.2024.108641", authors: 'R. Mahmoodi, <strong>A. Seyedi</strong>, A. Abdollahpouri, and F. Akhlaghian, <em>Engineering Applications of AI 2024</em>.', links: [{ icon: 'external-link', label: 'DOI', url: 'https://doi.org/10.1016/j.engappai.2024.108641' }] },
+                                { title: 'Towards Cohesion-Fairness Harmony: Contrastive Regularization in Individual Fair Graph Clustering', primaryLink: "https://doi.org/10.1007/978-981-97-2242-6_23", authors: 'S. Ghodsi, <strong>A. Seyedi</strong>, and E. Ntoutsi, <em>PAKDD 2024</em>.', links: [{ icon: 'code', label: 'Source Code', url: 'https://github.com/amjadseyedi/iFairNMTF' }, { icon: 'file-text', label: 'PDF', url: 'https://arxiv.org/pdf/2402.10756' }, { icon: 'external-link', label: 'DOI', url: 'https://doi.org/10.1007/978-981-97-2242-6_23' }] },
+                                { title: 'Orthogonal Encoder-Decoder Factorization for Unsupervised Feature Selection', primaryLink: "https://doi.org/10.1016/j.ins.2024.120277", authors: 'M. Mozafari, <strong>A. Seyedi</strong>, R. Pir Mohammadiani, and F. Akhlaghian, <em>Information Sciences 2024</em>.', links: [{ icon: 'external-link', label: 'DOI', url: 'https://doi.org/10.1016/j.ins.2024.120277' }] },
+                                { title: 'Multi-Label Feature Selection with Global and Local Label Correlation', primaryLink: "https://doi.org/10.1016/j.eswa.2024.123198", authors: 'M. Faraji, <strong>A. Seyedi</strong>, F. Akhlaghian, and R. Mahmoodi, <em>Expert Systems with Applications 2024</em>.', links: [{ icon: 'external-link', label: 'DOI', url: 'https://doi.org/10.1016/j.eswa.2024.123198' }] },
+                                { title: 'Deep Asymmetric Nonnegative Matrix Factorization for Graph Clustering', primaryLink: "https://doi.org/10.1016/j.patcog.2023.110179", authors: 'A. Hajiveiseh, <strong>A. Seyedi</strong>, and F. Akhlaghian, <em>Pattern Recognition 2024</em>.', links: [{ icon: 'external-link', label: 'DOI', url: 'https://doi.org/10.1016/j.patcog.2023.110179' }] },
+                            ]
+                        },
+                        {
+                            label: '2023 & Earlier',
+                            items: [
+                                { title: 'Link Prediction by Adversarial Nonnegative Matrix Factorization', primaryLink: "https://doi.org/10.1016/j.knosys.2023.110998", authors: 'R. Mahmoodi, <strong>A. Seyedi</strong>, F. Akhlaghian, and A. Abdollahpouri, <em>Knowledge-Based Systems 2023</em>.', links: [{ icon: 'external-link', label: 'DOI', url: 'https://doi.org/10.1016/j.knosys.2023.110998' }] },
+                                { title: 'Self-Supervised Semi-Supervised Nonnegative Matrix Factorization for Data Clustering', primaryLink: "https://doi.org/10.1016/j.patcog.2022.109282", authors: 'Jovan Chavoshinejad, <strong>Seyed Amjad Seyedi</strong>, Fardin Akhlaghian Tab, and Navid Salahian, <em>Pattern Recognition 2023</em>.', links: [{ icon: 'code', label: 'Source Code', url: 'https://github.com/ChavoshiNejad/S4NMF' }, { icon: 'external-link', label: 'DOI', url: 'https://doi.org/10.1016/j.patcog.2022.109282' }] },
+                                { title: 'Adversarial Elastic Deep Nonnegative Matrix Factorization for Matrix Completion', primaryLink: "https://doi.org/10.1016/j.ins.2022.11.120", authors: '<strong>Seyed Amjad Seyedi</strong>, Fardin Akhlaghian Tab, Abdulrahman Lotfi, Navid Salahian, and Jovan Chavoshinejad, <em>Information Sciences 2023</em>.', links: [{ icon: 'code', label: 'Source Code', url: 'https://github.com/amjadseyedi/EADNMF' }, { icon: 'external-link', label: 'DOI', url: 'https://doi.org/10.1016/j.ins.2022.11.120' }] },
+                                { title: 'Deep Autoencoder-Like NMF with Contrastive Regularization and Feature Relationship Preservation', primaryLink: "https://doi.org/10.1016/j.eswa.2022.119051", authors: 'Navid Salahian, Fardin Akhlaghian Tab, <strong>Seyed Amjad Seyedi</strong>, and Jovan Chavoshinejad, <em>Expert Systems with Applications 2023</em>.', links: [] },
+                                { title: 'Asymmetric Semi-Nonnegative Matrix Factorization for Directed Graph Clustering', primaryLink: "https://doi.org/10.1109/ICCKE50421.2020.9303649", authors: 'R. Abdollahi, <strong>A. Seyedi</strong>, and M. R. Noorimehr, <em>ICCKE 2020</em>.', links: [] },
+                                { title: 'A Weakly-Supervised Factorization Method with Dynamic Graph Embedding', primaryLink: "https://doi.org/10.1109/AISP.2017.8324084", authors: '<strong>A. Seyedi</strong>, P. Moradi, and F. Akhlaghian Tab, <em>AISP 2017</em>.', links: [] },
+                                { title: 'A Clustering-based Matrix Factorization Method to Improve the Accuracy of Recommendation Systems', primaryLink: "https://doi.org/10.1109/IranianCEE.2017.7985435", authors: 'Z. Shajarian, <strong>A. Seyedi</strong>, and P. Moradi, <em>ICEE 2017</em>.', links: [] },
+                                { title: 'An Improved Density Peaks Method for Data Clustering', primaryLink: "https://doi.org/10.1109/ICCKE.2016.7802150", authors: 'A. Lotfi, <strong>A. Seyedi</strong>, and P. Moradi, <em>ICCKE 2016</em>.', links: [] },
+                                { title: 'Self-Paced Multi-Label Learning with Diversity', primaryLink: "http://proceedings.mlr.press/v101/seyedi19a.html", authors: '<strong>A. Seyedi</strong>, S. Ghodsi, F. Akhlaghian, M. Jalili, and P. Moradi, <em>ACML 2019</em>.', links: [{ icon: 'code', label: 'Source Code', url: 'https://github.com/amjadseyedi/SPMLD' }] },
+                                { title: 'Dynamic Graph-based Label Propagation for Density Peaks Clustering', primaryLink: "https://doi.org/10.1016/j.eswa.2018.07.075", authors: '<strong>A. Seyedi</strong>, A. Lotfi, P. Moradi, and N.N. Qader, <em>Expert Systems with Applications 2019</em>.', links: [{ icon: 'external-link', label: 'DOI', url: 'https://doi.org/10.1016/j.eswa.2018.07.075' }] },
+                            ]
+                        }
+                    ],
+                },
+                educations: {
+                    title: 'Education',
+                    items: [
+                        {
+                            degree: 'PhD in Mathematics & Operational Research',
+                            period: 'Jun 2024 – Present',
+                            institution: 'University of Mons (UMONS), Mons, Belgium',
+                            details: 'Thesis: <em>Advancing Matrix Factorization Models for Trustworthy Machine Learning and Signal Processing</em><br>Advisor: Prof. Nicolas Gillis &nbsp;|&nbsp; Co-advisor: Prof. Arnaud Vandaele<br>PhD confirmation: June 2026 &nbsp;|&nbsp; Expected defense: June 2027<br>Topics: low-rank approximation, optimization, robust and trustworthy machine learning'
+                        },
+                        {
+                            degree: "Master's Degree in Artificial Intelligence",
+                            period: 'Sep 2015 – Feb 2018',
+                            institution: 'University of Kurdistan, Sanandaj, Iran',
+                            details: 'Thesis: <em>"A Graph-based Semi-Supervised Learning Approach for Multi-Label Classification"</em><br>Supervisor: Dr. Parham Moradi &nbsp;|&nbsp; Advisor: Dr. Fardin Akhlaghian Tab<br>Topics: semi-supervised learning, multi-label learning, matrix factorization'
+                        },
+                        {
+                            degree: "Bachelor's Degree in Software Engineering",
+                            period: 'Jan 2012 – Jun 2014',
+                            institution: 'Amirkabir Technical College, Arak, Iran',
+                            details: 'Project: <em>Manufacturing and Setting up a Video Conferencing Software</em>'
+                        },
+                        {
+                            degree: 'Associate Degree in Computer Software',
+                            period: 'Jan 2009 – Jun 2011',
+                            institution: 'Technical College of Tabriz, Tabriz, Iran',
+                            details: ''
+                        },
+                    ],
+                },
+                experiences: {
+                    title: 'Experience',
+                    items: [
+                        { title: 'Visiting Researcher (scheduled)', period: 'Jan 2027 – Mar 2027', institution: 'Inria, Montpellier, France', details: 'Host: Dr. Aurélien Bellet<br>Topic: Low-rank matrix factorization methods for federated learning.' },
+
+                        {
+                            title: 'Team Leader & Thesis Advisor',
+                            period: 'Sep 2020 – Jun 2024',
+                            institution: 'Algebraic Machine Learning (AML) Team, University of Kurdistan, Iran',
+                            details: 'Led research in representation learning, matrix factorization, semi-supervised learning, robustness and sparse coding. Supported 13 completed master’s theses; currently advising one PhD and one master’s student.'
+                        },
+                        {
+                            title: 'Graduate Research Assistant',
+                            period: 'Sep 2019 – Jun 2024',
+                            institution: 'Representation Learning Lab, University of Kurdistan, Iran',
+                            details: 'Research on matrix factorization, distributionally robust learning, generalization and adversarial training, including image inpainting and recommender systems.'
+                        },
+                        {
+                            title: 'Teaching Assistant',
+                            period: 'Jan 2019 – Jun 2024',
+                            institution: 'University of Kurdistan, Iran',
+                            details: '<strong>Advanced Concepts in Artificial Intelligence</strong> (Graduate), Spring & Fall 2023<br><strong>Nonnegative Matrix Factorization for Machine Learning</strong> (Graduate), Fall 2022<br><strong>Pattern Recognition</strong> (Graduate), Spring 2019–Spring 2023<br><strong>Special Topics in Artificial Intelligence</strong> (Graduate), Fall 2021'
+                        },
+                        {
+                            title: 'Lab Instructor',
+                            period: 'Fall 2019',
+                            institution: 'University of Kurdistan, Iran',
+                            details: 'Course: Computer Lab'
+                        },
+                    ],
+                },
+                students: {
+                    title: 'Supervised Students & Alumni',
+                    currentTitle: 'Current PhD Students',
+                    alumniTitle: "Master's Alumni",
+                    tableHeaders: ['Student', 'Supervisor(s)', 'Years', 'Research Topic', 'Current Position'],
+                    currentStudents: [
+                        { name: 'Wafa Barkhoda', link: 'https://scholar.google.com/citations?hl=en&user=bDDX7RIAAAAJ', supervisor: 'Dr. Akhlaghian', years: '2022–Present', topic: 'Distributionally robust optimization', position: 'Faculty member at Kermanshah University of Technology' },
+                    ],
+                    alumni: [
+                        { name: 'Zahra Mohsenirad', link: null, supervisor: 'Dr. Akhlaghian', years: '2023–2026', topic: 'Hyperspectral unmixing', position: '' },
+                        { name: 'Shirin Moradi', link: 'https://scholar.google.com/citations?hl=en&user=JB4CVBAAAAAJ', supervisor: 'Dr. Akhlaghian', years: '2022–2025', topic: 'Anomaly detection in hyperspectral images', position: '' },
+                        { name: 'Sarina Khaledian', link: null, supervisor: 'Dr. Akhlaghian', years: '2022–2025', topic: 'Popularity bias, diversity, and fairness in recommendation', position: '' },
+                        { name: 'Negin Jabari', link: 'https://scholar.google.com/citations?user=ur2HXGUAAAAJ&hl=en', supervisor: 'Dr. Akhlaghian', years: '2023–2025', topic: 'Multi-view representation', position: '' },
+                        { name: 'Sayvan Soleymanbeigi', link: 'https://scholar.google.com/citations?user=8uql40MAAAAJ&hl=en', supervisor: 'Dr. Akhlaghian & Dr. Daneshfar', years: '2022–2024', topic: 'Topic modeling, text clustering', position: 'Generative AI Engineer at Trifay Hataw' },
+                        { name: 'Arina Mohammadi', link: 'https://scholar.google.com/citations?user=-1AZPGkAAAAJ&hl=en', supervisor: 'Dr. Akhlaghian & Dr. Pir Mohammadiani', years: '2021–2023', topic: 'Attributed graph clustering', position: '' },
+                        { name: 'Mohammad Faraji', link: 'https://scholar.google.com/citations?user=S8QF7LMAAAAJ&hl=en', supervisor: 'Dr. Akhlaghian', years: '2021–2023', topic: 'Multi-label feature selection', position: '' },
+                        { name: 'Akram Hajiveiseh', link: 'https://scholar.google.com/citations?user=0VjfV-YAAAAJ&hl=en', supervisor: 'Dr. Akhlaghian', years: '2020–2023', topic: 'Directed graph clustering', position: 'Research fellow at Edinburgh Napier University' },
+                        { name: 'Maryam Mozafari', link: 'https://scholar.google.com/citations?user=jIh78k8AAAAJ&hl=en', supervisor: 'Dr. Akhlaghian & Dr. Pir Mohammadiani', years: '2021–2022', topic: 'Unsupervised feature selection', position: 'PhD student at University of Quebec in Outaouais' },
+                    ],
+                },
+                services: {
+                    title: 'Professional Services',
+                    reviewerTitle: 'Journal Reviewer',
+                    confReviewerTitle: 'Conference Reviewer',
+                    journals: [
+                        'Artificial Intelligence Review',
+                        'Computers and Electrical Engineering',
+                        'Digital Signal Processing',
+                        'Engineering Applications of Artificial Intelligence',
+                        'Expert Systems with Applications',
+                        'Information Fusion',
+                        'Information Processing & Management',
+                        'Information Sciences',
+                        'International Journal of Machine Learning and Cybernetics',
+                        'Journal of Computational and Applied Mathematics',
+                        'Journal of Information and Intelligence',
+                        'Knowledge-Based Systems',
+                        'Mathematics',
+                        'Medical Image Analysis',
+                        'Neurocomputing',
+                        'IEEE Transactions on Neural Networks and Learning Systems',
+                        'Pattern Recognition',
+                        'Scientific Reports',
+                        'Signal Processing',
+                        'ACM Transactions on Intelligent Systems and Technology',
+                    ],
+                    conferences: [
+                        'AAAI Conference on Artificial Intelligence (AAAI), 2027 — 6 papers',
+                        'IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2027 — 4 papers',
+                        'International Conference on Machine Learning (ICML), 2026 — 5 papers, Silver Reviewer',
+                        'IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2026',
+                    ],
+                },
+                teaching: {
+                    title: 'Teaching & Lecture Slides',
+                    courses: [
+                        { name: 'Advanced Concepts in Artificial Intelligence (Graduate)', period: 'Spring and Fall 2023' },
+                        { name: 'Nonnegative Matrix Factorization for Machine Learning (Graduate)', period: 'Fall 2022' },
+                        { name: 'Pattern Recognition (Graduate)', period: 'Spring 2019 – Spring 2023' },
+                        { name: 'Special Topics in Artificial Intelligence (Graduate)', period: 'Fall 2021' },
+                        { name: 'Computer Lab (Undergraduate)', period: 'Fall 2019 — two sections' },
+                    ],
+                    items: [
+                        { name: 'Introduction on Nonnegative Matrix Factorization', pdf: 'https://amjadseyedi.github.io/slides/NMF.pdf', context: 'Pattern Recognition (Master), Spring 2021 | Spring 2022', downloadLabel: 'Slides PDF' },
+                        { name: 'Introduction on Semi-Supervised Learning', pdf: 'https://amjadseyedi.github.io/slides/SSL.pdf', context: 'Pattern Recognition (Master), Fall 2019 | Spring 2020 | Spring 2022 | Spring 2023', downloadLabel: 'Slides PDF' },
+                        { name: 'Modern Machine Learning Paradigms', pdf: 'https://amjadseyedi.github.io/slides/SSL2.pdf', context: 'Special Topics in AI (Master), Fall 2021', downloadLabel: 'Slides PDF' },
+                        { name: 'Transformer Network', pdf: 'https://amjadseyedi.github.io/slides/Transformer.pdf', context: 'Advanced Topics in AI (PhD), Spring 2023', downloadLabel: 'Slides PDF' },
+                    ],
+                },
+                tools: {
+                    title: 'Mathematical Simulators',
+                    termTitle: 'Tilted Empirical Risk Minimization (TERM)'
+                },
+                academic: {
+                    interests: [
+                        'Machine Learning: representation learning, deep learning, and unsupervised learning',
+                        'Trustworthy ML: robustness, generalization, interpretability, and fairness',
+                        'Applications: healthcare, recommender systems, and remote sensing',
+                        'Applied Mathematics: linear algebra, optimization, and low-rank approximation'
+                    ],
+                    schools: [
+                        ['Oct 2025','CWI Autumn School: Scientific Machine Learning and Numerical Methods','CWI, Netherlands'],
+                        ['Oct 2025','SOCN: Stochastic Variance-Reduced Optimization Algorithms and Applications to Federated Learning','UCLouvain, Belgium'],
+                        ['Sep 2025','CWI PhD School: Machine Learning and Optimization','CWI, Netherlands'],
+                        ['Apr 2025','SOCN: Learning Theory from First Principles (Francis Bach)','KU Leuven, Belgium'],
+                        ['Mar 2025','Masterclass: Graphs, Data and AI (Jure Leskovec)','University of Antwerp, Belgium'],
+                        ['Oct 2024','Autumn School: Constrained Optimization and Machine Learning','Trier University, Germany']
+                    ],
+                    talks: [
+                        ['Oct 2026','ML4Hyper3D 2026, Lyon, France','Bilinear Nonnegative Matrix Factorization for Hyperspectral Unmixing'],
+                        ['Aug–Sep 2026','EUSIPCO 2026, Bruges, Belgium','Bilinear Nonnegative Matrix Factorization for Hyperspectral Unmixing'],
+                        ['May 2026','ICASSP 2026, Barcelona, Spain','Encoder-Decoder Symmetric Nonnegative Matrix Tri-Factorization for Graph Clustering'],
+                        ['Sep 2025','LRMA 2025, Mons, Belgium','Instance-wise distributionally robust nonnegative matrix factorization'],
+                        ['Feb 2025','Invited talk, STADIUS, KU Leuven, Belgium','Deep Matrix Factorizations for Data Representation'],
+                        ['Aug 2024','ALGOPT2024, UCLouvain, Belgium','Deep asymmetric nonnegative matrix factorization for graph clustering']
+                    ],
+                    skills: ['Python, PyTorch, NumPy, scikit-learn', 'MATLAB', 'C++, C#', 'LaTeX, Manim', 'Jupyter, Colab, PyCharm', 'Windows, Linux', 'Adobe Illustrator, Inkscape, Photoshop, GIMP'],
+                    references: [
+                        ['Prof. Nicolas Gillis','PhD supervisor, University of Mons','nicolas.gillis@umons.ac.be'],
+                        ['Prof. Arnaud Vandaele','PhD co-advisor, University of Mons','arnaud.vandaele@umons.ac.be'],
+                        ['Dr. Fardin Akhlaghian','MSc advisor and collaborator, University of Kurdistan','f.akhlaghian@uok.ac.ir'],
+                        ['Dr. Parham Moradi','MSc supervisor, Victoria University','parham.moradi@vu.edu.au']
+                    ]
+                },
+                searchPlaceholder: 'Search papers, courses, topics…',
+            },
+        };
+
+        
+        /* ── ESSENTIAL CORE JS FUNCTIONS ── */
+        function focusSearch() {
+            const input = document.getElementById('mainSearchInput');
+            if (input) input.focus();
+        }
+
+        function elevateWrapSmoothly(makeElevated) {
+            const wrap = document.getElementById('searchCapsuleWrap');
+            const before = wrap.getBoundingClientRect();
+            if (makeElevated) wrap.classList.add('elevated');
+            else wrap.classList.remove('elevated');
+            const after = wrap.getBoundingClientRect();
+            const deltaX = before.left - after.left;
+            const deltaY = before.top - after.top;
+            if (deltaX || deltaY) {
+                wrap.style.transition = 'none';
+                wrap.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+                // force reflow so the browser registers the starting point
+                void wrap.offsetHeight;
+                wrap.style.transition = '';
+                wrap.style.transform = '';
+            }
+        }
+
+        function onSearchFocus() {
+            
+            const input = document.getElementById('mainSearchInput');
+            requestAnimationFrame(function() {
+                elevateWrapSmoothly(true);
+                document.getElementById('profileSection').classList.add('hidden-state');
+                document.getElementById('sectionWidgetsGrid').classList.add('hidden-state');
+                document.getElementById('mobileLauncherGrid').style.display = 'none';
+                document.getElementById('siteFooter').classList.add('hidden-state');
+                document.getElementById('searchBackdrop').classList.add('visible');
+                document.getElementById('searchResultsArea').classList.add('visible');
+                updateResultsBody(input.value.trim().toLowerCase());
+                if (document.activeElement !== input) input.focus();
+            });
+        }
+
+        function handleSearchInput() {
+            if (!isSearchFocused) onSearchFocus();
+            const q = document.getElementById('mainSearchInput').value.trim().toLowerCase();
+            updateResultsBody(q);
+        }
+
+        function closeSearchResults() {
+            isSearchFocused = false;
+            infoCardVisible = false;
+            elevateWrapSmoothly(false);
+            document.getElementById('profileSection').classList.remove('hidden-state');
+            document.getElementById('sectionWidgetsGrid').classList.remove('hidden-state');
+            if (isMobile() && currentView === 'main') {
+                document.getElementById('mobileLauncherGrid').style.display = 'block';
+            }
+            document.getElementById('siteFooter').classList.remove('hidden-state');
+            document.getElementById('searchBackdrop').classList.remove('visible');
+            document.getElementById('searchResultsArea').classList.remove('visible');
+            const input = document.getElementById('mainSearchInput');
+            if (input) { input.value = ''; input.blur(); }
+            const body = document.getElementById('sraBody');
+            if (body) body.innerHTML = '';
+        }
+
+        function setResultView(mode) {
+            resultViewMode = mode;
+            const tw = document.getElementById('tabWidget');
+            const ti = document.getElementById('tabIndex');
+            if (tw) tw.classList.toggle('active-tab', mode === 'widget');
+            if (ti) ti.classList.toggle('active-tab', mode === 'index');
+            const input = document.getElementById('mainSearchInput');
+            const q = input ? input.value.trim().toLowerCase() : '';
+            updateResultsBody(q);
+        }
+
+        function setStudentViewMode(mode) {
+            studentViewMode = mode;
+            const container = document.getElementById('subStudents');
+            if (container && currentView === 'students') {
+                renderSubPage('students', container);
+            }
+        }
+
+        function toggleTheme() {
+            const current = document.documentElement.getAttribute('data-theme') || 'light';
+            const next = current === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+            if (document.getElementById('scThemeIcon')) {
+                document.getElementById('scThemeIcon').setAttribute('data-lucide', next === 'dark' ? 'moon' : 'sun');
+            }
+            updateMobileTopActions();
+            refreshIcons();
+        }
+
+
+
+                const BRAND_SVGS = {
+            linkedin: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.74a1.63 1.63 0 1 0 0 3.26 1.63 1.63 0 0 0 0-3.26Z"/></svg>',
+            github: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg>',
+            'graduation-cap': '<i data-lucide="graduation-cap" style="width:16px;height:16px;"></i>',
+            microscope: '<i data-lucide="microscope" style="width:16px;height:16px;"></i>',
+            database: '<i data-lucide="database" style="width:16px;height:16px;"></i>',
+            link: '<i data-lucide="link" style="width:16px;height:16px;"></i>',
+            'file-text': '<i data-lucide="file-text" style="width:16px;height:16px;"></i>'
+        };
+
+        function showInfoCard() {
+            if (isSearchFocused) closeSearchResults();
+            
+            const d = data.main;
+            document.getElementById('infoModalName').textContent = d.name;
+            document.getElementById('infoModalTitle').textContent = d.title;
+            document.getElementById('infoModalBio').innerHTML = stripHtml(d.bio).substring(0, 240) + '…';
+            
+            document.getElementById('isbPapers').textContent = 'Papers';
+            document.getElementById('isbDegrees').textContent = 'Degrees';
+            document.getElementById('isbStudents').textContent = 'Students';
+            document.getElementById('isbReviewer').textContent = 'Reviewer';
+            
+            let html = '';
+            (d.infoLinks || []).forEach(l => {
+                const iconSvg = BRAND_SVGS[l.icon] || '<i data-lucide="external-link" style="width:16px;height:16px;"></i>';
+                html += '<a href="' + l.url + '" target="_blank" class="pill-link" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:16px;font-weight:600;">' + iconSvg + ' ' + l.label + '</a>';
+            });
+            document.getElementById('infoModalLinks').innerHTML = html;
+            
+            document.getElementById('infoModalBackdrop').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            refreshIcons();
+        }
+
+        function closeInfoModal() {
+            document.getElementById('infoModalBackdrop').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Normalize case, punctuation, accented characters and common academic abbreviations.
+        const SEARCH_ALIASES = {
+            'tnnls': 'ieee transactions on neural networks and learning systems',
+            'ijmlc': 'international journal of machine learning and cybernetics',
+            'eswa': 'expert systems with applications',
+            'eaai': 'engineering applications of artificial intelligence',
+            'icml': 'international conference on machine learning',
+            'aaai': 'aaai conference on artificial intelligence',
+            'icassp': 'ieee international conference on acoustics speech and signal processing',
+            'nmf': 'nonnegative matrix factorization',
+            'umons': 'university of mons'
+        };
+        function normalizedSearch(value) {
+            return String(value || '').normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
+                .toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim().replace(/\s+/g, ' ');
+        }
+        function matchedTerms(item, q) {
+            const normalizedQuery = normalizedSearch(q);
+            if (!normalizedQuery) return 1;
+            const alias = SEARCH_ALIASES[normalizedQuery];
+            const terms = (alias ? alias : normalizedQuery).split(' ').filter(Boolean);
+            const text = normalizedSearch([item.title, item.desc, item.searchText, item.cat].join(' '));
+            return terms.every(term => text.includes(term));
+        }
+        function searchRank(item, q) {
+            const needle = normalizedSearch(q);
+            if (!needle) return 0;
+            const title = normalizedSearch(item.title), description = normalizedSearch(item.desc);
+            if (title === needle) return 100;
+            if (title.startsWith(needle)) return 80;
+            if (title.includes(needle)) return 65;
+            if (description.includes(needle)) return 38;
+            return 15;
+        }
+        function escapeSearchHtml(input) {
+            return String(input || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+        }
+        function updateResultsBody(q) {
+            const body = document.getElementById('sraBody');
+            if (!body) return;
+            body.className = 'sra-body hidden-scroll ' + (resultViewMode === 'widget' ? 'grid-view' : 'list-view');
+            const hits = (q ? searchIndex.filter(i => matchedTerms(i, q)) : searchIndex.slice(0, 12))
+                .map(i => ({ item: i, index: searchIndex.indexOf(i), rank: searchRank(i, q) }))
+                .sort((a,b) => b.rank-a.rank || a.index-b.index);
+            if (!hits.length) {
+                body.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:34px;color:var(--text-muted);">No results found</div>';
+                return;
+            }
+            body.innerHTML = hits.map(({item:i,index}) =>
+                '<button type="button" class="sra-result-card" style="text-align:left;font:inherit;color:inherit;width:100%;" onclick="openSearchResult('+ index +')" aria-label="Open '+escapeSearchHtml(i.title)+'">' +
+                '<div style="display:flex;align-items:center;gap:10px;"><div style="width:34px;height:34px;border-radius:10px;background:var(--accent-soft);color:var(--accent);display:flex;align-items:center;justify-content:center;"><i data-lucide="'+ escapeSearchHtml(i.icon) +'" style="width:16px;height:16px;"></i></div>' +
+                '<div><div style="font-weight:700;font-size:0.88rem;color:var(--text);">'+escapeSearchHtml(i.title)+'</div><div style="font-size:0.65rem;font-weight:700;color:var(--accent);text-transform:uppercase;">'+escapeSearchHtml(i.cat)+'</div></div></div>' +
+                (i.desc ? '<div style="font-size:0.75rem;color:var(--text-secondary);margin-top:4px;">'+escapeSearchHtml(i.desc)+'</div>' : '') +
+                '</button>').join('');
+            refreshIcons();
+        }
+
+        let currentView = 'main';
+        let data = CONTENT.en;
+        let searchIndex = [];
+        let widgetItems = [];
+        let resultViewMode = 'widget';
+        let studentViewMode = 'widget';
+        let pubViewMode = 'list';
+
+        function setPubViewMode(mode) {
+            pubViewMode = mode;
+            const container = document.getElementById('subPublications');
+            if (container && currentView === 'publications') {
+                renderSubPage('publications', container);
+            }
+        }
+        let isSearchFocused = false;
+        let isDeckExpanded = false;
+        let infoCardVisible = false;
+        let morphOpen = false;
+
+        function isMobile() { return window.innerWidth <= 768; }
+
+        function stripHtml(html) {
+            const tmp = document.createElement('div');
+            tmp.innerHTML = html;
+            return tmp.textContent || tmp.innerText || '';
+        }
+
+                function refreshIcons() {
+            if (window.lucide && typeof lucide.createIcons === 'function') {
+                lucide.createIcons({
+                    attrs: {
+                        'stroke-width': '1.75',
+                        'stroke-linecap': 'round',
+                        'stroke-linejoin': 'round'
+                    }
+                });
+            }
+        }
+
+        function targetId(kind, value) {
+            return 'item-' + kind + '-' + Array.from(String(value)).reduce((h,c) => ((h * 31 + c.charCodeAt(0)) >>> 0),7).toString(36);
+        }
+        function buildIndexAndWidgets(d) {
+            const idx = [], widgets = [];
+            const secKeys = ['publications', 'educations', 'experiences', 'students', 'services', 'teaching'];
+            secKeys.forEach(key => {
+                const section = d.main.sections[key];
+                if (section) widgets.push({id:key,label:section.label,desc:section.desc,icon:section.icon});
+            });
+            function add(title, cat, view, desc, searchText, icon, anchor) {
+                idx.push({title,cat,view,desc:desc || '',searchText:searchText || '',icon:icon || 'file-text',anchor});
+            }
+            const academic = d.academic || {};
+            add(d.main.name, 'About', 'main', 'PhD Researcher · University of Mons', stripHtml(d.main.bio) + ' ' + d.main.title + ' ' + d.main.address, 'user', 'profileSection');
+            (academic.interests || []).forEach(t => add(t, 'Research Interests', 'experiences', 'Research interests', t, 'lightbulb', targetId('interest',t)));
+            (d.publications?.years || []).forEach(year => (year.items || []).forEach(p => add(p.title, 'Publication · ' + year.label, 'publications', stripHtml(p.authors), year.label + ' ' + stripHtml(p.authors) + ' ' + (p.primaryLink || '') + ' ' + (p.links || []).map(l => l.label + ' ' + l.url).join(' '), 'file-text', publicationId(p.title))));
+            (d.educations?.items || []).forEach(e => add(e.degree, 'Education', 'educations', e.institution + ' · ' + (e.period || ''), stripHtml(e.details || '') + ' ' + e.institution + ' ' + e.period, 'graduation-cap', educationId(e.degree)));
+            (d.experiences?.items || []).forEach(e => add(e.title, 'Experience', 'experiences', e.institution + ' · ' + (e.period || ''), stripHtml(e.details || '') + ' ' + e.institution + ' ' + e.period, 'briefcase', targetId('experience',e.title)));
+            (d.students?.currentStudents || []).forEach(st => add(st.name, 'Current Student', 'students', st.topic, [st.supervisor,st.years,st.position,st.topic].join(' '), 'user', targetId('student',st.name)));
+            (d.students?.alumni || []).forEach(st => add(st.name, 'MSc Alumni', 'students', st.topic, [st.supervisor,st.years,st.position,st.topic].join(' '), 'user', targetId('student',st.name)));
+            (d.services?.journals || []).forEach(j => add(j, 'Journal Reviewer', 'services', 'Peer-review service', 'journal reviewing peer review ' + j, 'award', targetId('journal',j)));
+            (d.services?.conferences || []).forEach(c => add(c, 'Conference Reviewer', 'services', 'Peer-review service', 'conference reviewing peer review ' + c, 'award', targetId('conference',c)));
+            (d.teaching?.courses || []).forEach(c => add(c.name, 'Teaching · Course', 'teaching', c.period, c.period + ' graduate undergraduate course', 'library', targetId('course',c.name)));
+            (d.teaching?.items || []).forEach(t => add(t.name, 'Teaching · Slides', 'teaching', t.context || 'Lecture slides', (t.context || '') + ' ' + (t.pdf || ''), 'file', targetId('slide',t.name)));
+            (academic.talks || []).forEach(r => add(r[2], 'Talks & Presentations', 'experiences', r[1] + ' · ' + r[0], r.join(' '), 'mic', targetId('talk',r.join('|'))));
+            (academic.schools || []).forEach(r => add(r[1], 'Courses & Schools', 'educations', r[2] + ' · ' + r[0], r.join(' '), 'graduation-cap', targetId('school',r.join('|'))));
+            (academic.skills || []).forEach(skill => add(skill, 'Technical Skills', 'services', 'Programming & tools', skill, 'code', targetId('skill',skill)));
+            (academic.references || []).forEach(ref => add(ref[0], 'Academic Reference', 'services', ref[1], ref.join(' '), 'contact', targetId('reference',ref[0])));
+            searchIndex = idx;
+            widgetItems = widgets;
+            return {idx,widgets};
+        }
+
+        function renderDeck() {
+            const deck = document.getElementById('floatingDeck');
+            if (isMobile()) { deck.innerHTML = ''; return; }
+            deck.innerHTML = '';
+            const isMain = currentView === 'main';
+
+            const topBtn = document.createElement('button');
+            topBtn.className = 'deck-btn';
+            if (isMain) {
+                topBtn.innerHTML = '<span class="deck-icon-slot"><i data-lucide="menu" style="width:18px;height:18px;"></i></span><span class="deck-tooltip">DECK</span>';
+                topBtn.onclick = function(e) { e.stopPropagation(); toggleDeckExpand(); };
+            } else {
+                topBtn.innerHTML = '<span class="deck-icon-slot"><i data-lucide="home" style="width:18px;height:18px;"></i></span><span class="deck-tooltip">Home</span>';
+                topBtn.onclick = function() { navigateTo('main'); };
+            }
+            deck.appendChild(topBtn);
+
+            const d1 = document.createElement('div');
+            d1.className = 'deck-divider';
+            deck.appendChild(d1);
+
+            ['publications', 'educations', 'experiences', 'students', 'services', 'teaching', ].forEach(id => {
+                const w = widgetItems.find(wi => wi.id === id);
+                if (!w) return;
+                const btn = document.createElement('button');
+                btn.className = 'deck-btn nav-deck-item' + (id === currentView ? ' active' : '');
+                btn.dataset.view = id;
+                btn.innerHTML = '<span class="deck-icon-slot"><i data-lucide="' + w.icon + '" style="width:18px;height:18px;"></i></span><span class="deck-expand-line"></span><span class="deck-expand-label">' + w.label + '</span><span class="deck-tooltip">' + w.label + '</span>';
+                btn.onclick = function() { navigateTo(id); collapseDeck(); };
+                deck.appendChild(btn);
+            });
+
+            const d2 = document.createElement('div');
+            d2.className = 'deck-divider';
+            deck.appendChild(d2);
+
+// Utility buttons moved to sub-page headers and main UI
+
+            if (isDeckExpanded) deck.classList.add('expanded');
+            else deck.classList.remove('expanded');
+            refreshIcons();
+        }
+
+        function toggleDeckExpand() {
+            isDeckExpanded = !isDeckExpanded;
+            document.getElementById('floatingDeck').classList.toggle('expanded', isDeckExpanded);
+        }
+
+        function collapseDeck() {
+            isDeckExpanded = false;
+            document.getElementById('floatingDeck').classList.remove('expanded');
+        }
+
+        function renderWidgetGrid() {
+            const grid = document.getElementById('sectionWidgetsGrid');
+            if (isMobile()) { grid.innerHTML = ''; return; }
+            const order = ['publications', 'educations', 'experiences', 'students', 'services', 'teaching'];
+            grid.innerHTML = order.map(id => {
+                const w = widgetItems.find(wi => wi.id === id);
+                if (!w) return '';
+                return `<div class="section-widget-item" onclick="navigateTo('${id}')">` +
+                       '<div class="sw-icon-wrap"><i data-lucide="' + w.icon + '" style="width:22px;height:22px;"></i></div>' +
+                       '<div class="sw-label">' + w.label + '</div>' +
+                       '<div class="sw-desc">' + w.desc + '</div></div>';
+            }).join('');
+            refreshIcons();
+        }
+
+                /* MOBILE 2 COLUMNS x 3 ROWS LAUNCHER GRID */
+        function renderMobileLauncher() {
+            const grid = document.getElementById('mobileLauncherGrid');
+            if (!isMobile()) { grid.innerHTML = ''; return; }
+            const order = ['publications', 'educations', 'experiences', 'students', 'services', 'teaching'];
+            grid.innerHTML = '<div class="mlg-inner">' + order.map(id => {
+                const w = widgetItems.find(wi => wi.id === id);
+                if (!w) return '';
+                return `<div class="mlg-item" onclick="navigateTo('${id}')">` +
+                       '<div class="mlg-icon-wrap"><i data-lucide="' + w.icon + '" style="width:26px;height:26px;"></i></div>' +
+                       '<div class="mlg-label">' + w.label + '</div>' +
+                       '<div class="mlg-desc">' + w.desc + '</div></div>';
+            }).join('') + '</div>';
+            refreshIcons();
+        }
+
+                                                function renderMobileFooterCapsule() {
+            const capsule = document.getElementById('mobileFooterCapsule');
+            const fog = document.getElementById('mobileBottomFog');
+            if (!isMobile() || currentView === 'main') {
+                capsule.classList.remove('visible');
+                capsule.style.display = 'none';
+                capsule.innerHTML = '';
+                if (fog) { fog.classList.remove('visible'); fog.style.display = 'none'; }
+                return;
+            }
+            capsule.classList.add('visible');
+            capsule.style.display = 'flex';
+            if (fog) { fog.classList.add('visible'); fog.style.display = 'block'; }
+            const order = ['publications', 'educations', 'experiences', 'students', 'services', 'teaching'];
+            const backIcon = 'arrow-left';
+            let html = `<button class="mfc-item back-home-btn" onclick="navigateTo('main')" title="Back to Home"><i data-lucide="${backIcon}" style="width:18px;height:18px;"></i></button>`;
+            order.forEach((id) => {
+                if (id === currentView) return;
+                const w = widgetItems.find(wi => wi.id === id);
+                if (!w) return;
+                html += `<button class="mfc-item" onclick="navigateTo('${id}')" title="${w.label}"><i data-lucide="${w.icon}" style="width:18px;height:18px;"></i></button>`;
+            });
+            capsule.innerHTML = html;
+            refreshIcons();
+        }
+
+        function updateMobileTopActions() {
+            const el = document.getElementById('mobileTopActions');
+            if (!isMobile() || currentView === 'main') { el.classList.remove('visible'); return; }
+            el.classList.add('visible');
+            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            document.getElementById('mtaThemeIcon').setAttribute('data-lucide', isDark ? 'moon' : 'sun');
+            refreshIcons();
+        }
+
+        function openMorph() {
+            showInfoCard();
+        }
+
+        function closeMorph() {
+            morphOpen = false;
+            document.getElementById('morphOverlay').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function navigateTo(viewId) {
+            currentView = viewId;
+            collapseDeck();
+            closeSearchResults();
+            if (morphOpen) closeMorph();
+
+            const landing = document.getElementById('landingContainer');
+            const subs = document.querySelectorAll('.sub-page-container');
+            const footer = document.getElementById('siteFooter');
+
+            if (viewId === 'main') {
+                landing.style.display = 'flex';
+                subs.forEach(c => c.classList.remove('active-view'));
+                document.getElementById('profileSection').classList.remove('hidden-state');
+                document.getElementById('sectionWidgetsGrid').classList.remove('hidden-state');
+                document.getElementById('mobileLauncherGrid').style.display = isMobile() ? 'block' : 'none';
+                footer.classList.remove('hidden-state');
+                document.getElementById('searchCapsuleWrap').classList.remove('elevated');
+                isSearchFocused = false;
+                infoCardVisible = false;
+                document.getElementById('searchBackdrop').classList.remove('visible');
+                document.getElementById('searchResultsArea').classList.remove('visible');
+                document.getElementById('mainSearchInput').value = '';
+            } else {
+                landing.style.display = 'none';
+                subs.forEach(c => c.classList.remove('active-view'));
+                const target = document.getElementById('sub' + viewId.charAt(0).toUpperCase() + viewId.slice(1));
+                if (target) {
+                    target.classList.add('active-view');
+                    renderSubPage(viewId, target);
+                }
+                document.getElementById('searchCapsuleWrap').classList.remove('elevated');
+                isSearchFocused = false;
+                infoCardVisible = false;
+                document.getElementById('searchBackdrop').classList.remove('visible');
+                document.getElementById('searchResultsArea').classList.remove('visible');
+                document.getElementById('mainSearchInput').value = '';
+                footer.classList.remove('hidden-state');
+                document.getElementById('mobileLauncherGrid').style.display = 'none';
+            }
+            renderDeck();
+            renderWidgetGrid();
+            renderMobileLauncher();
+            renderMobileFooterCapsule();
+            const isDarkTheme = document.documentElement.getAttribute('data-theme') === 'dark'; if (document.getElementById('scThemeIcon')) document.getElementById('scThemeIcon').setAttribute('data-lucide', isDarkTheme ? 'moon' : 'sun'); updateMobileTopActions();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function renderSubPage(viewId, container) {
+            const d = data;
+            const backIcon = 'arrow-left';
+            let html = '<div class="sub-header">';
+            html += '<div class="sub-profile-mini" onclick="showInfoCard()" style="cursor:pointer;" title="About Amjad Seyedi"><img src="data/jpg/amjad-seyedi-.jpg" alt="" class="spm-avatar" onerror="this.style.display=\'none\';" /><span class="spm-name">' + d.main.name + '</span></div>';
+            html += '<div class="sub-header-actions"><button class="action-icon-btn" onclick="toggleTheme()" title="Theme"><i data-lucide="' + (document.documentElement.getAttribute('data-theme') === 'dark' ? 'moon' : 'sun') + '" style="width:16px;height:16px;"></i></button></div>';
+            html += '</div><div class="sub-content-card">';
+
+            switch (viewId) {
+                case 'publications': html += renderPublications(d.publications); break;
+                case 'educations': html += renderEducations(d.educations); break;
+                case 'experiences': html += renderExperiences(d.experiences); break;
+                case 'students': html += renderStudents(d.students); break;
+                case 'services': html += renderServices(d.services); break;
+                case 'teaching': html += renderTeaching(d.teaching); break;
+                default: html += '<h2>Page not found</h2>';
+            }
+            html += '</div>';
+            container.innerHTML = html;
+            refreshIcons();
+        }
+
+                function publicationId(title) {
+            return 'paper-' + Array.from(title).reduce((h, c) => ((h * 31 + c.charCodeAt(0)) >>> 0), 7).toString(36);
+        }
+        function focusPublication(title) {
+            pubViewMode = 'list';
+            navigateTo('publications');
+            const el = document.getElementById(publicationId(title));
+            if (el) {
+                el.scrollIntoView({behavior:'smooth',block:'center'});
+                el.classList.add('publication-highlight');
+                history.replaceState(null, '', '#'+el.id);
+                setTimeout(() => el.classList.remove('publication-highlight'), 2500);
+            }
+        }
+        function focusEducation(degree) {
+            navigateTo('educations');
+            const el = document.getElementById(educationId(degree));
+            if (el) {
+                el.scrollIntoView({behavior:'smooth',block:'center'});
+                el.classList.add('publication-highlight');
+                history.replaceState(null, '', '#' + el.id);
+                setTimeout(() => el.classList.remove('publication-highlight'), 2500);
+            }
+        }
+        function educationId(degree) {
+            return 'education-' + Array.from(degree).reduce((h, c) => ((h * 31 + c.charCodeAt(0)) >>> 0), 7).toString(36);
+        }
+        function openSearchResult(index) {
+            const result = searchIndex[index];
+            if (!result) return;
+            if (result.view === 'publications') pubViewMode = 'list';
+            navigateTo(result.view);
+            if (result.view === 'main') {
+                document.getElementById('profileSection')?.scrollIntoView({behavior:'smooth',block:'center'});
+                return;
+            }
+            // Wait for the new section's markup and layout, then focus the actual matching record.
+            requestAnimationFrame(() => {
+                const el = result.anchor && document.getElementById(result.anchor);
+                if (!el) return;
+                el.scrollIntoView({behavior:'smooth',block:'center'});
+                el.classList.add('publication-highlight');
+                history.replaceState(null, '', '#' + el.id);
+                setTimeout(() => el.classList.remove('publication-highlight'), 2600);
+            });
+        }
+
+        function renderPublications(d) {
+            if (!d) return '<h2>No publications</h2>';
+            
+            
+            let h = '<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:18px;">' +
+                    '<h2 style="margin:0;"><i data-lucide="book-open"></i> ' + d.title + '</h2>' +
+                    '<div class="svt-container">' +
+                    '<button class="svt-icon-btn' + (pubViewMode === 'list' ? ' active' : '') + '" onclick="setPubViewMode(\'list\')" title="List View"><i data-lucide="list" style="width:16px;height:16px;"></i></button>' +
+                    '<span class="svt-divider">|</span>' +
+                    '<button class="svt-icon-btn' + (pubViewMode === 'timeline' ? ' active' : '') + '" onclick="setPubViewMode(\'timeline\')" title="Timeline View"><i data-lucide="git-commit" style="width:16px;height:16px;"></i></button>' +
+                    '</div></div>';
+
+            if (d.scholarlUrl) {
+                h += '<p style="margin:8px 0 16px;"><a href="' + d.scholarlUrl + '" target="_blank" class="pill-link"><i data-lucide="external-link"></i> Full profile on Google Scholar</a></p>';
+            }
+
+            if (pubViewMode === 'timeline') {
+                h += '<div class="pub-timeline-container"><div class="pub-timeline-track"></div>';
+                (d.years || []).forEach(yr => {
+                    h += '<div class="pub-tl-section">';
+                    h += '<div class="pub-tl-year-badge"><i data-lucide="clock" style="width:14px;height:14px;"></i> ' + yr.label + '</div>';
+                    (yr.items || []).forEach(item => {
+                        h += '<div class="pub-tl-item" id="' + publicationId(item.title) + '" onclick="this.classList.toggle(\'active\')">';
+                        h += '<div class="pub-tl-dot"></div>';
+                        h += '<div class="pub-tl-title-wrap">';
+                        h += '<div class="pub-tl-title"><a href="' + item.primaryLink + '" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" style="color:inherit;text-decoration:none;">' + item.title + '</a></div>';
+                        h += '<div class="pub-tl-popover">';
+                        h += '<div style="font-size:0.82rem;color:var(--text-secondary);margin-bottom:8px;">' + item.authors + '</div>';
+                        if (item.links && item.links.length) {
+                            h += '<div style="display:flex;flex-wrap:wrap;gap:6px;">';
+                            item.links.filter(l => l.url !== item.primaryLink && !/doi\.org\//i.test(l.url || '')).forEach(l => {
+                                h += '<a href="' + l.url + '" target="_blank" class="pill-link" onclick="event.stopPropagation();"><i data-lucide="' + (l.icon || 'external-link') + '"></i> ' + l.label + '</a>';
+                            });
+                            h += '</div>';
+                        }
+                        h += '</div></div></div>';
+                    });
+                    h += '</div>';
+                });
+                h += '</div>';
+            } else {
+                (d.years || []).forEach(yr => {
+                    h += '<h3 style="margin:22px 0 12px;font-weight:700;font-size:1.05rem;">' + yr.label + '</h3>';
+                    (yr.items || []).forEach(item => {
+                        h += '<div class="item-card" id="' + publicationId(item.title) + '"><div class="ic-title"><a href="' + item.primaryLink + '" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;">' + item.title + '</a></div>';
+                        h += '<div class="ic-sub">' + item.authors + '</div>';
+                        if (item.links && item.links.length) {
+                            h += '<div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;">';
+                            item.links.filter(l => l.url !== item.primaryLink && !/doi\.org\//i.test(l.url || '')).forEach(l => {
+                                h += '<a href="' + l.url + '" target="_blank" class="pill-link"><i data-lucide="' + (l.icon || 'external-link') + '"></i> ' + l.label + '</a>';
+                            });
+                            h += '</div>';
+                        }
+                        h += '</div>';
+                    });
+                });
+            }
+            return h;
+        }
+
+
+        function renderAcademicCards(title, records) {
+            if (!records || !records.length) return '';
+            let h = '<h3 style="margin:28px 0 12px;font-weight:750;font-size:1.03rem;">' + title + '</h3>';
+            records.forEach(r => {
+                h += '<div class="item-card" id="' + targetId(title === 'Courses & Schools' ? 'school' : 'talk',r.join('|')) + '" style="padding:14px 18px;"><div class="ic-title">' + r[1] + '</div><div class="ic-sub">' + r[0] + (r[2] ? ' · ' + r[2] : '') + '</div></div>';
+            });
+            return h;
+        }
+
+        function renderEducations(d) {
+            if (!d) return '<h2>No education</h2>';
+            let h = '<h2><i data-lucide="graduation-cap"></i> ' + d.title + '</h2>';
+            (d.items || []).forEach(item => {
+                h += '<div class="item-card" id="' + educationId(item.degree) + '">';
+                h += '<div class="ic-title">' + item.degree + '</div>';
+                if (item.period) h += '<div style="font-size:0.80rem;font-weight:600;color:var(--accent);margin:2px 0 4px;">' + item.period + '</div>';
+                h += '<div class="ic-sub" style="font-weight:600;">' + item.institution + '</div>';
+                if (item.details) h += '<div class="ic-sub" style="margin-top:6px;">' + item.details + '</div>';
+                h += '</div>';
+            });
+            const academic = CONTENT.en.academic;
+            h += renderAcademicCards('Courses & Schools', academic.schools);
+            return h;
+        }
+
+        function renderExperiences(d) {
+            if (!d) return '<h2>No experiences</h2>';
+            let h = '<h2><i data-lucide="briefcase"></i> ' + d.title + '</h2>';
+            (d.items || []).forEach(item => {
+                h += '<div class="item-card" id="' + targetId('experience',item.title) + '">';
+                h += '<div class="ic-title">' + item.title + '</div>';
+                if (item.period) h += '<div style="font-size:0.80rem;font-weight:600;color:var(--accent);margin:2px 0 4px;">' + item.period + '</div>';
+                h += '<div class="ic-sub" style="font-weight:600;">' + item.institution + '</div>';
+                if (item.details) h += '<div class="ic-sub" style="margin-top:6px;">' + item.details + '</div>';
+                h += '</div>';
+            });
+            const academic = CONTENT.en.academic;
+            h += renderAcademicCards('Talks & Presentations', academic.talks);
+            h += '<h3 style="margin:28px 0 12px;font-weight:750;">Research Interests</h3><div class="item-card">' + academic.interests.map(x=>'<p id="'+targetId('interest',x)+'" style="margin:6px 0;">'+x+'</p>').join('') + '</div>';
+            return h;
+        }
+
+                                function renderStudents(d) {
+            if (!d) return '<h2>No students</h2>';
+            
+            let h = '<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:18px;">' +
+                    '<h2 style="margin:0;"><i data-lucide="users"></i> ' + d.title + '</h2>' +
+                    '<div class="svt-container">' +
+                    '<button class="svt-icon-btn' + (studentViewMode === 'widget' ? ' active' : '') + '" onclick="setStudentViewMode(\'widget\')" title="Widget View"><i data-lucide="grid3x3" style="width:16px;height:16px;"></i></button>' +
+                    '<span class="svt-divider">|</span>' +
+                    '<button class="svt-icon-btn' + (studentViewMode === 'table' ? ' active' : '') + '" onclick="setStudentViewMode(\'table\')" title="Index View"><i data-lucide="list" style="width:16px;height:16px;"></i></button>' +
+                    '</div></div>';
+            
+            const defaultLink = '#';
+
+            function buildStudentGrid(list) {
+                if (!list || !list.length) return '';
+                let g = '<div class="student-grid">';
+                list.forEach(s => {
+                    const firstName = s.name.split(' ')[0].toLowerCase();
+                    const photoPath = 'data/jpg/' + firstName + '.jpg';
+                    const targetUrl = s.link ? s.link : defaultLink;
+                    const initials = s.name.split(' ').map(n => n[0]).join('').substring(0, 2);
+                    
+                    g += '<a href="' + targetUrl + '" ' + (s.link ? 'target="_blank"' : 'onclick="event.preventDefault()"') + ' class="student-photo-card" id="' + targetId('student',s.name) + '">' +
+                         '<div class="student-photo-wrap">' +
+                         '<img src="' + photoPath + '" alt="' + s.name + '" class="student-photo-img" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\';" />' +
+                         '<div class="student-photo-fallback">' + initials + '</div>' +
+                         '<div class="student-photo-overlay"><span class="student-name-label">' + s.name + '</span></div>' +
+                         '</div>' +
+                         '<div class="student-details-wrap">' +
+                         '<div class="student-topic">' + s.topic + '</div>' +
+                         '<div class="student-meta">' + s.years + (s.position ? ' • ' + s.position : '') + '</div>' +
+                         '</div>' +
+                         '</a>';
+                });
+                g += '</div>';
+                return g;
+            }
+
+            function buildStudentTable(list) {
+                if (!list || !list.length) return '';
+                let t = '<div style="overflow-x:auto;"><table class="glass-table"><thead><tr>';
+                (d.tableHeaders || []).forEach(th => t += '<th>' + th + '</th>');
+                t += '</tr></thead><tbody>';
+                list.forEach(s => {
+                    const targetUrl = s.link ? s.link : defaultLink;
+                    const nameCell = '<a href="' + targetUrl + '" target="_blank" style="color:var(--accent);text-decoration:none;font-weight:600;">' + s.name + '</a>';
+                    t += '<tr id="' + targetId('student',s.name) + '"><td>' + nameCell + '</td><td>' + (s.supervisor||'') + '</td><td>' + s.years + '</td><td>' + s.topic + '</td><td>' + (s.position||'') + '</td></tr>';
+                });
+                t += '</tbody></table></div>';
+                return t;
+            }
+
+            const currentList = d.currentStudents || [];
+            if (currentList.length) {
+                h += '<h3 style="margin:20px 0 10px;font-weight:700;">' + d.currentTitle + '</h3>';
+                h += studentViewMode === 'widget' ? buildStudentGrid(currentList) : buildStudentTable(currentList);
+            }
+
+            const alumniList = d.alumni || [];
+            if (alumniList.length) {
+                h += '<h3 style="margin:28px 0 10px;font-weight:700;">' + (d.alumniTitle || 'Alumni') + '</h3>';
+                h += studentViewMode === 'widget' ? buildStudentGrid(alumniList) : buildStudentTable(alumniList);
+            }
+            return h;
+        }
+
+        function renderServices(d) {
+            if (!d) return '<h2>No services</h2>';
+            let h = '<h2><i data-lucide="award"></i> ' + d.title + '</h2>';
+            h += '<h3 style="margin:18px 0 12px;font-weight:700;">' + d.reviewerTitle + '</h3>';
+            h += '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;">';
+            (d.journals || []).forEach(j => {
+                h += '<div class="item-card" id="' + targetId('journal',j) + '" style="padding:14px;margin:0;font-weight:500;font-size:0.85rem;">' + j + '</div>';
+            });
+            h += '</div>';
+            if (d.conferences && d.conferences.length) {
+                h += '<h3 style="margin:24px 0 12px;font-weight:700;">' + (d.confReviewerTitle || 'Conference Reviewer') + '</h3>';
+                h += '<div style="display:flex;flex-direction:column;gap:10px;">';
+                (d.conferences || []).forEach(c => {
+                    h += '<div class="item-card" id="' + targetId('conference',c) + '" style="padding:14px;margin:0;font-weight:500;font-size:0.85rem;">' + c + '</div>';
+                });
+                h += '</div>';
+            }
+            const academic = CONTENT.en.academic;
+            h += '<h3 style="margin:28px 0 12px;font-weight:750;">Technical Skills</h3><div class="item-card">' + academic.skills.map(skill => '<span id="' + targetId('skill',skill) + '" style="display:inline-block;margin:4px 8px 4px 0;">' + skill + '</span>').join(' · ') + '</div>';
+            h += '<h3 style="margin:28px 0 12px;font-weight:750;">Academic References</h3>';
+            academic.references.forEach(r=>{h += '<div class="item-card" id="'+targetId('reference',r[0])+'"><strong>'+r[0]+'</strong><div class="ic-sub">'+r[1]+'<br><a href="mailto:'+r[2]+'">'+r[2]+'</a></div></div>';});
+            return h;
+        }
+
+        function renderTeaching(d) {
+            if (!d) return '<h2>No teaching</h2>';
+            let h = '<h2><i data-lucide="library"></i> ' + d.title + '</h2>';
+            if (d.courses && d.courses.length) {
+                h += '<h3 style="margin:18px 0 12px;font-weight:700;">Courses Taught</h3>';
+                d.courses.forEach(c => {
+                    h += '<div class="item-card" id="' + targetId('course',c.name) + '"><div class="ic-title">' + c.name + '</div>';
+                    if (c.period) h += '<div class="ic-sub">' + c.period + '</div>';
+                    h += '</div>';
+                });
+            }
+            if (d.items && d.items.length) {
+                h += '<h3 style="margin:24px 0 12px;font-weight:700;">Lecture Slides</h3>';
+                h += '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;">';
+                d.items.forEach(item => {
+                    h += '<div class="item-card" id="' + targetId('slide',item.name) + '">';
+                    h += '<div class="ic-title">' + item.name + '</div>';
+                    if (item.context) h += '<div class="ic-sub" style="margin:6px 0 10px;font-size:0.78rem;">' + item.context + '</div>';
+                    h += '<a href="' + item.pdf + '" target="_blank" class="pill-link" style="margin-top:auto;"><i data-lucide="download"></i> ' + (item.downloadLabel || 'Download PDF') + '</a>';
+                    h += '</div>';
+                });
+                h += '</div>';
+            }
+            return h;
+        }
+        document.addEventListener('DOMContentLoaded', refreshIcons);
+        window.onload = function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            data = CONTENT.en;
+            buildIndexAndWidgets(data);
+            renderDeck();
+            renderWidgetGrid();
+            renderMobileLauncher();
+            renderMobileFooterCapsule();
+            updateMobileTopActions();
+            refreshIcons();
+
+            setTimeout(function() {
+                dismissIntro();
+            }, 1000);
+
+            const backdrop = document.getElementById('searchBackdrop');
+            if (backdrop) backdrop.addEventListener('click', closeSearchResults);
+            
+            document.addEventListener('click', function(e) {
+                if (isDeckExpanded && !isMobile()) {
+                    const deck = document.getElementById('floatingDeck');
+                    if (deck && !deck.contains(e.target)) collapseDeck();
+                }
+                if (isSearchFocused) {
+                    const wrap = document.getElementById('searchCapsuleWrap');
+                    const area = document.getElementById('searchResultsArea');
+                    if (wrap && !wrap.contains(e.target) && area && !area.contains(e.target)) {
+                        closeSearchResults();
+                    }
+                }
+            });
+        };
+    </script>
+</body>
+</html>
