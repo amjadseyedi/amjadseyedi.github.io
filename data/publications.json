@@ -7,7 +7,7 @@
       "items": [
         {
           "title": "Supervised Deep Multimodal Matrix Factorization for Interpretable Brain Network Analysis",
-          "primaryLink": "https://arxiv.org/pdf/2605.13312",
+          "primaryLink": "https://arxiv.org/abs/2605.13312",
           "authors": "<strong>A. Seyedi</strong>, Lifang He, Songlin Zhao, Akwum Onwunta, and Nicolas Gillis.",
           "links": [
             {
@@ -218,7 +218,7 @@
       "items": [
         {
           "title": "A Deep Latent Factor Graph Clustering with Fairness-Utility Trade-off Perspective",
-          "primaryLink": "https://arxiv.org/abs/2510.23507",
+          "primaryLink": "https://ieeexplore.ieee.org/abstract/document/11402535",
           "authors": "S. Ghodsi, <strong>A. Seyedi</strong>, T. Quy, F. Karimi, and E. Ntoutsi, <em>IEEE BigData 2025</em>.",
           "links": [
             {
