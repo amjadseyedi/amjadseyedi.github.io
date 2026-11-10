@@ -15,10 +15,20 @@
       "link": "https://scholar.google.com/citations?hl=en&user=bDDX7RIAAAAJ",
       "supervisor": "Dr. Akhlaghian",
       "years": "2022–Present",
-      "topic": "Distributionally robust optimization",
+      "topic": "distributionally robust optimization",
       "degreeDuringMentorship": "PhD",
       "mentorshipRole": "Research mentor",
-      "currentPosition": "Faculty member at Kermanshah University of Technology"
+      "currentPosition": "Faculty Member at Kermanshah University of Technology"
+    },
+    {
+      "name": "Erica Jourabchi",
+      "link": null,
+      "supervisor": "Dr. Akhlaghian",
+      "years": "2026–Present",
+      "topic": "multi-view clustering",
+      "degreeDuringMentorship": "MSc",
+      "mentorshipRole": "Research mentor",
+      "currentPosition": ""
     }
   ],
   "alumni": [
@@ -27,7 +37,7 @@
       "link": null,
       "supervisor": "Dr. Akhlaghian",
       "years": "2023–2026",
-      "topic": "Hyperspectral unmixing",
+      "topic": "hyperspectral unmixing",
       "degreeDuringMentorship": "MSc",
       "mentorshipRole": "Research mentor",
       "currentPosition": ""
@@ -37,17 +47,7 @@
       "link": "https://scholar.google.com/citations?hl=en&user=JB4CVBAAAAAJ",
       "supervisor": "Dr. Akhlaghian",
       "years": "2022–2025",
-      "topic": "Anomaly detection in hyperspectral images",
-      "degreeDuringMentorship": "MSc",
-      "mentorshipRole": "Research mentor",
-      "currentPosition": ""
-    },
-    {
-      "name": "Sarina Khaledian",
-      "link": null,
-      "supervisor": "Dr. Akhlaghian",
-      "years": "2022–2025",
-      "topic": "Popularity bias, diversity, and fairness in recommendation",
+      "topic": "anomaly detection in hyperspectral images",
       "degreeDuringMentorship": "MSc",
       "mentorshipRole": "Research mentor",
       "currentPosition": ""
@@ -57,7 +57,17 @@
       "link": "https://scholar.google.com/citations?user=ur2HXGUAAAAJ&hl=en",
       "supervisor": "Dr. Akhlaghian",
       "years": "2023–2025",
-      "topic": "Multi-view representation",
+      "topic": "multi-view representation",
+      "degreeDuringMentorship": "MSc",
+      "mentorshipRole": "Research mentor",
+      "currentPosition": ""
+    },
+    {
+      "name": "Sarina Khaledian",
+      "link": null,
+      "supervisor": "Dr. Akhlaghian",
+      "years": "2022–2025",
+      "topic": "popularity bias, diversity, and fairness in recommendation",
       "degreeDuringMentorship": "MSc",
       "mentorshipRole": "Research mentor",
       "currentPosition": ""
@@ -65,9 +75,9 @@
     {
       "name": "Sayvan Soleymanbeigi",
       "link": "https://scholar.google.com/citations?user=8uql40MAAAAJ&hl=en",
-      "supervisor": "Dr. Akhlaghian & Dr. Daneshfar",
+      "supervisor": "Dr. Akhlaghian and Dr. Daneshfar",
       "years": "2022–2024",
-      "topic": "Topic modeling, text clustering",
+      "topic": "topic modeling, text clustering",
       "degreeDuringMentorship": "MSc",
       "mentorshipRole": "Research mentor",
       "currentPosition": "Generative AI Engineer at Trifay Hataw"
@@ -75,9 +85,19 @@
     {
       "name": "Arina Mohammadi",
       "link": "https://scholar.google.com/citations?user=-1AZPGkAAAAJ&hl=en",
-      "supervisor": "Dr. Akhlaghian & Dr. Pir Mohammadiani",
+      "supervisor": "Dr. Akhlaghian and Dr. Pir Mohammadiani",
       "years": "2021–2023",
-      "topic": "Attributed graph clustering",
+      "topic": "attributed graph clustering",
+      "degreeDuringMentorship": "MSc",
+      "mentorshipRole": "Research mentor",
+      "currentPosition": ""
+    },
+    {
+      "name": "Setare Mohammadi",
+      "link": null,
+      "supervisor": "Dr. Akhlaghian",
+      "years": "2021–2023",
+      "topic": "robust representation learning",
       "degreeDuringMentorship": "MSc",
       "mentorshipRole": "Research mentor",
       "currentPosition": ""
@@ -87,30 +107,60 @@
       "link": "https://scholar.google.com/citations?user=S8QF7LMAAAAJ&hl=en",
       "supervisor": "Dr. Akhlaghian",
       "years": "2021–2023",
-      "topic": "Multi-label feature selection",
+      "topic": "multi-label feature selection",
       "degreeDuringMentorship": "MSc",
       "mentorshipRole": "Research mentor",
       "currentPosition": ""
+    },
+    {
+      "name": "Reza Mahmoodi",
+      "link": "https://scholar.google.com/citations?user=d8-bxRMAAAAJ&hl=en",
+      "supervisor": "Dr. Akhlaghian and Dr. Abdollahpouri",
+      "years": "2021–2022",
+      "topic": "link prediction",
+      "degreeDuringMentorship": "MSc",
+      "mentorshipRole": "Research mentor",
+      "currentPosition": "PhD student at University of Kurdistan"
     },
     {
       "name": "Akram Hajiveiseh",
       "link": "https://scholar.google.com/citations?user=0VjfV-YAAAAJ&hl=en",
       "supervisor": "Dr. Akhlaghian",
       "years": "2020–2023",
-      "topic": "Directed graph clustering",
+      "topic": "directed graph clustering",
       "degreeDuringMentorship": "MSc",
       "mentorshipRole": "Research mentor",
-      "currentPosition": "Research fellow at Edinburgh Napier University"
+      "currentPosition": "Research Fellow at Edinburgh Napier University University"
+    },
+    {
+      "name": "Jovan Chavoshinejad",
+      "link": "https://scholar.google.com/citations?user=ANttTRIAAAAJ&hl=en",
+      "supervisor": "Dr. Akhlaghian",
+      "years": "2020–2022",
+      "topic": "self-supervised/semi-supervised learning",
+      "degreeDuringMentorship": "MSc",
+      "mentorshipRole": "Research mentor",
+      "currentPosition": ""
+    },
+    {
+      "name": "Navid Salahian",
+      "link": "https://scholar.google.com/citations?user=a_Q67kIAAAAJ&hl=en",
+      "supervisor": "Dr. Akhlaghian",
+      "years": "2020–2022",
+      "topic": "unsupervised representation learning",
+      "degreeDuringMentorship": "MSc",
+      "mentorshipRole": "Research mentor",
+      "currentPosition": ""
     },
     {
       "name": "Maryam Mozafari",
       "link": "https://scholar.google.com/citations?user=jIh78k8AAAAJ&hl=en",
-      "supervisor": "Dr. Akhlaghian & Dr. Pir Mohammadiani",
+      "supervisor": "Dr. Akhlaghian and Dr. Pir Mohammadiani",
       "years": "2021–2022",
-      "topic": "Unsupervised feature selection",
+      "topic": "unsupervised feature selection",
       "degreeDuringMentorship": "MSc",
       "mentorshipRole": "Research mentor",
-      "currentPosition": "PhD student at University of Quebec in Outaouais"
+      "currentPosition": "PhD Student at Université du Québec en Outaouais"
     }
   ]
 }
