@@ -15,6 +15,11 @@
               "label": "arXiv PDF",
               "url": "https://arxiv.org/pdf/2605.13312"
             }
+            {
+              "icon": "code",
+              "label": "Source Code",
+              "url": "https://github.com/amjadseyedi/SD3MF"
+            }
           ]
         },
         {
@@ -38,7 +43,13 @@
           "title": "Distributionally Robust Multi-View Clustering with Anchor Graph Learning",
           "primaryLink": "https://doi.org/10.1016/j.eswa.2026.134005",
           "authors": "W. Barkhoda, <strong>A. Seyedi</strong>, and F. Akhlaghian, <em>Expert Systems with Applications 2027</em>.",
-          "links": []
+          "links": [
+            {
+              "icon": "code",
+              "label": "Source Code",
+              "url": "https://github.com/barkhoda/DR-MVC"
+            }
+          ]
         }
       ]
     },
@@ -382,25 +393,13 @@
           "title": "Asymmetric Semi-Nonnegative Matrix Factorization for Directed Graph Clustering",
           "primaryLink": "https://doi.org/10.1109/ICCKE50421.2020.9303649",
           "authors": "R. Abdollahi, <strong>A. Seyedi</strong>, and M. R. Noorimehr, <em>ICCKE 2020</em>.",
-          "links": []
-        },
-        {
-          "title": "A Weakly-Supervised Factorization Method with Dynamic Graph Embedding",
-          "primaryLink": "https://doi.org/10.1109/AISP.2017.8324084",
-          "authors": "<strong>A. Seyedi</strong>, P. Moradi, and F. Akhlaghian Tab, <em>AISP 2017</em>.",
-          "links": []
-        },
-        {
-          "title": "A Clustering-based Matrix Factorization Method to Improve the Accuracy of Recommendation Systems",
-          "primaryLink": "https://doi.org/10.1109/IranianCEE.2017.7985435",
-          "authors": "Z. Shajarian, <strong>A. Seyedi</strong>, and P. Moradi, <em>ICEE 2017</em>.",
-          "links": []
-        },
-        {
-          "title": "An Improved Density Peaks Method for Data Clustering",
-          "primaryLink": "https://doi.org/10.1109/ICCKE.2016.7802150",
-          "authors": "A. Lotfi, <strong>A. Seyedi</strong>, and P. Moradi, <em>ICCKE 2016</em>.",
-          "links": []
+          "links": [
+            {
+              "icon": "code",
+              "label": "Source Code",
+              "url": "https://github.com/amjadseyedi/RAsNMF"
+            }
+          ]
         },
         {
           "title": "Self-Paced Multi-Label Learning with Diversity",
@@ -423,6 +422,35 @@
               "icon": "external-link",
               "label": "DOI",
               "url": "https://doi.org/10.1016/j.eswa.2018.07.075"
+            },
+            {
+              "icon": "code",
+              "label": "Source Code",
+              "url": "https://github.com/amjadseyedi/DPC-DLP"
+            }
+          ]
+        }
+        {
+          "title": "A Weakly-Supervised Factorization Method with Dynamic Graph Embedding",
+          "primaryLink": "https://doi.org/10.1109/AISP.2017.8324084",
+          "authors": "<strong>A. Seyedi</strong>, P. Moradi, and F. Akhlaghian Tab, <em>AISP 2017</em>.",
+          "links": []
+        },
+        {
+          "title": "A Clustering-based Matrix Factorization Method to Improve the Accuracy of Recommendation Systems",
+          "primaryLink": "https://doi.org/10.1109/IranianCEE.2017.7985435",
+          "authors": "Z. Shajarian, <strong>A. Seyedi</strong>, and P. Moradi, <em>ICEE 2017</em>.",
+          "links": []
+        },
+        {
+          "title": "An Improved Density Peaks Method for Data Clustering",
+          "primaryLink": "https://doi.org/10.1109/ICCKE.2016.7802150",
+          "authors": "A. Lotfi, <strong>A. Seyedi</strong>, and P. Moradi, <em>ICCKE 2016</em>.",
+          "links": [
+            {
+              "icon": "code",
+              "label": "Source Code",
+              "url": "https://github.com/amjadseyedi/IDPC"
             }
           ]
         }
