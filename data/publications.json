@@ -11,25 +11,25 @@
           "authors": "<strong>A. Seyedi</strong>, Lifang He, Songlin Zhao, Akwum Onwunta, and Nicolas Gillis.",
           "links": [
             {
-              "icon": "file-text",
-              "label": "arXiv PDF",
-              "url": "https://arxiv.org/pdf/2605.13312"
-            },
-            {
               "icon": "code",
               "label": "Source Code",
               "url": "https://github.com/amjadseyedi/SD3MF"
+            },
+            {
+              "icon": "file-text",
+              "label": "PDF",
+              "url": "https://arxiv.org/pdf/2605.13312"
             }
           ]
         },
         {
           "title": "ECG-NAT: A Self-supervised Neighborhood Attention Transformer for Multi-lead ECG Classification",
-          "primaryLink": "https://arxiv.org/pdf/2605.13194",
+          "primaryLink": "https://arxiv.org/abs/2605.13194",
           "authors": "M. Gazeran, S. Soleymanbaigi, F. Daneshfar, <strong>A. Seyedi</strong>, and F. Akhlaghian.",
           "links": [
             {
               "icon": "file-text",
-              "label": "arXiv PDF",
+              "label": "PDF",
               "url": "https://arxiv.org/pdf/2605.13194"
             }
           ]
@@ -387,7 +387,13 @@
           "title": "Deep Autoencoder-Like NMF with Contrastive Regularization and Feature Relationship Preservation",
           "primaryLink": "https://doi.org/10.1016/j.eswa.2022.119051",
           "authors": "Navid Salahian, Fardin Akhlaghian Tab, <strong>Seyed Amjad Seyedi</strong>, and Jovan Chavoshinejad, <em>Expert Systems with Applications 2023</em>.",
-          "links": []
+          "links": [
+            {
+              "icon": "code",
+              "label": "Source Code",
+              "url": "https://github.com/amjadseyedi/DANMF_CRFR"
+            }
+          ]
         },
         {
           "title": "Asymmetric Semi-Nonnegative Matrix Factorization for Directed Graph Clustering",
