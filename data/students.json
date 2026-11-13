@@ -4,7 +4,7 @@
   "alumniTitle": "Former Students & Mentees",
   "tableHeaders": [
     "Student",
-    "Degree During Mentorship",
+    "Degree",
     "Years",
     "Research Topic",
     "Current Position"
@@ -50,7 +50,7 @@
       "topic": "anomaly detection in hyperspectral images",
       "degreeDuringMentorship": "MSc",
       "mentorshipRole": "Research mentor",
-      "currentPosition": ""
+      "currentPosition": "PhD student at Razi University, Iran"
     },
     {
       "name": "Negin Jabari",
