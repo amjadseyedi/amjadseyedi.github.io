@@ -1,0 +1,533 @@
+{
+  "title": "Publications & Preprints",
+  "scholarlUrl": "https://scholar.google.com/citations?user=gRU1aPYAAAAJ&hl=en",
+  "years": [
+    {
+      "label": "Preprints",
+      "items": [
+        {
+          "title": "Supervised Deep Multimodal Matrix Factorization for Interpretable Brain Network Analysis",
+          "primaryLink": "https://arxiv.org/abs/2605.13312",
+          "authors": "<strong>Amjad Seyedi</strong>, Lifang He, Songlin Zhao, Akwum Onwunta, and Nicolas Gillis.",
+          "links": [
+            {
+              "icon": "code",
+              "label": "Source Code",
+              "url": "https://github.com/amjadseyedi/SD3MF"
+            },
+            {
+              "icon": "file-text",
+              "label": "PDF",
+              "url": "https://arxiv.org/pdf/2605.13312"
+            }
+          ],
+          "arxivId": "2605.13312",
+          "citationYear": null
+        },
+        {
+          "title": "ECG-NAT: A Self-supervised Neighborhood Attention Transformer for Multi-lead ECG Classification",
+          "primaryLink": "https://arxiv.org/abs/2605.13194",
+          "authors": "Mahsa Gazeran, Sayvan Soleymanbaigi, Fatemeh Daneshfar, <strong>Amjad Seyedi</strong>, and Fardin Akhlaghian Tab.",
+          "links": [
+            {
+              "icon": "file-text",
+              "label": "PDF",
+              "url": "https://arxiv.org/pdf/2605.13194"
+            }
+          ],
+          "arxivId": "2605.13194",
+          "citationYear": null
+        }
+      ]
+    },
+    {
+      "label": "2027",
+      "items": [
+        {
+          "title": "Distributionally Robust Multi-View Clustering with Anchor Graph Learning",
+          "primaryLink": "https://doi.org/10.1016/j.eswa.2026.134005",
+          "authors": "Wafa Barkhoda, <strong>Amjad Seyedi</strong>, and Fardin Akhlaghian Tab, <em>Expert Systems with Applications 2027</em>.",
+          "links": [
+            {
+              "icon": "code",
+              "label": "Source Code",
+              "url": "https://github.com/barkhoda/DR-MVC"
+            }
+          ],
+          "doi": "10.1016/j.eswa.2026.134005",
+          "citationYear": "2027"
+        }
+      ]
+    },
+    {
+      "label": "2026",
+      "items": [
+        {
+          "title": "Bilinear Nonnegative Matrix Factorization for Hyperspectral Unmixing",
+          "primaryLink": "https://www.researchgate.net/profile/Amjad-Seyedi/publication/404900737_Bilinear_Nonnegative_Matrix_Factorization_for_Hyperspectral_Unmixing/links/6a06e41a39e45e75a6dcc627/Bilinear-Nonnegative-Matrix-Factorization-for-Hyperspectral-Unmixing.pdf",
+          "authors": "<strong>Amjad Seyedi</strong>, Arnauld Vandaele, and Nicolas Gillis, <em>EUSIPCO 2026</em>.",
+          "links": [
+            {
+              "icon": "code",
+              "label": "Source Code",
+              "url": "https://github.com/amjadseyedi/BiNMF"
+            }
+          ],
+          "bibtex": "@inproceedings{seyedi2026bilinear,\n  title = {Bilinear Nonnegative Matrix Factorization for Hyperspectral Unmixing},\n  author = {Seyedi, Amjad and Vandaele, Arnaud and Gillis, Nicolas},\n  booktitle = {European Signal Processing Conference (EUSIPCO)},\n  year = {2026},\n  url = {https://cmsworkshops.com/EUSIPCO2026/papers/accepted_papers.php}\n}",
+          "citationYear": "2026"
+        },
+        {
+          "title": "Robust Asymmetric Encoder-Decoder Nonnegative Matrix Factorization for Hyperspectral Anomaly Detection",
+          "primaryLink": "https://doi.org/10.1016/j.neucom.2026.133709",
+          "authors": "Shirin Moradi, <strong>Amjad Seyedi</strong>, Wafa Barkhoda, and Fardin Akhlaghian Tab, <em>Neurocomputing 2026</em>.",
+          "links": [
+            {
+              "icon": "external-link",
+              "label": "DOI",
+              "url": "https://doi.org/10.1016/j.neucom.2026.133709"
+            },
+            {
+              "icon": "code",
+              "label": "Source Code",
+              "url": "https://github.com/shirin-moradi/REDNMF"
+            }
+          ],
+          "doi": "10.1016/j.neucom.2026.133709",
+          "citationYear": "2026"
+        },
+        {
+          "title": "Robust log-based multi-label feature selection with dynamic label correlation and relevance–redundancy optimization",
+          "primaryLink": "https://doi.org/10.1016/j.knosys.2026.115825",
+          "authors": "Mohammad Faraji, <strong>Amjad Seyedi</strong>, and Fardin Akhlaghian Tab, <em>Knowledge-Based Systems 2026</em>.",
+          "links": [
+            {
+              "icon": "external-link",
+              "label": "DOI",
+              "url": "https://doi.org/10.1016/j.knosys.2026.115825"
+            },
+            {
+              "icon": "code",
+              "label": "Source Code",
+              "url": "https://github.com/FarajiMohammad/RLBMLFS"
+            }
+          ],
+          "doi": "10.1016/j.knosys.2026.115825",
+          "citationYear": "2026"
+        },
+        {
+          "title": "Contrastive Calibration on Consensus and Complementary Multi-View Representations",
+          "primaryLink": "https://doi.org/10.1016/j.patcog.2026.113291",
+          "authors": "Negin Jabari, <strong>Amjad Seyedi</strong>, Reza Mahmoodi, and Fardin Akhlaghian Tab, <em>Pattern Recognition 2026</em>.",
+          "links": [
+            {
+              "icon": "external-link",
+              "label": "DOI",
+              "url": "https://doi.org/10.1016/j.patcog.2026.113291"
+            },
+            {
+              "icon": "code",
+              "label": "Source Code",
+              "url": "https://github.com/neginjabbari/C4MV"
+            }
+          ],
+          "doi": "10.1016/j.patcog.2026.113291",
+          "citationYear": "2026"
+        },
+        {
+          "title": "Encoder-Decoder Symmetric Nonnegative Matrix Tri-Factorization for Graph Clustering",
+          "primaryLink": "https://doi.org/10.1109/ICASSP55912.2026.11460800",
+          "authors": "<strong>Amjad Seyedi</strong> and Nicolas Gillis, <em>ICASSP 2026</em>.",
+          "links": [
+            {
+              "icon": "external-link",
+              "label": "DOI",
+              "url": "https://doi.org/10.1109/ICASSP55912.2026.11460800"
+            },
+            {
+              "icon": "code",
+              "label": "Source Code",
+              "url": "https://github.com/amjadseyedi/ED-SNMTF"
+            }
+          ],
+          "doi": "10.1109/ICASSP55912.2026.11460800",
+          "citationYear": "2026"
+        },
+        {
+          "title": "Semantic Encoder-Decoder Nonnegative Matrix Factorization with Kullback-Leibler Divergence",
+          "primaryLink": "https://doi.org/10.1007/s13042-025-02874-9",
+          "authors": "Sayvan Soleymanbaigi, <strong>Amjad Seyedi</strong>, Fatemeh Daneshfar, and Fardin Akhlaghian Tab, <em>IJMLC 2026</em>.",
+          "links": [
+            {
+              "icon": "external-link",
+              "label": "DOI",
+              "url": "https://doi.org/10.1007/s13042-025-02874-9"
+            }
+          ],
+          "doi": "10.1007/s13042-025-02874-9",
+          "citationYear": "2026"
+        },
+        {
+          "title": "Community Detection via Deep Motif-regularized Asymmetric Nonnegative Matrix Factorization",
+          "primaryLink": "https://doi.org/10.1016/j.engappai.2025.113505",
+          "authors": "Hazhir Sohrabi, <strong>Amjad Seyedi</strong>, Parham Moradi, and Shahrokh Esmaeili, <em>Engineering Applications of Artificial Intelligence 2026</em>.",
+          "links": [
+            {
+              "icon": "external-link",
+              "label": "DOI",
+              "url": "https://doi.org/10.1016/j.engappai.2025.113505"
+            },
+            {
+              "icon": "code",
+              "label": "Source Code",
+              "url": "https://github.com/sohrabi94/DMRA-NMF"
+            }
+          ],
+          "doi": "10.1016/j.engappai.2025.113505",
+          "citationYear": "2026"
+        },
+        {
+          "title": "Distributionally Robust Nonnegative Matrix Factorization with Self-Paced Adaptive Multi-Loss Fusion",
+          "primaryLink": "https://doi.org/10.1016/j.ins.2025.122823",
+          "authors": "Wafa Barkhoda, <strong>Amjad Seyedi</strong>, Nicolas Gillis, and Fardin Akhlaghian Tab, <em>Information Sciences 2026</em>.",
+          "links": [
+            {
+              "icon": "external-link",
+              "label": "DOI",
+              "url": "https://doi.org/10.1016/j.ins.2025.122823"
+            },
+            {
+              "icon": "code",
+              "label": "Source Code",
+              "url": "https://github.com/barkhoda/DRNMF-SP"
+            }
+          ],
+          "doi": "10.1016/j.ins.2025.122823",
+          "citationYear": "2026"
+        },
+        {
+          "title": "Encoder-Decoder Nonnegative Matrix Factorization with β-Divergence for Data Clustering",
+          "primaryLink": "https://doi.org/10.1016/j.patcog.2025.112211",
+          "authors": "Sayvan Soleymanbaigi, <strong>Amjad Seyedi</strong>, Fardin Akhlaghian Tab, and Fatemeh Daneshfar, <em>Pattern Recognition 2026</em>.",
+          "links": [
+            {
+              "icon": "external-link",
+              "label": "DOI",
+              "url": "https://doi.org/10.1016/j.patcog.2025.112211"
+            }
+          ],
+          "doi": "10.1016/j.patcog.2025.112211",
+          "citationYear": "2026"
+        },
+        {
+          "title": "Instance-wise Distributionally Robust Nonnegative Matrix Factorization",
+          "primaryLink": "https://doi.org/10.1016/j.patcog.2025.111732",
+          "authors": "Wafa Barkhoda, <strong>Amjad Seyedi</strong>, Nicolas Gillis, and Fardin Akhlaghian Tab, <em>Pattern Recognition 2026</em>.",
+          "links": [
+            {
+              "icon": "external-link",
+              "label": "DOI",
+              "url": "https://doi.org/10.1016/j.patcog.2025.111732"
+            },
+            {
+              "icon": "code",
+              "label": "Source Code",
+              "url": "https://github.com/barkhoda/iDRNMF"
+            }
+          ],
+          "doi": "10.1016/j.patcog.2025.111732",
+          "citationYear": "2026"
+        }
+      ]
+    },
+    {
+      "label": "2025",
+      "items": [
+        {
+          "title": "A Deep Latent Factor Graph Clustering with Fairness-Utility Trade-off Perspective",
+          "primaryLink": "https://ieeexplore.ieee.org/abstract/document/11402535",
+          "authors": "Siamak Ghodsi, <strong>Amjad Seyedi</strong>, Tai Le Quy, Fariba Karimi, and Eirini Ntoutsi, <em>IEEE BigData 2025</em>.",
+          "links": [
+            {
+              "icon": "code",
+              "label": "Source Code",
+              "url": "https://github.com/SiamakGhodsi/DFNMF"
+            },
+            {
+              "icon": "file-text",
+              "label": "PDF",
+              "url": "https://arxiv.org/abs/2510.23507"
+            }
+          ],
+          "arxivId": "2510.23507",
+          "citationYear": "2025"
+        },
+        {
+          "title": "A New Bi-Level Deep Human Action Representation Structure based on the Sequence of Sub-Actions",
+          "primaryLink": "https://doi.org/10.1007/s00521-024-10370-4",
+          "authors": "Fardin Akhlaghian Tab, Mohsen Ramezani, Hadi Afshoon, <strong>Amjad Seyedi</strong>, and Atefeh Moradyani, <em>Neural Computing and Applications 2025</em>.",
+          "links": [
+            {
+              "icon": "external-link",
+              "label": "DOI",
+              "url": "https://doi.org/10.1007/s00521-024-10370-4"
+            }
+          ],
+          "doi": "10.1007/s00521-024-10370-4",
+          "citationYear": "2025"
+        }
+      ]
+    },
+    {
+      "label": "2024",
+      "items": [
+        {
+          "title": "Diverse Joint Nonnegative Matrix Factorization for Attributed Graph Clustering",
+          "primaryLink": "https://doi.org/10.1016/j.asoc.2024.112012",
+          "authors": "Arina Mohammadi, <strong>Amjad Seyedi</strong>, Fardin Akhlaghian Tab, and Rojiar Pir Mohammadiani, <em>Applied Soft Computing 2024</em>.",
+          "links": [
+            {
+              "icon": "external-link",
+              "label": "DOI",
+              "url": "https://doi.org/10.1016/j.asoc.2024.112012"
+            }
+          ],
+          "doi": "10.1016/j.asoc.2024.112012",
+          "citationYear": "2024"
+        },
+        {
+          "title": "Enhancing Link Prediction through Adversarial Training in Deep Nonnegative Matrix Factorization",
+          "primaryLink": "https://doi.org/10.1016/j.engappai.2024.108641",
+          "authors": "Reza Mahmoodi, <strong>Amjad Seyedi</strong>, Alireza Abdollahpouri, and Fardin Akhlaghian Tab, <em>Engineering Applications of AI 2024</em>.",
+          "links": [
+            {
+              "icon": "external-link",
+              "label": "DOI",
+              "url": "https://doi.org/10.1016/j.engappai.2024.108641"
+            }
+          ],
+          "doi": "10.1016/j.engappai.2024.108641",
+          "citationYear": "2024"
+        },
+        {
+          "title": "Towards Cohesion-Fairness Harmony: Contrastive Regularization in Individual Fair Graph Clustering",
+          "primaryLink": "https://doi.org/10.1007/978-981-97-2242-6_23",
+          "authors": "Siamak Ghodsi, <strong>Amjad Seyedi</strong>, and Eirini Ntoutsi, <em>PAKDD 2024</em>.",
+          "links": [
+            {
+              "icon": "code",
+              "label": "Source Code",
+              "url": "https://github.com/amjadseyedi/iFairNMTF"
+            },
+            {
+              "icon": "file-text",
+              "label": "PDF",
+              "url": "https://arxiv.org/pdf/2402.10756"
+            },
+            {
+              "icon": "external-link",
+              "label": "DOI",
+              "url": "https://doi.org/10.1007/978-981-97-2242-6_23"
+            }
+          ],
+          "doi": "10.1007/978-981-97-2242-6_23",
+          "citationYear": "2024"
+        },
+        {
+          "title": "Orthogonal Encoder-Decoder Factorization for Unsupervised Feature Selection",
+          "primaryLink": "https://doi.org/10.1016/j.ins.2024.120277",
+          "authors": "Maryam Mozafari, <strong>Amjad Seyedi</strong>, Rojiar Pir Mohammadiani, and Fardin Akhlaghian Tab, <em>Information Sciences 2024</em>.",
+          "links": [
+            {
+              "icon": "external-link",
+              "label": "DOI",
+              "url": "https://doi.org/10.1016/j.ins.2024.120277"
+            }
+          ],
+          "doi": "10.1016/j.ins.2024.120277",
+          "citationYear": "2024"
+        },
+        {
+          "title": "Multi-Label Feature Selection with Global and Local Label Correlation",
+          "primaryLink": "https://doi.org/10.1016/j.eswa.2024.123198",
+          "authors": "Mohammad Faraji, <strong>Amjad Seyedi</strong>, Fardin Akhlaghian Tab, and Reza Mahmoodi, <em>Expert Systems with Applications 2024</em>.",
+          "links": [
+            {
+              "icon": "external-link",
+              "label": "DOI",
+              "url": "https://doi.org/10.1016/j.eswa.2024.123198"
+            }
+          ],
+          "doi": "10.1016/j.eswa.2024.123198",
+          "citationYear": "2024"
+        },
+        {
+          "title": "Deep Asymmetric Nonnegative Matrix Factorization for Graph Clustering",
+          "primaryLink": "https://doi.org/10.1016/j.patcog.2023.110179",
+          "authors": "Akram Hajiveiseh, <strong>Amjad Seyedi</strong>, and Fardin Akhlaghian Tab, <em>Pattern Recognition 2024</em>.",
+          "links": [
+            {
+              "icon": "external-link",
+              "label": "DOI",
+              "url": "https://doi.org/10.1016/j.patcog.2023.110179"
+            }
+          ],
+          "doi": "10.1016/j.patcog.2023.110179",
+          "citationYear": "2024"
+        }
+      ]
+    },
+    {
+      "label": "2023 & Earlier",
+      "items": [
+        {
+          "title": "Link Prediction by Adversarial Nonnegative Matrix Factorization",
+          "primaryLink": "https://doi.org/10.1016/j.knosys.2023.110998",
+          "authors": "Reza Mahmoodi, <strong>Amjad Seyedi</strong>, Fardin Akhlaghian Tab, and Alireza Abdollahpouri, <em>Knowledge-Based Systems 2023</em>.",
+          "links": [
+            {
+              "icon": "external-link",
+              "label": "DOI",
+              "url": "https://doi.org/10.1016/j.knosys.2023.110998"
+            }
+          ],
+          "doi": "10.1016/j.knosys.2023.110998",
+          "citationYear": "2023"
+        },
+        {
+          "title": "Self-Supervised Semi-Supervised Nonnegative Matrix Factorization for Data Clustering",
+          "primaryLink": "https://doi.org/10.1016/j.patcog.2022.109282",
+          "authors": "Jovan Chavoshinejad, <strong>Amjad Seyedi</strong>, Fardin Akhlaghian Tab, and Navid Salahian, <em>Pattern Recognition 2023</em>.",
+          "links": [
+            {
+              "icon": "code",
+              "label": "Source Code",
+              "url": "https://github.com/ChavoshiNejad/S4NMF"
+            },
+            {
+              "icon": "external-link",
+              "label": "DOI",
+              "url": "https://doi.org/10.1016/j.patcog.2022.109282"
+            }
+          ],
+          "doi": "10.1016/j.patcog.2022.109282",
+          "citationYear": "2023"
+        },
+        {
+          "title": "Adversarial Elastic Deep Nonnegative Matrix Factorization for Matrix Completion",
+          "primaryLink": "https://doi.org/10.1016/j.ins.2022.11.120",
+          "authors": "<strong>Amjad Seyedi</strong>, Fardin Akhlaghian Tab, Abdulrahman (Hiwa) Lotfi, Navid Salahian, and Jovan Chavoshinejad, <em>Information Sciences 2023</em>.",
+          "links": [
+            {
+              "icon": "code",
+              "label": "Source Code",
+              "url": "https://github.com/amjadseyedi/EADNMF"
+            },
+            {
+              "icon": "external-link",
+              "label": "DOI",
+              "url": "https://doi.org/10.1016/j.ins.2022.11.120"
+            }
+          ],
+          "doi": "10.1016/j.ins.2022.11.120",
+          "citationYear": "2023"
+        },
+        {
+          "title": "Deep Autoencoder-Like NMF with Contrastive Regularization and Feature Relationship Preservation",
+          "primaryLink": "https://doi.org/10.1016/j.eswa.2022.119051",
+          "authors": "Navid Salahian, Fardin Akhlaghian Tab, <strong>Amjad Seyedi</strong>, and Jovan Chavoshinejad, <em>Expert Systems with Applications 2023</em>.",
+          "links": [
+            {
+              "icon": "code",
+              "label": "Source Code",
+              "url": "https://github.com/amjadseyedi/DANMF_CRFR"
+            }
+          ],
+          "doi": "10.1016/j.eswa.2022.119051",
+          "citationYear": "2023"
+        },
+        {
+          "title": "Asymmetric Semi-Nonnegative Matrix Factorization for Directed Graph Clustering",
+          "primaryLink": "https://doi.org/10.1109/ICCKE50421.2020.9303649",
+          "authors": "R. Abdollahi, <strong>Amjad Seyedi</strong>, and M. R. Noorimehr, <em>ICCKE 2020</em>.",
+          "links": [
+            {
+              "icon": "code",
+              "label": "Source Code",
+              "url": "https://github.com/amjadseyedi/RAsNMF"
+            }
+          ],
+          "doi": "10.1109/ICCKE50421.2020.9303649",
+          "citationYear": "2020"
+        },
+        {
+          "title": "Self-Paced Multi-Label Learning with Diversity",
+          "primaryLink": "http://proceedings.mlr.press/v101/seyedi19a.html",
+          "authors": "<strong>Amjad Seyedi</strong>, Siamak Ghodsi, Fardin Akhlaghian Tab, Mahdi Jalili, and Parham Moradi, <em>ACML 2019</em>.",
+          "links": [
+            {
+              "icon": "code",
+              "label": "Source Code",
+              "url": "https://github.com/amjadseyedi/SPMLD"
+            },
+            {
+              "icon": "file-text",
+              "label": "PDF",
+              "url": "https://proceedings.mlr.press/v101/seyedi19a/seyedi19a.pdf"
+            }
+          ],
+          "bibtex": "@InProceedings{pmlr-v101-seyedi19a,\n  title = {Self-Paced Multi-Label Learning with Diversity},\n  author = {Seyedi, Seyed Amjad and Ghodsi, S. Siamak and Akhlaghian, Fardin and Jalili, Mahdi and Moradi, Parham},\n  booktitle = {Proceedings of The Eleventh Asian Conference on Machine Learning},\n  pages = {790--805},\n  year = {2019},\n  editor = {Lee, Wee Sun and Suzuki, Taiji},\n  volume = {101},\n  series = {Proceedings of Machine Learning Research},\n  publisher = {PMLR},\n  url = {https://proceedings.mlr.press/v101/seyedi19a.html}\n}",
+          "citationYear": "2019"
+        },
+        {
+          "title": "Dynamic Graph-based Label Propagation for Density Peaks Clustering",
+          "primaryLink": "https://doi.org/10.1016/j.eswa.2018.07.075",
+          "authors": "<strong>Amjad Seyedi</strong>, Abdulrahman (Hiwa) Lotfi, Parham Moradi, and N.N. Qader, <em>Expert Systems with Applications 2019</em>.",
+          "links": [
+            {
+              "icon": "external-link",
+              "label": "DOI",
+              "url": "https://doi.org/10.1016/j.eswa.2018.07.075"
+            },
+            {
+              "icon": "code",
+              "label": "Source Code",
+              "url": "https://github.com/amjadseyedi/DPC-DLP"
+            }
+          ],
+          "doi": "10.1016/j.eswa.2018.07.075",
+          "citationYear": "2019"
+        },
+        {
+          "title": "A Weakly-Supervised Factorization Method with Dynamic Graph Embedding",
+          "primaryLink": "https://doi.org/10.1109/AISP.2017.8324084",
+          "authors": "<strong>Amjad Seyedi</strong>, Parham Moradi, and Fardin Akhlaghian Tab, <em>AISP 2017</em>.",
+          "links": [],
+          "doi": "10.1109/AISP.2017.8324084",
+          "citationYear": "2017"
+        },
+        {
+          "title": "A Clustering-based Matrix Factorization Method to Improve the Accuracy of Recommendation Systems",
+          "primaryLink": "https://doi.org/10.1109/IranianCEE.2017.7985435",
+          "authors": "Zzahra Shajarian, <strong>Amjad Seyedi</strong>, and Parham Moradi, <em>ICEE 2017</em>.",
+          "links": [],
+          "doi": "10.1109/IranianCEE.2017.7985435",
+          "citationYear": "2017"
+        },
+        {
+          "title": "An Improved Density Peaks Method for Data Clustering",
+          "primaryLink": "https://doi.org/10.1109/ICCKE.2016.7802150",
+          "authors": "Abdulrahman (Hiwa) Lotfi, <strong>Amjad Seyedi</strong>, and Parham Moradi, <em>ICCKE 2016</em>.",
+          "links": [
+            {
+              "icon": "code",
+              "label": "Source Code",
+              "url": "https://github.com/amjadseyedi/IDPC"
+            }
+          ],
+          "doi": "10.1109/ICCKE.2016.7802150",
+          "citationYear": "2016"
+        }
+      ]
+    }
+  ]
+}
