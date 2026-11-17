@@ -2634,9 +2634,13 @@
                             item.links.filter(l => l.url !== item.primaryLink && !/doi\.org\//i.test(l.url || '')).forEach(l => {
                                 h += '<a href="' + l.url + '" target="_blank" class="pill-link"><i data-lucide="' + (l.icon || 'external-link') + '"></i> ' + l.label + '</a>';
                             });
-                            h += '</div>';
-                        }
-                        h += citationButton(item, false);
+                            h += citationButton(item, false);
+h += '</div>';
+} else {
+    h += '<div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;">';
+    h += citationButton(item, false);
+    h += '</div>';
+}
                         h += '</div>';
                     });
                 });
