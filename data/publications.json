@@ -416,6 +416,11 @@
               "icon": "code",
               "label": "Source Code",
               "url": "https://github.com/amjadseyedi/SPMLD"
+            },
+            {
+              "icon": "file-text",
+              "label": "PDF",
+              "url": "https://proceedings.mlr.press/v101/seyedi19a/seyedi19a.pdf"
             }
           ]
         },
