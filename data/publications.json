@@ -6,6 +6,23 @@
       "label": "Preprints",
       "items": [
         {
+          "title": "FairPGT: Partitioned Graph Transformers for Dual-Level Fair Graph Clustering",
+          "primaryLink": "https://arxiv.org/abs/2611.23631",
+          "authors": "Siamak Ghodsi, <strong>Amjad Seyedi</strong>, Sahar Tahmasebi, Eirini Ntoutsi, Sören Auer.",
+          "links": [
+            {
+              "icon": "code",
+              "label": "Source Code",
+              "url": "https://github.com/SiamakGhodsi/FairPGT"
+            },
+            {
+              "icon": "file-text",
+              "label": "PDF",
+              "url": "https://arxiv.org/pdf/2611.23631"
+            }
+          ]
+        },
+        {
           "title": "Supervised Deep Multimodal Matrix Factorization for Interpretable Brain Network Analysis",
           "primaryLink": "https://arxiv.org/abs/2605.13312",
           "authors": "<strong>Amjad Seyedi</strong>, Lifang He, Songlin Zhao, Akwum Onwunta, and Nicolas Gillis.",
