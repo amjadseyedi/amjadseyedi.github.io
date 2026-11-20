@@ -3,6 +3,7 @@
   "reviewerTitle": "Journal Reviewer",
   "confReviewerTitle": "Conference Reviewer",
   "journals": [
+    "ACM Transactions on Intelligent Systems and Technology",
     "Artificial Intelligence Review",
     "CAAI Transactions on Intelligence Technology",
     "Computers and Electrical Engineering",
@@ -22,8 +23,7 @@
     "IEEE Transactions on Neural Networks and Learning Systems",
     "Pattern Recognition",
     "Scientific Reports",
-    "Signal Processing",
-    "ACM Transactions on Intelligent Systems and Technology"
+    "Signal Processing"
   ],
   "conferences": [
     "AAAI Conference on Artificial Intelligence (AAAI), 2027 — 6 papers",
